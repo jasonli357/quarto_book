@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; 教程和参考资料 – Quarto Book</title>
+<title>9&nbsp; 如何在 Quarto 中优雅地展示 .ipynb 文件？ – Quarto Book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../body/A01_markdown.html" rel="next">
-<link href="../body/04_github_page.html" rel="prev">
+<link href="../body/A02_JupyterNotebook.html" rel="prev">
 <link href="../images/book-logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -83,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/05_references.html"><strong>参考资料</strong></a></li><li class="breadcrumb-item"><a href="../body/05_references.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">教程和参考资料</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/A01_markdown.html"><strong>附录</strong></a></li><li class="breadcrumb-item"><a href="../body/A04_display_ipynb_file.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">如何在 Quarto 中优雅地展示 <code>.ipynb</code> 文件？</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -182,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/05_references.html" class="sidebar-item-text sidebar-link active">
+  <a href="../body/05_references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">教程和参考资料</span></span></a>
   </div>
 </li>
@@ -211,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/A04_display_ipynb_file.html" class="sidebar-item-text sidebar-link">
+  <a href="../body/A04_display_ipynb_file.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">如何在 Quarto 中优雅地展示 <code>.ipynb</code> 文件？</span></span></a>
   </div>
 </li>
@@ -227,20 +260,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#quarto-book-相关的资源" id="toc-quarto-book-相关的资源" class="nav-link active" data-scroll-target="#quarto-book-相关的资源"><span class="header-section-number">6.1</span> Quarto Book 相关的资源</a></li>
-  <li><a href="#发布" id="toc-发布" class="nav-link" data-scroll-target="#发布"><span class="header-section-number">6.2</span> 发布</a></li>
-  <li><a href="#用-quarto-book-写的书" id="toc-用-quarto-book-写的书" class="nav-link" data-scroll-target="#用-quarto-book-写的书"><span class="header-section-number">6.3</span> 用 Quarto book 写的书</a></li>
-  <li><a href="#一些-github-仓库" id="toc-一些-github-仓库" class="nav-link" data-scroll-target="#一些-github-仓库"><span class="header-section-number">6.4</span> 一些 Github 仓库</a></li>
-  <li><a href="#quarto-for-scientists-中提到的资料" id="toc-quarto-for-scientists-中提到的资料" class="nav-link" data-scroll-target="#quarto-for-scientists-中提到的资料"><span class="header-section-number">6.5</span> Quarto for Scientists 中提到的资料</a></li>
+  <li><a href="#问题原始-.ipynb-显示效果很糟" id="toc-问题原始-.ipynb-显示效果很糟" class="nav-link active" data-scroll-target="#问题原始-.ipynb-显示效果很糟"><span class="header-section-number">9.1</span> 问题：原始 <code>.ipynb</code> 显示效果很糟</a></li>
+  <li><a href="#good-1用-github-的仓库链接" id="toc-good-1用-github-的仓库链接" class="nav-link" data-scroll-target="#good-1用-github-的仓库链接"><span class="header-section-number">9.2</span> Good 1：用 GitHub 的仓库链接</a></li>
+  <li><a href="#good-2使用-nbviewer-进行在线预览" id="toc-good-2使用-nbviewer-进行在线预览" class="nav-link" data-scroll-target="#good-2使用-nbviewer-进行在线预览"><span class="header-section-number">9.3</span> Good 2：使用 nbviewer 进行在线预览</a></li>
+  <li><a href="#仅提供源文件下载" id="toc-仅提供源文件下载" class="nav-link" data-scroll-target="#仅提供源文件下载"><span class="header-section-number">9.4</span> 仅提供源文件下载？</a></li>
+  <li><a href="#总结三种场景推荐链接" id="toc-总结三种场景推荐链接" class="nav-link" data-scroll-target="#总结三种场景推荐链接"><span class="header-section-number">9.5</span> 总结：三种场景推荐链接</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/05_references.html"><strong>参考资料</strong></a></li><li class="breadcrumb-item"><a href="../body/05_references.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">教程和参考资料</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/A01_markdown.html"><strong>附录</strong></a></li><li class="breadcrumb-item"><a href="../body/A04_display_ipynb_file.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">如何在 Quarto 中优雅地展示 <code>.ipynb</code> 文件？</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">教程和参考资料</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">如何在 Quarto 中优雅地展示 <code>.ipynb</code> 文件？</span></h1>
 </div>
 
 
@@ -257,95 +290,100 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="quarto-book-相关的资源" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="quarto-book-相关的资源"><span class="header-section-number">6.1</span> Quarto Book 相关的资源</h2>
-<ul>
-<li><a href="https://quarto.org/docs/books/">Quarto Book 官方指南</a> | <a href="https://www.aidoczh.com/quarto/docs/books/index.html">中文</a> | <a href="https://quarto.org/docs/reference/projects/books.html">Options</a></li>
-<li><a href="https://www.brodrigues.co/blog/2023-06-29-book_quarto/">How to self-publish a technical book on Leanpub and Amazon using Quarto</a></li>
-<li>李东风，2023，R 语言教程. <a href="https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/quarto.html">22 Quarto格式文件</a></li>
-<li>R for Data Science, 2024. <a href="https://r4ds.hadley.nz/quarto-formats.html">Chapter 25: Quarto</a>. <a href="https://github.com/hadley/r4ds/">Github</a>, <a href="https://github.com/hadley/r4ds/blob/main/_quarto.yml">_quarto.yml</a></li>
-</ul>
-</section>
-<section id="发布" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="发布"><span class="header-section-number">6.2</span> 发布</h2>
-<ul>
-<li><a href="https://mickael.canouil.fr/posts/2024-12-30-quarto-github-pages/">Quarto: Publishing to GitHub Pages</a></li>
-<li><a href="https://kalonjilabs.com/posts/how-to-publish-quarto/">How to Create and Publish a Quarto Book on GitHub</a></li>
-<li><a href="https://quarto.org/docs/publishing/github-pages.html">Quarto 官网：GitHub Pages</a></li>
-</ul>
-<p>Note:</p>
-<ol type="1">
-<li>考虑到国内很多读者无法访问 GitHub Pages，可以使用 <a href="https://gitee.com/">Gitee</a> 或 <a href="https://coding.net/">Coding</a> 等国内平台进行发布。</li>
-<li>我个人是将编译后的 <code>docs</code> 文件夹上传到 GitHub 的 <code>gh-pages</code> 分支中，这样可以直接通过 <code>https://&lt;username&gt;.github.io/&lt;repository&gt;/</code> 访问。</li>
-</ol>
-</section>
-<section id="用-quarto-book-写的书" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="用-quarto-book-写的书"><span class="header-section-number">6.3</span> 用 Quarto book 写的书</h2>
-<p>你可以选择自己喜欢的风格，然后将对应的仓库克隆下来，修改 <code>_quarto.yml</code> 文件和 <code>index.qmd</code> 文件，添加自己的内容。</p>
-<ul>
-<li><a href="https://github.com/arlionn/ds">数据分析与 Python 应用</a>
-<ul>
-<li>我自己写的第一本 Quarto Book，可以很好地支持中文。</li>
-</ul></li>
-<li><a href="https://github.com/tidyverse/style">https://style.tidyverse.org/</a>
-<ul>
-<li>不涉及任何 R 代码的执行问题，可以视为一个 Quarto-book 模板</li>
-</ul></li>
-<li><a href="https://r4ds.hadley.nz/">R for Data Science</a> | <a href="https://github.com/hadley/r4ds/">Code</a></li>
-<li><a href="https://jjallaire.github.io/visualization-curriculum">Visualization Curriculum</a> | <a href="https://github.com/jjallaire/visualization-curriculum">Code</a></li>
-<li>Oscar Baruffa, 2024, Big Book for R. <a href="https://www.bigbookofr.com/">Read</a>, <a href="https://github.com/oscarbaruffa/BigBookofR">Github</a>
-<ul>
-<li><code>include-after-body: footer.html</code></li>
-</ul></li>
-<li>The Epidemiologist R Handbook, 2024. <a href="https://epirhandbook.com/en/">Read</a>, <a href="https://github.com/appliedepi/epiRhandbook_eng">Github</a>
-<ul>
-<li>R 安装和帮助文件等写的非常细致</li>
-</ul></li>
-<li>Scheuch, C., Voigt, S., &amp; Weiss, P. (2023). Tidy Finance with R (1st ed.). Chapman and Hall/CRC. <a href="https://doi.org/10.1201/b23237">-Link-</a>. <a href="https://www.tidy-finance.org/r/index.html">Read</a>, <a href="https://github.com/tidy-finance/r-tidyfinance">github</a>, <a href="https://github.com/tidy-finance/website/tree/main">Quarto book</a>
-<ul>
-<li><a href="https://github.com/tidy-finance/website/blob/main/_quarto.yml">_quarto.yml</a></li>
-</ul></li>
-<li>Nicholas Tierney. <strong>Quarto for Scientists</strong> . <strong>2024</strong> . <a href="https://qmd4sci.njtierney.com/">book</a>, <a href="https://github.com/njtierney/qmd4sci">github</a>, <a href="https://github.com/njtierney/qmd4sci/blob/main/_quarto.yml">_quarto.yml</a></li>
-<li>使用 Quarto Website 的形式写的书
-<ul>
-<li>to be added</li>
-</ul></li>
-<li>更多：<a href="https://github.com/mcanouil/awesome-quarto">awesome-quarto</a></li>
-</ul>
-</section>
-<section id="一些-github-仓库" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="一些-github-仓库"><span class="header-section-number">6.4</span> 一些 Github 仓库</h2>
-<p>这些仓库提供了形式各样的 Quarto Book 模板，你可以根据自己的需要进行修改。</p>
-<ul>
-<li><a href="https://github.com/coatless-tutorials/quarto-book-template">coatless-tutorials / quarto-book-template</a>
-<ul>
-<li>Template repository for creating a book powered by Quarto and Rendered by GitHub Actions onto GitHub Pages.</li>
-<li>介绍了如何使用 github page 发布你的书稿</li>
-</ul></li>
-<li><a href="https://github.com/fredguth/tufte-quarto">tufte-quarto</a> → <a href="https://fredguth.github.io/tufte-quarto/">website</a>
-<ul>
-<li>Tufte book layout for Quarto. 可以将部分图片显示在网页的右侧边栏处。</li>
-</ul></li>
-<li><a href="https://github.com/nmfs-opensci/NOAA-quarto-book">NOAA-quarto-book</a>
-<ul>
-<li>A Quarto book project with html, pdf and Word output types.</li>
-</ul></li>
-</ul>
-</section>
-<section id="quarto-for-scientists-中提到的资料" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="quarto-for-scientists-中提到的资料"><span class="header-section-number">6.5</span> Quarto for Scientists 中提到的资料</h2>
 <blockquote class="blockquote">
-<p>Source: Nicholas Tierney. <strong>Quarto for Scientists</strong> . <strong>2024</strong> . <a href="https://qmd4sci.njtierney.com/">book</a>, <a href="https://github.com/njtierney/qmd4sci">github</a>, <a href="https://github.com/njtierney/qmd4sci/blob/main/_quarto.yml">_quarto.yml</a></p>
+<p><a href="https://chatgpt.com/share/68891be4-b90c-8005-9526-2adda314f6fb">ChatGPT 对话</a></p>
 </blockquote>
-<p>Here are some resources that I really liked for learning Quarto:</p>
+<p>在撰写 Quarto 教学材料或公开笔记时，我们经常会附上 Jupyter Notebook 文件（<code>.ipynb</code>）供读者参考。然而，直接使用相对路径链接往往导致显示异常，影响阅读体验。</p>
+<section id="问题原始-.ipynb-显示效果很糟" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="问题原始-.ipynb-显示效果很糟"><span class="header-section-number">9.1</span> 问题：原始 <code>.ipynb</code> 显示效果很糟</h2>
+<p>最常见的做法是使用如下相对路径：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">点击查看原始 .ipynb 文件</span><span class="co">](../examples/sample_notebook_python.ipynb)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>链接虽然有效，但 Quarto 渲染后，读者点击跳转的是 <code>.ipynb</code> 文件的原始 JSON 内容，页面混乱难读：</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a> <span class="dt">"cells"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">{</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>   <span class="dt">"cell_type"</span><span class="fu">:</span> <span class="st">"markdown"</span><span class="fu">,</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>   <span class="dt">"id"</span><span class="fu">:</span> <span class="st">"7c5e1f3e"</span><span class="fu">,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>   <span class="dt">"source"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"## 标题"</span><span class="ot">,</span> <span class="st">"第一段说明"</span><span class="ot">]</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="er">...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>这并不是一个理想的展示方式。</p>
+</section>
+<section id="good-1用-github-的仓库链接" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="good-1用-github-的仓库链接"><span class="header-section-number">9.2</span> Good 1：用 GitHub 的仓库链接</h2>
+<p>GitHub 提供了对 <code>.ipynb</code> 文件的原生支持，能将其渲染为结构化、可阅读、可复制的 notebook 页面，非常适合教学阅读与代码学习。推荐链接格式如下：</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">点击查看 notebook</span><span class="co">](https://github.com/lianxhcn/research_with_AI/blob/main/examples/sample_notebook_python.ipynb)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>读者点击后会看到类似 Jupyter Lab 的网页视图，代码、Markdown 和输出完整呈现，体验良好。</p>
+<p>缺点是默认字体不是等宽字体，导致代码的排版，尤其是对齐效果不佳。</p>
+</section>
+<section id="good-2使用-nbviewer-进行在线预览" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="good-2使用-nbviewer-进行在线预览"><span class="header-section-number">9.3</span> Good 2：使用 nbviewer 进行在线预览</h2>
+<p>如果你希望 notebook 的展示界面更加简洁、无干扰，可以使用 <a href="https://nbviewer.org">nbviewer.org</a> 提供的免费服务。只需将 GitHub 上的 <code>.ipynb</code> 链接粘贴进去，即可获得更清爽的预览链接：</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">在线预览 notebook</span><span class="co">](https://nbviewer.org/github/lianxhcn/research_with_AI/blob/main/examples/sample_notebook_python.ipynb)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>nbviewer 的亮点</strong> 包括：</p>
 <ul>
-<li><a href="https://quarto.org/docs/get-started/hello/rstudio.html">The Quarto “get started” guide</a></li>
-<li><a href="https://quarto.org/docs/manuscripts/">The Quarto guide “Quarto manuscripts”</a></li>
-<li><a href="https://r4ds.hadley.nz/quarto">The Quarto chapter in “R for data science”</a></li>
-<li><a href="https://openscapes.github.io/quarto-website-tutorial/">Making shareable documents with Quarto from</a>, from OpenScapes</li>
-<li><a href="https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/">Alison Hill’s blog post: “we don’t talk about Quarto”</a></li>
-<li><a href="https://quarto.org/docs/blog/posts/2023-05-22-quarto-for-academics/">Mine Çentinkaya-Rundel’s talk “Quarto for academics”</a></li>
+<li>页面专注，仅保留 notebook 主体内容</li>
+<li>加载稳定，兼容性好，适合公开教学资料</li>
+<li>无需额外插件，直接生成纯 HTML 页面</li>
+<li>由 Project Jupyter 官方支持，长期稳定</li>
 </ul>
+<p>适用于希望发布静态网站、课程材料或展示成果时提供「无 GitHub 视觉干扰」的 notebook 预览。</p>
+<p>下图对比了 <a href="https://github.com/lianxhcn/research_with_AI/blob/main/examples/sample_notebook_python.ipynb">GitHub 渲染</a> 和 <a href="https://nbviewer.org/github/lianxhcn/research_with_AI/blob/main/examples/sample_notebook_python.ipynb">nbviewer 预览</a> 的差异：</p>
+<p><img src="https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20250730031915.png" class="img-fluid"></p>
+<p>此外，nbviewer 还支持多种其他功能，如：</p>
+<ul>
+<li>直接从 URL 加载 notebook</li>
+<li>支持多种渲染主题</li>
+<li>在线执行代码</li>
+</ul>
+<p><img src="https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20250730032648.png" class="img-fluid"></p>
+</section>
+<section id="仅提供源文件下载" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="仅提供源文件下载"><span class="header-section-number">9.4</span> 仅提供源文件下载？</h2>
+<p>若你希望读者能下载 notebook 文件进行本地运行，则可以保留相对路径链接，但务必提示读者「右键另存为」，防止误点后进入 JSON 混乱页面。如下写法更稳妥：</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">下载原始 .ipynb 文件</span><span class="co">](../examples/sample_notebook_python.ipynb)</span> ←（右键另存为）</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>并配合一个提示框：</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning title="注意"}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>此链接指向的是 <span class="in">`.ipynb`</span> 原始文件（JSON 格式），直接点击可能乱码。   </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>建议：右键另存为以下载文件。</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="总结三种场景推荐链接" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="总结三种场景推荐链接"><span class="header-section-number">9.5</span> 总结：三种场景推荐链接</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 25%">
+<col style="width: 67%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>使用目的</th>
+<th>推荐链接方式</th>
+<th>示例格式</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>在线阅读</td>
+<td>GitHub 渲染视图</td>
+<td><code>github.com/.../xxx.ipynb</code></td>
+</tr>
+<tr class="even">
+<td>清爽展示</td>
+<td>nbviewer 在线预览</td>
+<td><code>nbviewer.org/github/.../xxx.ipynb</code></td>
+</tr>
+<tr class="odd">
+<td>下载使用</td>
+<td>相对路径 + 提示说明</td>
+<td><code>../examples/xxx.ipynb</code></td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
@@ -775,14 +813,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../body/04_github_page.html" class="pagination-link" aria-label="使用 GitHub Pages 发布">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">使用 GitHub Pages 发布</span></span>
+      <a href="../body/A02_JupyterNotebook.html" class="pagination-link" aria-label="Jupyter Notebook">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Jupyter Notebook</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../body/A01_markdown.html" class="pagination-link" aria-label="Markdown">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Markdown</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

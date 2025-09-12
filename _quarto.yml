@@ -47,6 +47,7 @@ book:
       chapters: 
         - body/A01_markdown.md
         - body/A02_JupyterNotebook.ipynb
+        - body/A04_display_ipynb_file.ipynb
 
 format:
   html:

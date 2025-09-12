@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lianxhcn.github.io/quarto_book/index.html</loc>
-    <lastmod>2025-06-09T09:51:25.381Z</lastmod>
+    <lastmod>2025-07-24T18:16:36.742Z</lastmod>
   </url>
   <url>
     <loc>https://lianxhcn.github.io/quarto_book/body/01_intro.html</loc>
@@ -26,10 +26,14 @@
   </url>
   <url>
     <loc>https://lianxhcn.github.io/quarto_book/body/A01_markdown.html</loc>
-    <lastmod>2025-06-09T07:30:11.507Z</lastmod>
+    <lastmod>2025-07-31T14:41:03.156Z</lastmod>
   </url>
   <url>
     <loc>https://lianxhcn.github.io/quarto_book/body/A02_JupyterNotebook.html</loc>
     <lastmod>2025-06-09T07:30:11.508Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lianxhcn.github.io/quarto_book/body/A04_display_ipynb_file.html</loc>
+    <lastmod>2025-07-29T19:27:53.117Z</lastmod>
   </url>
 </urlset>

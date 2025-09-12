@@ -310,8 +310,19 @@
     "objectID": "body/A01_markdown.html#marp-幻灯片",
     "href": "body/A01_markdown.html#marp-幻灯片",
     "title": "7  Markdown",
-    "section": "7.4 marp 幻灯片",
-    "text": "7.4 marp 幻灯片\n在 VScode 中安装 Marp 插件后，你可以使用 Markdown 语法来创建幻灯片。使用 Marp 最大的好处是你可以专注于内容，而不必担心幻灯片的格式和样式。Marp 会自动将你的 Markdown 文档转换为美观的幻灯片。\n\n\n7.4.1 模版 1：最基本的设定\n以下是一个简单的 Marp 幻灯片模板，你只需要新建一个 .md 文件，输入如下内容，然后在 VScode 中打开该文件即可：\n---\nmarp: true\n---\n\n# 幻灯片标题\n\n---\n\n## 第一页幻灯片\n\n- xxx\n- xxx\n\n---\n\n## 第二页幻灯片\n\n- xxx\n- xxx\n\n\n7.4.2 模版 2：更多的设定\n该模板的主要功能包括：\n\n幻灯片的标题、作者、页码、脚注\n幻灯片的字号\n标题的颜色和页面背景颜色\n\n---\nmarp: true\nsize: 16:9      # 宽版：4:3\npaginate: true  # 显示页码\nfooter: '脚注文本或 [xxx](URL)'\n---\n\n&lt;style&gt;\n/*一级标题局中*/\nsection.lead h1 {\n  text-align: center; /*其他参数：left, right*/\n}\nsection {\n  font-size: 22px;      /* 正文字号 */\n}\nh1 {\n  color: blackyellow;   /* 标题的颜色 */\n  /*font-size: 28px; */ /* 标题的字号, 其它标题也可以这样修改 */\n}\nh2 {\n  color: green;\n}\nh3 {\n  color: darkblue;\n}\n\n/* 右下角添加页码 */\nsection::after {\n  content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total); \n}\nheader,\nfooter {\n  position: absolute;\n  left: 50px;\n  right: 50px;\n  height: 25px;\n}\n&lt;/style&gt;\n\n&lt;!--顶部文字--&gt;\n[lianxh.cn](https://www.lianxh.cn/news/46917f1076104.html) \n\n&lt;br&gt;\n\n&lt;!--封面图片--&gt;\n![bg right:50% w:400 brightness:. sepia:50%](https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20220722114227.png) \n\n&lt;!--幻灯片标题--&gt;\n# Marp 参数设置\n\n&lt;br&gt;\n&lt;br&gt;\n\n&lt;!--作者信息--&gt;\n[连玉君](https://www.lianxh.cn) (中山大学)\narlionn@163.com\n\n&lt;br&gt;\n---\n&lt;!-- backgroundColor: #FFFFF9 --&gt;\n## 第一页幻灯片\n\n- 背景是淡黄色的，可以根据需要修改颜色\n\n---\n&lt;!-- backgroundColor:white --&gt;\n## 第二页幻灯片\n\n- 背景是纯白色\n- 下面的图片在右侧，占页面 60% 的宽度\n\n![bg right:60% w:800](图片网址)\n详情参见：\n\n宋森安, 2021, 用Markdown制作幻灯片-五分钟学会Marp（上篇）, 连享会 No.656.\n宋森安, 2021, 用Markdown制作幻灯片-五分钟学会Marp（下篇）, 连享会 No.657.\n连玉君, 2022, Marp幻灯片模板：用Markdown快速写幻灯片, 连享会 No.1059.",
+    "section": "7.4 Marp 幻灯片",
+    "text": "7.4 Marp 幻灯片\n在 VScode 中安装 Marp 插件后，你可以使用 Markdown 语法来创建幻灯片。使用 Marp 最大的好处是你可以专注于内容，而不必担心幻灯片的格式和样式。Marp 会自动将你的 Markdown 文档转换为美观的幻灯片。\n\n\n7.4.1 安装\n1. VScode 编辑器\n2. Marp 插件 - 在 VScode 中打开扩展市场，搜索 Marp for VS Code，点击安装。\n3. 如需使用 PDF 导出功能，还需要安装 Marp CLI： - 打开终端 (TERMINAL)：在 VScode 中，点击左侧活动栏的终端图标，或使用快捷键 Ctrl + ~（反引号）打开终端。 - 在终端中运行以下命令安装 Marp CLI： bash      npm install -g @marp-team/marp-cli\n扩展阅读：\n\n连玉君, 2024, VScode插件：安装、配置和使用, 连享会 No.1490.\n连玉君, 2024, VScode：实用 Markdown 插件推荐, 连享会 No.1390.\n\n\n\n7.4.2 模版 1：最基本的设定\n以下是一个简单的 Marp 幻灯片模板，你只需要新建一个 .md 文件，输入如下内容，然后在 VScode 中打开该文件即可：\n---\nmarp: true\n---\n\n# 幻灯片标题\n\n---\n\n## 第一页幻灯片\n\n- xxx\n- xxx\n\n---\n\n## 第二页幻灯片\n\n- xxx\n- xxx\n\n\n\n7.4.3 模版 2：更多的设定\n\n\n\n\n\n\n该模板的主要功能包括：\n\n\n\n\n幻灯片的标题、作者、页码、脚注\n自定义幻灯片的正文字号\n标题的颜色和页面背景颜色\n\n\n\n---\n### ------------------- 幻灯片还是普通网页\nmarp: true\n#marp: false\n\n### ------------------- 幻灯片尺寸，宽版：4:3\nsize: 16:9\n#size: 4:3\n\n### ------------------- 是否显示页码\npaginate: true  \n#paginate: false\n\n### ------------------- 页脚 (备选的用 '#' 注释掉)\n#footer: 'lianx.cn Marp 模板'\nfooter: '[www.lianxh.cn](https://www.lianxh.cn)&ensp;|&ensp;[Books](https://www.lianxh.cn/Books.html)'\n---\n\n&lt;!-- Global style: 设置标题字号、颜色 --&gt;\n&lt;!-- Global style: 正文字号、颜色 --&gt;\n&lt;style&gt;\n/*一级标题局中*/\nsection.lead h1 {\n  text-align: center; /*其他参数：left, right*/\n  /*使用方法：\n  &lt;!-- _class: lead --&gt;\n  */\n}\nsection {\n  font-size: 23px; \n}\nh1 {\n  color: blackyellow;\n}\nh2 {\n  color: green;\n}\nh3 {\n  color: darkblue;\n}\nh4 {\n  color: brown;\n  /*font-size: 28px; */\n}\n/* 右下角添加页码 */\nsection::after {\n  content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total); \n}\nheader,\nfooter {\n  position: absolute;\n  left: 50px;\n  right: 50px;\n  height: 25px;\n}\n&lt;/style&gt;\n\n&lt;!--顶部文字--&gt;\n[lianxh.cn](https://www.lianxh.cn/KC.html) \n\n&lt;br&gt;\n\n&lt;!--封面图片--&gt;\n![bg right:50% w:400 brightness:. sepia:50%](https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20220524091346.png)\n\n&lt;br&gt;\n\n&lt;br&gt;\n\n&lt;!--幻灯片标题--&gt;\n# 动态面板数据模型\n\n## Dynamic Panel Data Models\n\n&lt;br&gt;\n\n&lt;!--作者信息--&gt;\n#### [连玉君](https://www.lianxh.cn) (中山大学)\n\n&lt;arlionn@163.com&gt;\n\n&lt;br&gt;\n\n---\n&lt;!-- backgroundColor: #FFFFF9 --&gt;\n## 第一页幻灯片\n\n- 背景是淡黄色的，可以根据需要修改颜色\n\n---\n&lt;!-- backgroundColor:white --&gt;\n## 第二页幻灯片\n\n- 背景是纯白色\n- 下面的图片在右侧，占页面 60% 的宽度\n\n![bg right:60% w:800](图片网址)\n详情参见：\n\n宋森安, 2021, 用Markdown制作幻灯片-五分钟学会Marp（上篇）, 连享会 No.656.\n宋森安, 2021, 用Markdown制作幻灯片-五分钟学会Marp（下篇）, 连享会 No.657.\n连玉君, 2022, Marp幻灯片模板：用Markdown快速写幻灯片, 连享会 No.1059.",
+    "crumbs": [
+      "**附录**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "body/A01_markdown.html#用-markdown-编写个人网站和简历",
+    "href": "body/A01_markdown.html#用-markdown-编写个人网站和简历",
+    "title": "7  Markdown",
+    "section": "7.5 用 Markdown 编写个人网站和简历",
+    "text": "7.5 用 Markdown 编写个人网站和简历\n使用 Markdown 语法，你可以轻松地创建个人网站和简历。\n你可以参考如下推文，轻松创建个人主页 (无需购买域名，也无需学习 HTML 和 CSS)：\n\n连小白, 2025, 50 分钟搞定个人主页：Fork 模板 + GitHub Pages + Quarto 完整教程\n\nMarkdown 也可以用来制作简历，参见：\n\nlapis-cv.bingyan.net，github\nresume.todev.cc/，github",
     "crumbs": [
       "**附录**",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Markdown</span>"
@@ -337,6 +348,72 @@
     "crumbs": [
       "**附录**",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Jupyter Notebook</span>"
+    ]
+  },
+  {
+    "objectID": "body/A04_display_ipynb_file.html",
+    "href": "body/A04_display_ipynb_file.html",
+    "title": "9  如何在 Quarto 中优雅地展示 .ipynb 文件？",
+    "section": "",
+    "text": "9.1 问题：原始 .ipynb 显示效果很糟\n在撰写 Quarto 教学材料或公开笔记时，我们经常会附上 Jupyter Notebook 文件（.ipynb）供读者参考。然而，直接使用相对路径链接往往导致显示异常，影响阅读体验。\n最常见的做法是使用如下相对路径：\n链接虽然有效，但 Quarto 渲染后，读者点击跳转的是 .ipynb 文件的原始 JSON 内容，页面混乱难读：\n这并不是一个理想的展示方式。",
+    "crumbs": [
+      "**附录**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>如何在 Quarto 中优雅地展示 `.ipynb` 文件？</span>"
+    ]
+  },
+  {
+    "objectID": "body/A04_display_ipynb_file.html#问题原始-.ipynb-显示效果很糟",
+    "href": "body/A04_display_ipynb_file.html#问题原始-.ipynb-显示效果很糟",
+    "title": "9  如何在 Quarto 中优雅地展示 .ipynb 文件？",
+    "section": "",
+    "text": "[点击查看原始 .ipynb 文件](../examples/sample_notebook_python.ipynb)\n\n{\n \"cells\": [\n  {\n   \"cell_type\": \"markdown\",\n   \"id\": \"7c5e1f3e\",\n   \"source\": [\"## 标题\", \"第一段说明\"]\n  },\n  ...",
+    "crumbs": [
+      "**附录**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>如何在 Quarto 中优雅地展示 `.ipynb` 文件？</span>"
+    ]
+  },
+  {
+    "objectID": "body/A04_display_ipynb_file.html#good-1用-github-的仓库链接",
+    "href": "body/A04_display_ipynb_file.html#good-1用-github-的仓库链接",
+    "title": "9  如何在 Quarto 中优雅地展示 .ipynb 文件？",
+    "section": "9.2 Good 1：用 GitHub 的仓库链接",
+    "text": "9.2 Good 1：用 GitHub 的仓库链接\nGitHub 提供了对 .ipynb 文件的原生支持，能将其渲染为结构化、可阅读、可复制的 notebook 页面，非常适合教学阅读与代码学习。推荐链接格式如下：\n[点击查看 notebook](https://github.com/lianxhcn/research_with_AI/blob/main/examples/sample_notebook_python.ipynb)\n读者点击后会看到类似 Jupyter Lab 的网页视图，代码、Markdown 和输出完整呈现，体验良好。\n缺点是默认字体不是等宽字体，导致代码的排版，尤其是对齐效果不佳。",
+    "crumbs": [
+      "**附录**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>如何在 Quarto 中优雅地展示 `.ipynb` 文件？</span>"
+    ]
+  },
+  {
+    "objectID": "body/A04_display_ipynb_file.html#good-2使用-nbviewer-进行在线预览",
+    "href": "body/A04_display_ipynb_file.html#good-2使用-nbviewer-进行在线预览",
+    "title": "9  如何在 Quarto 中优雅地展示 .ipynb 文件？",
+    "section": "9.3 Good 2：使用 nbviewer 进行在线预览",
+    "text": "9.3 Good 2：使用 nbviewer 进行在线预览\n如果你希望 notebook 的展示界面更加简洁、无干扰，可以使用 nbviewer.org 提供的免费服务。只需将 GitHub 上的 .ipynb 链接粘贴进去，即可获得更清爽的预览链接：\n[在线预览 notebook](https://nbviewer.org/github/lianxhcn/research_with_AI/blob/main/examples/sample_notebook_python.ipynb)\nnbviewer 的亮点 包括：\n\n页面专注，仅保留 notebook 主体内容\n加载稳定，兼容性好，适合公开教学资料\n无需额外插件，直接生成纯 HTML 页面\n由 Project Jupyter 官方支持，长期稳定\n\n适用于希望发布静态网站、课程材料或展示成果时提供「无 GitHub 视觉干扰」的 notebook 预览。\n下图对比了 GitHub 渲染 和 nbviewer 预览 的差异：\n\n此外，nbviewer 还支持多种其他功能，如：\n\n直接从 URL 加载 notebook\n支持多种渲染主题\n在线执行代码",
+    "crumbs": [
+      "**附录**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>如何在 Quarto 中优雅地展示 `.ipynb` 文件？</span>"
+    ]
+  },
+  {
+    "objectID": "body/A04_display_ipynb_file.html#仅提供源文件下载",
+    "href": "body/A04_display_ipynb_file.html#仅提供源文件下载",
+    "title": "9  如何在 Quarto 中优雅地展示 .ipynb 文件？",
+    "section": "9.4 仅提供源文件下载？",
+    "text": "9.4 仅提供源文件下载？\n若你希望读者能下载 notebook 文件进行本地运行，则可以保留相对路径链接，但务必提示读者「右键另存为」，防止误点后进入 JSON 混乱页面。如下写法更稳妥：\n[下载原始 .ipynb 文件](../examples/sample_notebook_python.ipynb) ←（右键另存为）\n并配合一个提示框：\n::: {.callout-warning title=\"注意\"}\n\n此链接指向的是 `.ipynb` 原始文件（JSON 格式），直接点击可能乱码。   \n\n建议：右键另存为以下载文件。\n\n:::",
+    "crumbs": [
+      "**附录**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>如何在 Quarto 中优雅地展示 `.ipynb` 文件？</span>"
+    ]
+  },
+  {
+    "objectID": "body/A04_display_ipynb_file.html#总结三种场景推荐链接",
+    "href": "body/A04_display_ipynb_file.html#总结三种场景推荐链接",
+    "title": "9  如何在 Quarto 中优雅地展示 .ipynb 文件？",
+    "section": "9.5 总结：三种场景推荐链接",
+    "text": "9.5 总结：三种场景推荐链接\n\n\n\n\n\n\n\n\n使用目的\n推荐链接方式\n示例格式\n\n\n\n\n在线阅读\nGitHub 渲染视图\ngithub.com/.../xxx.ipynb\n\n\n清爽展示\nnbviewer 在线预览\nnbviewer.org/github/.../xxx.ipynb\n\n\n下载使用\n相对路径 + 提示说明\n../examples/xxx.ipynb",
+    "crumbs": [
+      "**附录**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>如何在 Quarto 中优雅地展示 `.ipynb` 文件？</span>"
     ]
   }
 ]
