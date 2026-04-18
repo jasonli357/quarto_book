@@ -2,9 +2,19 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Quarto Book",
+    "title": "Claude Code 协同 Stata",
     "section": "",
-    "text": "主页 || 课程 || 视频 || 推文 || 资料",
+    "text": "Claude Code 协同 Stata：环境配置与应用实践\n黎佳迅，中山大学岭南学院硕士研究生，研究方向为公司金融。曾担任连享会 寒假班 助教。",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Home</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#内容提要",
+    "href": "index.html#内容提要",
+    "title": "Claude Code 协同 Stata",
+    "section": "0.1 内容提要",
+    "text": "0.1 内容提要\nAI Agent 能够显著提升科研效率，实现多步骤任务的自动化执行。但在初次使用 Claude Code 时，无法识别 Stata 软件位置或路径解析失败是常见的配置问题。本书的目的是介绍两种简便的 Stata 配置方案以及 Claude Code 的基本使用技巧，帮助经管研究者将 Claude Code 顺利应用到 Stata 实证流程中。\n\n0.1.1 本书涵盖内容\n\nStata 环境配置的两种方案\n\n在 CLAUDE.md 中配置项目全局规则\n利用 Stata-MCP 实现 AI 与 Stata 的自动连接\n\nClaude Code 基本交互技巧\n\n执行权限控制\n发现、安装并管理官方及第三方技能包\n查看与恢复历史会话\n其他常用斜杠命令（Slash Commands）\n\n数据处理和 Skill 生成演示\n\n演示 “先计划、后执行” 的数据处理全过程\n将数据处理流程沉淀为可复用的 Skill\n\n\n\n\n0.1.2 导航\n  连享会主页 || GitHub 仓库",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Home</span>"
     ]
@@ -12,408 +22,826 @@
   {
     "objectID": "body/01_intro.html",
     "href": "body/01_intro.html",
-    "title": "2  创建流程",
+    "title": "2  概述：Claude Code 与 Stata 协同",
     "section": "",
-    "text": "2.1 使用模板创建书稿 (推荐)\nQuarto book 是一个基于 quarto 的书籍项目：你可以将多个章节文档通过一个名为 _quarto.yml 的文件组织成一本书，然后将其编译为一本电子书 (HTML 或 PDF 格式均可)，进而通过 GitHub Pages 发布。\n以本项目为例：\n创建一本 Quarto Book 非常简单。你可以使用 VScode 或 RStudio 来创建和编辑你的书籍项目。这里以 VScode 为例进行说明。\n你可以通过两种方式来创建 Quarto Book：\n对于初学者而言，建议采用第一种方式。你只需要将现有的模板项目克隆或下载到本地，然后简单修改相关配置和内容即可。\n在执行如下步骤之前，请先确保你已经完成了 环境配置 的相关工作。",
+    "text": "2.1 为什么用 Claude Code 配合 Stata\nAI Agent（智能体）能够显著提升科研效率，实现多步骤任务的自动化执行。Claude Code 是 Anthropic 推出的一款命令行 AI 编程助手，能够直接在终端中理解项目上下文、执行代码、读写文件。对于经管类研究者而言，将 Claude Code 与 Stata 结合，可以实现：",
     "crumbs": [
-      "**Quarto 简介**",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>创建流程</span>"
+      "**Stata 环境配置**",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>概述：Claude Code 与 Stata 协同</span>"
     ]
   },
   {
-    "objectID": "body/01_intro.html#使用模板创建书稿-推荐",
-    "href": "body/01_intro.html#使用模板创建书稿-推荐",
-    "title": "2  创建流程",
+    "objectID": "body/01_intro.html#为什么用-claude-code-配合-stata",
+    "href": "body/01_intro.html#为什么用-claude-code-配合-stata",
+    "title": "2  概述：Claude Code 与 Stata 协同",
     "section": "",
-    "text": "Clone 模板：\n\n将 quarto_book 仓库克隆或下载到本地。\n\n测试环境配置：\n\n在 VScode 中打开项目根目录，进而打开 _quarto.yml 文件。\n按快捷键 Ctrl+~ 打开 Terminal &gt;&gt; 输入 quarto render 即可开始编译。完成后项目根目录下会自动生成 /docs 子文件夹，其中包含编译后的 HTML 文件。\n通过我的电脑地址栏打开 /docs 文件夹，双击 index.html 文件即可在浏览器中预览书籍。 以上步骤若能成功完成，说明你的 Quarto 环境配置正常。\n\n修改书籍基本信息：\n\n在 VScode 中打开项目根目录下的 _quarto.yml 文件，修改书籍的标题、作者等信息。\n打开 index.qmd 文件，编辑书籍简介。\n\n撰写你的书稿：\n\n各章书稿存放于 body/ 目录下。你可以在该目录下创建新的 .md, .qmd 或 .ipynb 文件，或编辑现有的章节文件。\n完成后，请参照第 3 步，更新 _quarto.yml 文件中的章节列表。\n\n编译和预览书籍：\n\n在 VScode 中按 Ctrl+~ 打开 Terminal &gt;&gt; 输入 quarto render 即可重新编译书籍。\n预览方式同上，双击 /docs/index.html 文件即可在浏览器中查看最新编译结果。\n\nNote: 如果浏览器无法显示最新内容，请尝试清理浏览器缓存或使用无痕模式打开。\n\n\n\n发布书籍：参见 使用 GitHub Pages 发布。",
+    "text": "自动化数据处理流程（清洗、合并、计算变量、描述性统计）\n通过自然语言描述需求，自动生成并执行 Stata 代码\n将标准化的数据处理流程打包为可复用的”技能包”（Skill），避免重复劳动",
     "crumbs": [
-      "**Quarto 简介**",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>创建流程</span>"
+      "**Stata 环境配置**",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>概述：Claude Code 与 Stata 协同</span>"
     ]
   },
   {
-    "objectID": "body/01_intro.html#从头开始创建书稿",
-    "href": "body/01_intro.html#从头开始创建书稿",
-    "title": "2  创建流程",
-    "section": "2.2 从头开始创建书稿",
-    "text": "2.2 从头开始创建书稿\n虽然不建议初学者从头开始创建 Quarto Book 项目，但如果你希望完全自定义书籍结构和内容，可以按照以下步骤操作：\n\n在 VScode 中按 Ctrl+Shift+P，输入 Quarto: Create Project 来创建一个新的 Quarto Book 项目。\n在弹出的对话框中选择 Book 模板。\n输入项目名称和保存路径。\n打开生成的 _quarto.yml 文件，修改书籍的标题、作者等信息。\n编辑 index.qmd 文件，添加书籍的内容。\n编译和预览方式与「使用模板创建书稿」相同。",
+    "objectID": "body/01_intro.html#常见的配置问题",
+    "href": "body/01_intro.html#常见的配置问题",
+    "title": "2  概述：Claude Code 与 Stata 协同",
+    "section": "2.2 常见的配置问题",
+    "text": "2.2 常见的配置问题\n在初次使用 Claude Code 调用 Stata 时，最常遇到的两个问题是：\n\n2.2.1 问题一：Claude Code 找不到 Stata\n\n\n\nClaude Code 无法识别 Stata 安装位置\n\n\n即使将 Stata 添加到系统环境变量中，Claude Code 有时仍然无法正确定位 Stata 的安装路径。\n\n\n2.2.2 问题二：路径格式不兼容\n如果 Claude Code 安装在 WSL（Windows Subsystem for Linux）环境中，而 Stata 安装在 Windows 上，Claude Code 可能使用 WSL 的路径格式调用 Stata：\n# WSL 路径格式 —— Windows 端的 Stata 无法识别\n\"/d/stata18/StataMP-64.exe\" /e do \"/mnt/d/work/analysis.do\"\n但 Windows 中的 Stata 只能识别 D:/work/analysis.do 这种路径格式，导致路径解析失败。",
     "crumbs": [
-      "**Quarto 简介**",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>创建流程</span>"
+      "**Stata 环境配置**",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>概述：Claude Code 与 Stata 协同</span>"
     ]
   },
   {
-    "objectID": "body/01_intro.html#quarto-book-项目结构",
-    "href": "body/01_intro.html#quarto-book-项目结构",
-    "title": "2  创建流程",
-    "section": "2.3 Quarto Book 项目结构",
-    "text": "2.3 Quarto Book 项目结构\nQuarto book 本质上是将多个文档组织在一起，使它们能够作为一本书来编译和预览：\n\n支持多种文档格式，且可以同时使用多种格式的文档。包括：.qmd，.md，.Rmd 和 .ipynb 等。\n配置文件：Quarto Book 项目会通过 _quarto.yml 文件来定义书籍的元数据和结构。\nindex.qmd 文件：这是书籍的入口文件，通常包含书籍的封面和介绍等内容。编译时会将其作为书籍或网站的首页。\n\n一个典型的 Quarto Book 项目结构如下：\nquarto_book/\n├── _quarto.yml          # 配置文件，定义书籍的元数据和结构\n├── index.qmd           # 书籍的入口文件\n├── chapter1.qmd        # 第一章内容\n├── chapter2.qmd        # 第二章内容\n├── chapter3.qmd        # 第三章内容\n├── images/             # 存放书籍中使用的图片\n├── data/               # 存放书籍中使用的数据文件\n└── references.bib      # 参考文献文件（可选）\n如果章节较多，或希望每个章节有独立的目录，可以将章节文件放在 chapters/ 目录下，结构如下：\nquarto_book/\n├── _quarto.yml         # 配置文件，定义书籍的元数据和结构\n├── index.qmd           # 书籍的入口文件\n├── chapters/           # 存放章节文件\n│   ├── chapter1.qmd    # 第一章内容   \n│   ├── chapter2.qmd    # 第二章内容\n│   ├── chapter3.qmd    # 第三章内容\n├── images/             # 存放书籍中使用的图片\n├── data/               # 存放书籍中使用的数据文件\n└── references.bib      # 参考文献文件（可选）\n同理，你也可以为每个章节创建一个独立的目录，例如 chapter1/，chapter2/ 等，进而在 chapter1/ 目录下创建 data/, images/ 等子目录来组织相关资源。这样可以使项目结构更加清晰。",
+    "objectID": "body/01_intro.html#两种解决方案",
+    "href": "body/01_intro.html#两种解决方案",
+    "title": "2  概述：Claude Code 与 Stata 协同",
+    "section": "2.3 两种解决方案",
+    "text": "2.3 两种解决方案\n针对上述问题，本书介绍两种解决方案：\n\n\n\n\n\n\n\n\n\n方案一：CLAUDE.md 配置\n方案二：Stata MCP（推荐）\n\n\n\n\n原理\n在项目配置文件中写明 Stata 路径和运行规则\n通过 MCP 协议让 AI 与 Stata 自动连接\n\n\n优势\n简单，无需安装额外工具\n功能强大，支持会话保持和交互执行\n\n\n适用场景\n临时使用、快速上手\n长期使用、复杂数据处理任务\n\n\n前提条件\n无\n需要 Stata 授权（stata.lic）\n\n\n\n接下来的两章将分别详细介绍这两种方案的配置方法。",
     "crumbs": [
-      "**Quarto 简介**",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>创建流程</span>"
+      "**Stata 环境配置**",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>概述：Claude Code 与 Stata 协同</span>"
     ]
   },
   {
-    "objectID": "body/01_intro.html#参考资料",
-    "href": "body/01_intro.html#参考资料",
-    "title": "2  创建流程",
-    "section": "2.4 参考资料",
-    "text": "2.4 参考资料\n\nquarto book: 官方指南\nQuarto 发布基础\ngithub pages",
-    "crumbs": [
-      "**Quarto 简介**",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>创建流程</span>"
-    ]
-  },
-  {
-    "objectID": "body/02_install_setting.html",
-    "href": "body/02_install_setting.html",
-    "title": "3  环境配置",
+    "objectID": "body/02_claude_md.html",
+    "href": "body/02_claude_md.html",
+    "title": "3  方案一：在 CLAUDE.md 中配置 Stata",
     "section": "",
-    "text": "3.1 必要安装\n在 VScode 环境下高效编写和发布 Quarto Book，需要提前完成相关软件的安装与基本配置。以下流程适用于大部分 Windows、macOS 和 Linux 用户。",
+    "text": "3.1 什么是 CLAUDE.md\nCLAUDE.md 是一个项目级的”说明文件”，放在项目根目录下。Claude Code 每次启动时会自动读取它，因此可以在其中设定项目的工作规范和约定。\n通过在 CLAUDE.md 中写明 Stata 的使用规则，可以让 Claude Code 正确地找到 Stata 并以正确的方式执行代码。",
     "crumbs": [
-      "**Quarto 简介**",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>环境配置</span>"
+      "**Stata 环境配置**",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>方案一：在 CLAUDE.md 中配置 Stata</span>"
     ]
   },
   {
-    "objectID": "body/02_install_setting.html#必要安装",
-    "href": "body/02_install_setting.html#必要安装",
-    "title": "3  环境配置",
+    "objectID": "body/02_claude_md.html#配置内容",
+    "href": "body/02_claude_md.html#配置内容",
+    "title": "3  方案一：在 CLAUDE.md 中配置 Stata",
+    "section": "3.2 配置内容",
+    "text": "3.2 配置内容\n在 CLAUDE.md 中，至少应包含以下内容：\n\n3.2.1 1. 说明 Stata 安装路径\n告诉 Claude Code Stata 可执行文件的确切位置：\nStata 安装路径：D:/stata18/StataMP-64.exe\n\n\n3.2.2 2. 指定运行 dofile 的终端命令\n明确告诉 Claude Code 应该用什么命令来执行 Stata dofile：\n运行 Stata dofile 的命令：\n\"D:/stata18/StataMP-64.exe\" /e do \"script.do\"\n\n注意事项：\n- 路径使用 Windows 格式（D:/...），不能使用 WSL 格式（/mnt/d/...）\n- /e 参数表示 batch 模式，运行完自动关闭\n\n\n3.2.3 3. 规定日志（.log）生成位置\n日志文件：\n- 运行 Stata 前，需先 cd 到项目目录，否则日志会写到默认路径\n- 运行完成后，读取同名的 .log 文件查看结果\n\n\n3.2.4 4. 错误检测规则\n错误检测：\n- 检查 .log 文件中是否包含 \"r(\" 开头的错误代码\n- 如果发现错误，分析错误原因并修改 .do 文件后重新运行",
+    "crumbs": [
+      "**Stata 环境配置**",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>方案一：在 CLAUDE.md 中配置 Stata</span>"
+    ]
+  },
+  {
+    "objectID": "body/02_claude_md.html#完善-claude.md-的技巧",
+    "href": "body/02_claude_md.html#完善-claude.md-的技巧",
+    "title": "3  方案一：在 CLAUDE.md 中配置 Stata",
+    "section": "3.3 完善 CLAUDE.md 的技巧",
+    "text": "3.3 完善 CLAUDE.md 的技巧\nCLAUDE.md 不是一次写完就固定的文件。一个实用的做法是：\n\n在 AI 执行完任务后，问它刚刚有没有遇到问题。然后让它总结经验，写进 CLAUDE.md 里面。\n\n\n\n\n完善 CLAUDE.md 的过程\n\n\n这样随着使用，CLAUDE.md 会不断完善，AI 的工作效率和准确度也会逐步提升。",
+    "crumbs": [
+      "**Stata 环境配置**",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>方案一：在 CLAUDE.md 中配置 Stata</span>"
+    ]
+  },
+  {
+    "objectID": "body/02_claude_md.html#完整示例",
+    "href": "body/02_claude_md.html#完整示例",
+    "title": "3  方案一：在 CLAUDE.md 中配置 Stata",
+    "section": "3.4 完整示例",
+    "text": "3.4 完整示例\n以下是一个适用于命令行模式的 CLAUDE.md 示例：\n## Stata 数据处理规范\n\n- Stata 安装路径：D:/stata18/StataMP-64.exe\n- 运行 dofile 命令：\"D:/stata18/StataMP-64.exe\" /e do \"script.do\"\n- 运行前需先 cd 到项目目录\n- 路径格式必须使用 Windows 格式（D:/...），不能用 WSL 的 /mnt/d/... 格式\n\n- 原始数据在 data/raw/ 目录下，不要修改或覆盖\n- 清洗过程中以及清洗后的数据存入 data/processed/\n- 代码放在 code/\n- 说明文档放在 file/\n\n- 运行完成后，读取 .log 文件检查是否有 r( 开头的错误代码\n\n\n\n\n\n\nNote\n\n\n\n方案一虽然简单，但每次执行 Stata 代码都需要经历”写 .do 文件 → 执行命令 → 读 .log 文件”三个步骤，且每次运行都会启动一个新的 Stata 进程。如果希望更高效的交互体验，推荐使用方案二（Stata MCP）。",
+    "crumbs": [
+      "**Stata 环境配置**",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>方案一：在 CLAUDE.md 中配置 Stata</span>"
+    ]
+  },
+  {
+    "objectID": "body/03_stata_mcp.html",
+    "href": "body/03_stata_mcp.html",
+    "title": "4  方案二：安装 Stata MCP（推荐）",
     "section": "",
-    "text": "3.1.1 安装 VScode 编辑器\n访问 Visual Studio Code 官网，下载安装最新版 VScode。建议安装稳定版，无需安装 Insiders 预览版。\n\n\n3.1.2 安装 Quarto\n访问 Quarto 官网，下载并安装适合你操作系统的 Quarto。安装后，建议在命令行（终端/PowerShell）中运行 quarto --version 检查是否安装成功。\n\n\n3.1.3 安装 VScode 插件\n在 VScode 左侧扩展（Extensions）面板搜索并安装下列插件：\n\nQuarto（官方插件，支持 .qmd 文件的语法高亮与预览）\nMarkdown All in One（增强 Markdown 编辑体验）\nJupyter（如需直接在 VScode 内编辑 .ipynb 文件）\nPython、R（分别对应需要用到的语言）\n\n如果你的书稿中不涉及 Python 或 R 代码块，可以不安装对应的插件。\n同理，如果书稿中涉及可执行的 Stata 代码块，则需安装 Stata 相关的插件。",
+    "text": "4.1 什么是 Stata MCP\nMCP（Model Context Protocol）是一种让 AI 模型与外部工具交互的协议。Stata MCP 是基于此协议开发的工具，它将 Stata 变成了一个可交互的服务，而不是每次冷启动一个独立进程。",
     "crumbs": [
-      "**Quarto 简介**",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>环境配置</span>"
+      "**Stata 环境配置**",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>方案二：安装 Stata MCP（推荐）</span>"
     ]
   },
   {
-    "objectID": "body/02_install_setting.html#可选安装",
-    "href": "body/02_install_setting.html#可选安装",
-    "title": "3  环境配置",
-    "section": "3.2 可选安装",
-    "text": "3.2 可选安装",
+    "objectID": "body/03_stata_mcp.html#安装步骤",
+    "href": "body/03_stata_mcp.html#安装步骤",
+    "title": "4  方案二：安装 Stata MCP（推荐）",
+    "section": "4.2 安装步骤",
+    "text": "4.2 安装步骤\n安装 Stata MCP 需要以下步骤：\n\n\n\nStata MCP 架构\n\n\n\n4.2.1 1. 在 VS Code 安装 Stata MCP 插件\n在 VS Code 扩展商店中搜索并安装 Stata MCP 插件。\n\n\n4.2.2 2. 设置 Stata 安装路径\n在插件设置中填入 Stata 的安装路径。设置完成后，VS Code 右下角应显示 “Stata: Connected”，表示连接成功。\n\n\n4.2.3 3. 在 Claude Code 中添加 Stata MCP 服务器\n在终端中运行以下命令，将 Stata MCP 注册到 Claude Code：\nclaude mcp add --transport sse stata-mcp http://localhost:4000/mcp --scope user\n\n\n\n\n\n\nImportant前提条件\n\n\n\n使用 Stata MCP 需要有效的 Stata 授权文件（stata.lic）。如果没有授权，请使用方案一（CLAUDE.md 配置）。",
     "crumbs": [
-      "**Quarto 简介**",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>环境配置</span>"
+      "**Stata 环境配置**",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>方案二：安装 Stata MCP（推荐）</span>"
     ]
   },
   {
-    "objectID": "body/02_install_setting.html#安装-r-或-python-环境",
-    "href": "body/02_install_setting.html#安装-r-或-python-环境",
-    "title": "3  环境配置",
-    "section": "3.3 安装 R 或 Python 环境",
-    "text": "3.3 安装 R 或 Python 环境\n\n如果你的文档包含 R 代码块，需安装 R。\n如果包含 Python 代码块，需配置好 Python 运行环境。建议安装 Anaconda 套装，访问 Anaconda 官网 下载并安装。Anaconda 包含了 Python 及常用的数据科学库，安装后可通过 Anaconda Navigator 或命令行使用。\n\n国内用户，可以参照 6 Python：安装和环境配置 配置 Python 环境。\n\n\n\n3.3.1 Github 相关\n\ngithub 账号（推荐）\n\n如果你计划将 Quarto Book 发布到 GitHub 或其他代码托管平台，建议注册一个 GitHub 账号。注册后，你可以创建仓库来存储和管理你的 Quarto Book 项目。\n\ngithub desktop（推荐）\n\n如果你不熟悉 Git 命令行操作，可以安装 GitHub Desktop，它提供了图形化界面，方便进行版本控制和仓库管理。\n\n安装 Git（可选） 熟悉 Git 的用户，建议安装 Git 并在 VScode 中完成初步配置。这样可实现版本管理、远程仓库同步、多人协作等功能。",
+    "objectID": "body/03_stata_mcp.html#stata-mcp-的功能",
+    "href": "body/03_stata_mcp.html#stata-mcp-的功能",
+    "title": "4  方案二：安装 Stata MCP（推荐）",
+    "section": "4.3 Stata MCP 的功能",
+    "text": "4.3 Stata MCP 的功能\nStata MCP 提供两个核心工具：\n\nstata_run_file：运行完整的 .do 文件\nstata_run_selection：直接运行代码片段，无需创建文件\n多会话模式：通过不同的 session_id 可以并行运行多个 Stata 实例",
     "crumbs": [
-      "**Quarto 简介**",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>环境配置</span>"
+      "**Stata 环境配置**",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>方案二：安装 Stata MCP（推荐）</span>"
     ]
   },
   {
-    "objectID": "body/02_install_setting.html#其它问题",
-    "href": "body/02_install_setting.html#其它问题",
-    "title": "3  环境配置",
-    "section": "3.4 其它问题",
-    "text": "3.4 其它问题\n\n3.4.1 配置环境变量（如有需要）\n确保 quarto、R、python 等命令可在终端/命令行直接调用。对于 Windows 用户，如出现命令无法识别，可在“系统环境变量”中添加相应路径。\n\n\n3.4.2 检查依赖是否正常\n在终端分别运行以下命令，确认环境配置成功：\nquarto --version\npython --version      # 若需支持 Python\nR --version           # 若需支持 R\njupyter --version     # 若需支持 .ipynb\n完成上述准备工作后，你就可以在 VScode 环境下流畅地新建、编辑和预览 Quarto Book 项目了。",
+    "objectID": "body/03_stata_mcp.html#命令行-vs-stata-mcp-对比",
+    "href": "body/03_stata_mcp.html#命令行-vs-stata-mcp-对比",
+    "title": "4  方案二：安装 Stata MCP（推荐）",
+    "section": "4.4 命令行 vs Stata MCP 对比",
+    "text": "4.4 命令行 vs Stata MCP 对比\n既然 Claude Code 可以用命令行方式执行 Stata（\"/d/stata18/StataMP-64.exe\" /e do \"script.do\"），那 Stata MCP 还有什么意义？\n\n4.4.1 命令行方式的流程\n执行一次分析需要 3 步：\n\nWrite — 创建 .do 文件\nBash — 执行 StataMP-64.exe /e do script.do\nRead — 读取 .log 文件查看结果\n\n而且每次运行都是启动一个新的 Stata 进程，上次加载数据的状态不会保留。\n\n\n4.4.2 Stata MCP 的流程\n1 步搞定：\n\nstata_run_selection — 直接传入代码，结果立即返回到对话中\n\n\n\n4.4.3 详细对比\n\n\n\n对比项\n命令行 /e\nStata MCP\n\n\n\n\n工具调用次数\n3 次（Write → Bash → Read）\n1 次\n\n\n需要创建文件\n是\n否（用 stata_run_selection 直接运行代码片段）\n\n\n结果获取\n需手动读 .log\n直接返回到对话\n\n\n会话保持\n每次全新启动\n可复用同一会话\n\n\n数据加载\n每次重新加载\n加载一次，后续复用\n\n\n并行执行\n需手动管理\n用不同 session_id 即可\n\n\n\n\n\n4.4.4 会话保持的关键优势\n最大的实际意义是「会话保持」。在 Stata MCP 中，可以像平时和 Stata 交互一样，在同一个窗口内多次执行命令：\n* 第 1 次运行\nuse \"data.dta\"          // 数据加载到内存\n\n* 第 2 次运行\nsummarize income        // 直接对已加载的数据做分析\n\n* 第 3 次运行\nreg y x1 x2            // 继续在同一个数据上回归\n而命令行方式每次都得重新加载数据，对于大数据集来说非常浪费时间。",
     "crumbs": [
-      "**Quarto 简介**",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>环境配置</span>"
+      "**Stata 环境配置**",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>方案二：安装 Stata MCP（推荐）</span>"
     ]
   },
   {
-    "objectID": "body/03_YML_file.html",
-    "href": "body/03_YML_file.html",
-    "title": "4  _quarto.yml 文件",
+    "objectID": "body/03_stata_mcp.html#小结",
+    "href": "body/03_stata_mcp.html#小结",
+    "title": "4  方案二：安装 Stata MCP（推荐）",
+    "section": "4.5 小结",
+    "text": "4.5 小结\nStata MCP 就是把 Stata 变成了一个可交互的服务，而不是每次冷启动一个独立进程。对于需要反复执行 Stata 代码的数据处理任务，Stata MCP 能显著提升效率。",
+    "crumbs": [
+      "**Stata 环境配置**",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>方案二：安装 Stata MCP（推荐）</span>"
+    ]
+  },
+  {
+    "objectID": "body/04_permissions.html",
+    "href": "body/04_permissions.html",
+    "title": "5  执行权限控制",
     "section": "",
-    "text": "4.1 简介\n_quarto.yml 文件是 Quarto Book 项目的配置文件，用于定义书籍的元数据、结构和输出格式。以下是一个简单的 _quarto.yml 文件示例：\n你还可以在 _quarto.yml 文件中添加更多配置选项，如自定义样式、引用管理、输出格式等。具体的配置选项可以参考 Quarto Book 官方指南。",
+    "text": "5.1 权限模式概述\nClaude Code 在执行某些操作时，会停下来要求用户确认许可。这对于安全性至关重要，但如果频繁弹出确认，会打断工作流。本章介绍三种管理权限的方式。\n当你开启 “accept edits on”（自动接受编辑） 模式时，Claude Code 只会自动修改和保存代码文件。但当它需要执行终端命令（如 npm install、mkdir、git push）、读取环境变量或发起网络请求时，依然会停下来强制要求你同意。",
     "crumbs": [
-      "**创建 Quarto-book**",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>_quarto.yml 文件</span>"
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>执行权限控制</span>"
     ]
   },
   {
-    "objectID": "body/03_YML_file.html#简介",
-    "href": "body/03_YML_file.html#简介",
-    "title": "4  _quarto.yml 文件",
+    "objectID": "body/04_permissions.html#方法一dangerously-skip-permissions",
+    "href": "body/04_permissions.html#方法一dangerously-skip-permissions",
+    "title": "5  执行权限控制",
+    "section": "5.2 方法一：dangerously-skip-permissions",
+    "text": "5.2 方法一：dangerously-skip-permissions\nclaude --dangerously-skip-permissions\n跳过所有权限检查，Claude Code 执行任何操作都不会询问。\n\n\n\n\n\n\nCaution风险最高\n\n\n\n此方法意味着 Claude Code 可以不受限制地执行任何命令，包括删除文件、推送代码等危险操作。仅在你完全信任当前任务且理解风险的情况下使用。",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>执行权限控制</span>"
+    ]
+  },
+  {
+    "objectID": "body/04_permissions.html#方法二auto-模式推荐",
+    "href": "body/04_permissions.html#方法二auto-模式推荐",
+    "title": "5  执行权限控制",
+    "section": "5.3 方法二：Auto 模式（推荐）",
+    "text": "5.3 方法二：Auto 模式（推荐）\nclaude --permission-mode auto\nAuto 模式使用一个后台 AI 分类器来代替你做决定：\n\n90% 以上的常规安全命令（如 ls、新建文件、跑测试代码）会自动同意并执行\n只有当它试图执行真正危险的操作（比如删除数据库、推送包含密码的代码）时，才会停下来问你\n\n既保证了心流不被打断，又防止了系统崩溃。\n\n\n\n\n\n\nNote模型兼容性\n\n\n\nAuto 模式需要使用 Claude 官方模型（Sonnet/Opus）才能正常工作。如果使用 GLM 等第三方模型，Auto 模式可能不可用。",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>执行权限控制</span>"
+    ]
+  },
+  {
+    "objectID": "body/04_permissions.html#方法三settings.json-白名单",
+    "href": "body/04_permissions.html#方法三settings.json-白名单",
+    "title": "5  执行权限控制",
+    "section": "5.4 方法三：settings.json 白名单",
+    "text": "5.4 方法三：settings.json 白名单\n在 .claude/settings.json（全局）或 .claude/settings.local.json（项目级）中配置白名单，白名单里的命令不需要询问用户许可。\n\n5.4.1 白名单的自动添加\n每次 Claude Code 询问是否允许某个操作时，如果选择 “Yes, and don’t ask again for …”，Claude Code 会自动在 .claude/settings.local.json 的白名单里添加这个命令。\n\n\n5.4.2 手动配置示例\n{\n  \"permissions\": {\n    \"allow\": [\n      \"Bash(ls:*)\",\n      \"Bash(mkdir:*)\",\n      \"mcp__stata-mcp__stata_run_selection\",\n      \"mcp__stata-mcp__stata_run_file\"\n    ]\n  }\n}\n如果不确认添加某个命令是否有风险，可以先问问 AI。",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>执行权限控制</span>"
+    ]
+  },
+  {
+    "objectID": "body/04_permissions.html#三种方法对比",
+    "href": "body/04_permissions.html#三种方法对比",
+    "title": "5  执行权限控制",
+    "section": "5.5 三种方法对比",
+    "text": "5.5 三种方法对比\n\n\n\n\n\n\n\n\n\n方法\n安全性\n便利性\n适用场景\n\n\n\n\n--dangerously-skip-permissions\n最低\n最高\n快速实验，不涉及敏感操作\n\n\n--permission-mode auto\n较高\n高\n日常使用（推荐）\n\n\nsettings.json 白名单\n最高\n需要配置\n团队协作、规范化的工作流\n\n\n\n\n\n\n\n\n\nTip实用建议\n\n\n\n对于使用 Stata MCP 进行数据处理的场景，推荐在 settings.json 中将 stata_run_selection 和 stata_run_file 加入白名单，这样 AI 调用 Stata 时不会反复询问权限。",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>执行权限控制</span>"
+    ]
+  },
+  {
+    "objectID": "body/05_skills.html",
+    "href": "body/05_skills.html",
+    "title": "6  技能包：发现、安装与管理",
     "section": "",
-    "text": "project:\n  type: book\n  output-dir: docs  # 输出目录，可以自定义\n\nbook:\n  title: \"你的书名\"\n  author: \"作者姓名\"\n  date: today\n  date-format: iso\n  chapters:\n    - index.qmd\n    - chapters/chapter1.qmd\n    - chapters/chapter2.qmd\n    - chapters/chapter3.qmd\n\n# 输出格式设置，可按需调整\nformat:\n  html:\n    toc: true\n    toc-depth: 3\n    number-sections: true\n    theme: cosmo\n    code-fold: true\n    code-summary: \"显示代码\"\n    df-print: paged\n    highlight-style: github\n  pdf:\n    documentclass: book\n    toc: true\n    toc-depth: 3\n    number-sections: true",
+    "text": "6.1 什么是 Skills\nSkills（技能）是一组打包在指定文件夹中的 prompt + 程序 + 参考文件。它们可以让 Claude Code 在特定任务中表现得更加专业和稳定。\nSkills 的核心优势：",
     "crumbs": [
-      "**创建 Quarto-book**",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>_quarto.yml 文件</span>"
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>技能包：发现、安装与管理</span>"
     ]
   },
   {
-    "objectID": "body/03_YML_file.html#实例",
-    "href": "body/03_YML_file.html#实例",
-    "title": "4  _quarto.yml 文件",
-    "section": "4.2 实例",
-    "text": "4.2 实例\n你也可以查看如下示例的 _quarto.yml 文件，从中截取你需要的部分：\n\nHadley Wickham, R for Data Science, 2024. Chapter 25: Quarto. Github.\n\n_quarto.yml\n\nNicholas Tierney. Quarto for Scientists . 2024 . book, github\n\n_quarto.yml\n\n连玉君, 2025, 数据分析与 Python 应用.\n\n_quarto.yml",
-    "crumbs": [
-      "**创建 Quarto-book**",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>_quarto.yml 文件</span>"
-    ]
-  },
-  {
-    "objectID": "body/03_YML_file.html#更多配置选项",
-    "href": "body/03_YML_file.html#更多配置选项",
-    "title": "4  _quarto.yml 文件",
-    "section": "4.3 更多配置选项",
-    "text": "4.3 更多配置选项\n如果你想对 _quarto.yml 文件进行更深入的了解和配置，可以参考以下资源：\n\nQuarto Book 官方指南\nQuarto Book Options\nQuarto Book Configuration\nQuarto Book YAML Reference\n\n你也可以使用如下提示词，借助 ChatGPT, DeepSeek, 豆包等 AI 工具来学习和配置 _quarto.yml 文件：\n\n\n\n\n\n\n提示词\n\n\n\n\n分享一个完整的 quarto book 中的 _quarto.yml 配置讲义\n解释 _quarto.yml 文件中的每个配置项的作用\n如何在 _quarto.yml 文件中配置书籍网站主页的页脚\n如何设置代码块的语法高亮和折叠功能\n如何在 _quarto.yml 文件中添加自定义样式和主题",
-    "crumbs": [
-      "**创建 Quarto-book**",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>_quarto.yml 文件</span>"
-    ]
-  },
-  {
-    "objectID": "body/04_github_page.html",
-    "href": "body/04_github_page.html",
-    "title": "5  使用 GitHub Pages 发布",
+    "objectID": "body/05_skills.html#什么是-skills",
+    "href": "body/05_skills.html#什么是-skills",
+    "title": "6  技能包：发现、安装与管理",
     "section": "",
-    "text": "5.1 发布流程\n本章以我的仓库 https://github.com/lianxhcn/quarto_book 为例，介绍如何使用 GitHub Desktop 创建 gh-pages 分支并完成 Quarto Book 的在线部署。\n完成后，你可以通过访问 https://lianxhcn.github.io/quarto_book/ 来查看部署效果。其他人可以通过该链接访问你的 Quarto Book。\n我们的目的是使用 docs 文件夹作为静态网页根目录，发布到 lianxhcn.github.io/quarto_book，推荐采用项目级 Pages方式，具体如下：",
+    "text": "把标准化流程打包，可复用\nAI 只读取 SKILL.md 的元数据，判断要不要调用这个 Skill；要调用时再读取 Skill 里面的其他文件，节省 token 消耗和上下文空间",
     "crumbs": [
-      "**创建 Quarto-book**",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>使用 GitHub Pages 发布</span>"
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>技能包：发现、安装与管理</span>"
     ]
   },
   {
-    "objectID": "body/04_github_page.html#发布流程",
-    "href": "body/04_github_page.html#发布流程",
-    "title": "5  使用 GitHub Pages 发布",
+    "objectID": "body/05_skills.html#skills-的目录结构",
+    "href": "body/05_skills.html#skills-的目录结构",
+    "title": "6  技能包：发现、安装与管理",
+    "section": "6.2 Skills 的目录结构",
+    "text": "6.2 Skills 的目录结构\n一个标准的 Skill 文件夹结构如下：\n.claude/\n└── skills/\n    └── skillname/\n        ├── SKILL.md        # 核心文件，必须有（含元数据和具体 prompt 描述）\n        ├── scripts/        # 可选 — 程序脚本（Python 等）\n        ├── assets/         # 可选 — 模板和资源文件\n        ├── references/     # 可选 — 参考文档（说明手册、规范文档）\n        └── agents/         # 可选 — 子代理定义\n其中 SKILL.md 是核心定义文件，包含：\n\n元数据：名称、简介、触发条件（description 字段中的关键词）\nPrompt 内容：指导 AI 如何执行这个 Skill 的详细指令",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>技能包：发现、安装与管理</span>"
+    ]
+  },
+  {
+    "objectID": "body/05_skills.html#发现与安装-skills",
+    "href": "body/05_skills.html#发现与安装-skills",
+    "title": "6  技能包：发现、安装与管理",
+    "section": "6.3 发现与安装 Skills",
+    "text": "6.3 发现与安装 Skills\n\n6.3.1 方法一：通过 /plugin 命令\n在 Claude Code 中使用 /plugin 命令来浏览、下载和管理官方及第三方技能包。\n\n\n6.3.2 方法二：发送 URL 给 AI\n直接用自然语言把技能包的网址发给 AI，让它下载并安装。例如：\n请帮我安装这个 Skill：https://github.com/anthropics/skills.git\n\n\n6.3.3 方法三：手动下载\n手动下载网页上的 Skill 文件，移动到系统级或项目级的 .claude/skills 文件夹：\n\n系统级：~/.claude/skills/（Windows：C:\\Users\\用户名\\.claude\\skills\\）\n项目级：项目目录/.claude/skills/",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>技能包：发现、安装与管理</span>"
+    ]
+  },
+  {
+    "objectID": "body/05_skills.html#示例skill-creator",
+    "href": "body/05_skills.html#示例skill-creator",
+    "title": "6  技能包：发现、安装与管理",
+    "section": "6.4 示例：skill-creator",
+    "text": "6.4 示例：skill-creator\n以 Anthropic 官方的 skill-creator 为例，其核心结构如下：\n.claude/skills/skill-creator/\n├── SKILL.md              # 核心定义文件\n├── agents/               # 评估、对比和打分的子代理\n│   ├── analyzer.md\n│   ├── comparator.md\n│   └── grader.md\n├── assets/               # 前端模板等资源\n│   ├── eval_review.html\n│   └── eval-viewer/\n├── references/           # JSON/YAML Schema 等规范文档\n│   └── schemas.md\n└── scripts/              # 自动化脚本\n    ├── run_eval.py       # 执行技能测试与评估\n    ├── generate_report.py # 生成测试报告\n    ├── improve_description.py # 优化触发描述词\n    └── ...\n\n6.4.1 skill-creator 的工作原理\n功能：这是一个”用来创建技能的技能”。它可以协助用户从零开始搭建新技能、优化已有技能的触发词描述、执行自动化基准测试（Eval），并分析性能表现。\n工作原理：\n\n识别指令，创建 Skill：通过识别用户诸如”创建新技能”的意图，触发 SKILL.md 中的系统提示词\n执行脚本，测试和改进 Skill：调用 scripts/ 中的 Python 脚本来测试 Skill，然后根据 assets/ 提供的模板呈现结果\n\n\n\n6.4.2 核心文件的作用\n\nSKILL.md：核心定义文件。包含元数据以及指导 AI 创建和优化其他技能的 Prompt 指示\nscripts/：存放核心功能的 Python 脚本\nassets/：存放辅助执行的资源文件\nreferences/：提供背景及规范知识库\nagents/：对技能进行评估、对比和打分的子代理",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>技能包：发现、安装与管理</span>"
+    ]
+  },
+  {
+    "objectID": "body/05_skills.html#为什么要创建数据处理-skill",
+    "href": "body/05_skills.html#为什么要创建数据处理-skill",
+    "title": "6  技能包：发现、安装与管理",
+    "section": "6.5 为什么要创建数据处理 Skill",
+    "text": "6.5 为什么要创建数据处理 Skill\n对于经常使用 Stata 进行实证研究的经管类研究者而言，创建一个专门的数据处理 Skill 可以：\n\n向 AI 说明数据处理的具体要求（例如剔除哪些样本）\n给 AI 制定工作规范（例如变量标签怎么写、最后输出什么文件）\n避免每次都重复说明”剔除 ST 股、剔除金融业、指标要缩尾”等常规操作\n\n下一章将介绍 Claude Code 的常用斜杠命令，后续章节将详细演示如何创建和使用数据处理 Skill。",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>技能包：发现、安装与管理</span>"
+    ]
+  },
+  {
+    "objectID": "body/06_slash_commands.html",
+    "href": "body/06_slash_commands.html",
+    "title": "7  常用斜杠命令",
     "section": "",
-    "text": "Step 1：确保 docs 文件夹在主分支\n\n\n你已经把所有网页内容渲染到 docs，这是 GitHub Pages 推荐的目录名。\n\n\nStep 2：推送本地代码到 GitHub\n\n\n在 GitHub Desktop 中确认你的更改（见第二问）。\n确保主分支（main/master）与 GitHub 仓库同步。\n\n\nStep 3：在 GitHub 仓库中启用 Pages\n\n\n打开你的项目仓库页面： https://github.com/lianxhcn/quarto_book\n点击右上角的 Settings → 左侧栏选择 Pages 或 Pages（Beta）\n在 “Build and deployment” 下，Source 选择 “Deploy from a branch”\n选择：\n\nBranch：main（或你当前的主分支）\nFolder：/docs\n\n保存设置。\n\n\nStep 4：访问网页\n\n\n等待几分钟，GitHub 会自动生成页面： https://lianxhcn.github.io/quarto_book/\n\n\n\n\n\n\n\n注意事项\n\n\n\n\n如果页面内容没更新，请确保每次用 quarto render 后及时将最新的 docs 文件夹推送到 GitHub。\n随后，你可以随时修改本地仓库的内容，编译后推送到 GitHub，GitHub Pages 会自动更新。",
+    "text": "7.1 /resume：查看与恢复历史会话\nClaude Code 提供了一系列斜杠命令（Slash Commands），可以帮助你更高效地管理会话和工作流。以下是最常用的几个命令。\nClaude Code 会列出你最近的对话历史，你可以选择恢复之前的某个会话，继续之前的工作。\n这在以下场景特别有用：",
     "crumbs": [
-      "**创建 Quarto-book**",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>使用 GitHub Pages 发布</span>"
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
     ]
   },
   {
-    "objectID": "body/04_github_page.html#github-desktop-实现-pull-和-push",
-    "href": "body/04_github_page.html#github-desktop-实现-pull-和-push",
-    "title": "5  使用 GitHub Pages 发布",
-    "section": "5.2 GitHub Desktop 实现 Pull 和 Push",
-    "text": "5.2 GitHub Desktop 实现 Pull 和 Push\n以你的本地 D:\\Github_lianxh\\quarto_book 项目为例：\n\n5.2.1 初始设置（仅首次需要）\n\n确保你已经安装了 GitHub Desktop。\n打开 GitHub Desktop，登录你的 GitHub 账号。\n在 GitHub Desktop 中，点击左上角的 File → Clone repository。\n在弹出的对话框中，选择 URL 选项卡，输入你的仓库地址 https://github.com/lianxhcn/quarto_book，或者在下拉菜单中选择仓库名称。\n选择本地路径（如 D:\\Github_lianxh），点击 Clone。\n\n\n\n5.2.2 日常操作\nPush（推送本地更新到远程）\n\n正常编辑、修改、增加或删除文件。\n在 GitHub Desktop 主界面下方看到 “Changes” 列表，输入 Commit message（如 render new chapters 或 update），点击 “Commit to main”。\n\n注意：如果你修改了 _quarto.yml 文件，确保在提交前运行 quarto render 生成最新的 docs 文件夹。\n如果有新章节或文件，GitHub Desktop 会自动识别并显示在 “Changes” 列表中。\n\n提交后，界面会出现 “Push origin” 按钮，点击即可推送本地更改到 GitHub 仓库。\n\nPull（拉取最新远程内容到本地）\n如果你在网页端进行了修改，或者其他人提交了更新，或者想把你的仓库内容同步到你的另一台电脑上，你需要使用「拉取 (Pull)」功能把这些新增内容同步到本地：\n\n点击 GitHub Desktop 左上角的 “Current Branch”（确保在 main/master 分支）。\n点击右上角的 “Fetch origin”（如果有更新则会变成 “Pull origin”），点击它即可同步远程变更到本地。\n\n\n\n5.2.3 补充说明\n\n新文件/文件夹：只要在本地新建（如新增章节），在 GitHub Desktop 中会自动识别到“Changes”，按上述流程提交。\n删除或重命名：同理，所有文件操作 GitHub Desktop 都会追踪。\n冲突：如遇 pull/push 冲突，按 GitHub Desktop 提示合并冲突后再 push。\ndocs 里无变化？ 确认用 quarto render 重新编译，且本地 docs 文件夹变动已被 Git 跟踪和推送。\n访问慢？ GitHub Pages 有时需几分钟才能看到更新。",
-    "crumbs": [
-      "**创建 Quarto-book**",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>使用 GitHub Pages 发布</span>"
-    ]
-  },
-  {
-    "objectID": "body/04_github_page.html#参考文档",
-    "href": "body/04_github_page.html#参考文档",
-    "title": "5  使用 GitHub Pages 发布",
-    "section": "5.3 参考文档",
-    "text": "5.3 参考文档\n\nGitHub Pages 官方指南\nQuarto 官方关于发布到 GitHub Pages",
-    "crumbs": [
-      "**创建 Quarto-book**",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>使用 GitHub Pages 发布</span>"
-    ]
-  },
-  {
-    "objectID": "body/05_references.html",
-    "href": "body/05_references.html",
-    "title": "6  教程和参考资料",
+    "objectID": "body/06_slash_commands.html#resume查看与恢复历史会话",
+    "href": "body/06_slash_commands.html#resume查看与恢复历史会话",
+    "title": "7  常用斜杠命令",
     "section": "",
-    "text": "6.1 Quarto Book 相关的资源",
+    "text": "/resume\n\n\n\n昨天进行到一半的数据处理任务，今天想继续\n之前的工作结果需要微调或扩展",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
+    ]
+  },
+  {
+    "objectID": "body/06_slash_commands.html#btw运行时旁注对话",
+    "href": "body/06_slash_commands.html#btw运行时旁注对话",
+    "title": "7  常用斜杠命令",
+    "section": "7.2 /btw：运行时旁注对话",
+    "text": "7.2 /btw：运行时旁注对话\n/btw 你觉得刚才生成的代码还可以怎么优化？\n/btw 允许你在 Claude Code 运行过程中插入对话，而不打断当前进程。你的问题和回答完成后会自动消失，不会污染主上下文。\n这在以下场景特别有用：\n\nAI 正在执行一个耗时较长的任务，你想顺便问它一个问题\n不确定 AI 正在做什么，想快速了解一下进度",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
+    ]
+  },
+  {
+    "objectID": "body/06_slash_commands.html#branch创建分支",
+    "href": "body/06_slash_commands.html#branch创建分支",
+    "title": "7  常用斜杠命令",
+    "section": "7.3 /branch：创建分支",
+    "text": "7.3 /branch：创建分支\n/branch\n在当前工作状态下创建一个 Git 分支。这对于在不确定方案是否可行的情况下进行实验很有用——如果方案失败，可以轻松回退。",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
+    ]
+  },
+  {
+    "objectID": "body/06_slash_commands.html#rewind回退",
+    "href": "body/06_slash_commands.html#rewind回退",
+    "title": "7  常用斜杠命令",
+    "section": "7.4 /rewind：回退",
+    "text": "7.4 /rewind：回退\n/rewind\n将对话状态回退到之前的某个节点。如果你发现 AI 走了弯路，可以用这个命令回到之前的状态重新开始。",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
+    ]
+  },
+  {
+    "objectID": "body/06_slash_commands.html#export导出会话记录",
+    "href": "body/06_slash_commands.html#export导出会话记录",
+    "title": "7  常用斜杠命令",
+    "section": "7.5 /export：导出会话记录",
+    "text": "7.5 /export：导出会话记录\n/export\n将当前会话的完整记录导出为文件。这对于以下场景很有用：\n\n保存工作日志\n与同事分享你和 AI 的交互过程\n将 AI 的输出结果归档",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
+    ]
+  },
+  {
+    "objectID": "body/06_slash_commands.html#insights使用习惯分析",
+    "href": "body/06_slash_commands.html#insights使用习惯分析",
+    "title": "7  常用斜杠命令",
+    "section": "7.6 /insights：使用习惯分析",
+    "text": "7.6 /insights：使用习惯分析\n/insights\n生成一份 HTML 报告，分析你过去一个月使用 Claude Code 的习惯，包括：\n\n你最常用的操作类型\n哪些任务耗时最长\n工作效率的变化趋势\n改进建议\n\n这个命令可以帮助你反思和优化自己的 AI 协作方式。",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
+    ]
+  },
+  {
+    "objectID": "body/06_slash_commands.html#命令速查表",
+    "href": "body/06_slash_commands.html#命令速查表",
+    "title": "7  常用斜杠命令",
+    "section": "7.7 命令速查表",
+    "text": "7.7 命令速查表\n\n\n\n命令\n功能\n使用场景\n\n\n\n\n/resume\n恢复历史会话\n继续之前未完成的任务\n\n\n/btw\n运行时旁注对话\n不打断进程的快速提问\n\n\n/branch\n创建 Git 分支\n实验性操作前创建安全网\n\n\n/rewind\n回退对话状态\nAI 走了弯路时回退重来\n\n\n/export\n导出会话记录\n保存工作日志或分享\n\n\n/insights\n使用习惯分析\n了解和优化自己的使用方式",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
+    ]
+  },
+  {
+    "objectID": "body/07_data_workflow.html",
+    "href": "body/07_data_workflow.html",
+    "title": "8  先计划、后执行：数据处理工作流",
+    "section": "",
+    "text": "8.1 整体流程\n使用 Claude Code 进行数据处理时，推荐采用”先计划、后执行”的工作模式。这样可以避免 AI 在模糊指令下浪费大量时间探索数据结构，也能让你在执行前审阅和调整方案。\n数据处理的标准流程分为三个阶段：",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>先计划、后执行：数据处理工作流</span>"
+    ]
+  },
+  {
+    "objectID": "body/07_data_workflow.html#整体流程",
+    "href": "body/07_data_workflow.html#整体流程",
+    "title": "8  先计划、后执行：数据处理工作流",
+    "section": "",
+    "text": "Step 1：在 CLAUDE.md 中明确项目约定\n    ↓\nStep 2：打开 plan mode，说明任务需求\n    ↓\nStep 3：确认计划，开始执行",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>先计划、后执行：数据处理工作流</span>"
+    ]
+  },
+  {
+    "objectID": "body/07_data_workflow.html#step-1在-claude.md-中明确项目约定",
+    "href": "body/07_data_workflow.html#step-1在-claude.md-中明确项目约定",
+    "title": "8  先计划、后执行：数据处理工作流",
+    "section": "8.2 Step 1：在 CLAUDE.md 中明确项目约定",
+    "text": "8.2 Step 1：在 CLAUDE.md 中明确项目约定\n在开始数据处理之前，先在 CLAUDE.md 中写明你的工作习惯和希望 AI 工作的方式。这一步非常重要，它决定了 AI 后续所有操作的基本规范。\n以下是一个适合数据处理项目的 CLAUDE.md 示例：\n## Stata 数据处理规范\n\n- 通过 Stata-mcp 调用 Stata，不要用命令行。\n- 原始数据在 `data/raw/` 目录下，不要修改或覆盖\n- 清洗过程中以及清洗后的数据存入 `data/processed/`\n- 代码放在 `code/`\n- 说明文档放在 `file/`\n- Stata MCP 运行在 Windows 端，必须使用 Windows 路径格式（`C:/Users/...`），\n  不能用 WSL 的 `/mnt/c/...` 格式，否则报 `r(601) file not found`\n\n\n\n\n\n\nTip持续完善 CLAUDE.md\n\n\n\n可以在 AI 执行完任务后，问它刚刚有没有遇到问题。然后让它总结经验，写进 CLAUDE.md 里面。随着使用，CLAUDE.md 会不断完善，AI 的工作效率和准确度也会逐步提升。",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>先计划、后执行：数据处理工作流</span>"
+    ]
+  },
+  {
+    "objectID": "body/07_data_workflow.html#step-2打开-plan-mode说明任务需求",
+    "href": "body/07_data_workflow.html#step-2打开-plan-mode说明任务需求",
+    "title": "8  先计划、后执行：数据处理工作流",
+    "section": "8.3 Step 2：打开 plan mode，说明任务需求",
+    "text": "8.3 Step 2：打开 plan mode，说明任务需求\n在 Claude Code 中使用 plan mode 输入任务需求。好的 prompt 应该包含：\n\n用什么工具（Stata、Python 等）\n有哪些步骤（清洗、合并、计算等）\n最后要输出什么（.do 文件、.dta 数据、.md 文档）\n自己对需求不确定的地方也可以写明，让 AI 帮你完善\n\n\n8.3.1 示例 prompt\n【data/】里面是实证金融研究用的 A 股上市公司数据，需要清洗合并后\n计算常用控制变量（Size、Age、Lev、Growth、ROA），\n对这些指标进行描述性统计。用 stata 完成。\n\n注意事项：删除金融行业（行业代码J*）、计算出的指标要缩尾\n\n- 我不确定具体要执行哪些数据清洗操作，\n  需要你结合数据结构和数据处理的惯例判断\n\n最后输出三个文件：处理数据的.do文档；处理后数据集.dta文件；\n数据处理工作小结.md文档（包含数据处理操作和最后的描述性统计结果）\n\n\n\n\n\n\nNote关于不确定性的表达\n\n\n\n一些常规的数据处理操作（例如缩尾），即使不写，AI 有时候也会自己判断出需要执行，但结果不稳定。建议在 prompt 中尽量明确你的需求，至少列出关键注意事项。\n\n\n\n\n8.3.2 AI 的工作过程\n收到 prompt 后，AI 通常会：\n\n探索数据结构 — 读取数据的说明文件（如 CSMAR 的 .txt 文档），导入少量样本行确认\n识别关键信息 — 变量名、数据类型、频率、标识符格式等\n生成计划书 — 包含每一步的具体操作，具体到 Stata 命令级别\n\n例如，AI 可能识别出需要统一的变量名：\n\nSymbol → Stkcd（股票代码在不同数据集中的名称不同）\nEndDate → Accper（报告期的变量名不同）\n金额以字符串存储（如 \"19802000000.00\"），需要转为数值",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>先计划、后执行：数据处理工作流</span>"
+    ]
+  },
+  {
+    "objectID": "body/07_data_workflow.html#step-3确认计划并执行",
+    "href": "body/07_data_workflow.html#step-3确认计划并执行",
+    "title": "8  先计划、后执行：数据处理工作流",
+    "section": "8.4 Step 3：确认计划并执行",
+    "text": "8.4 Step 3：确认计划并执行\nAI 生成计划书后，你有两种执行方式：\n\n8.4.1 逐步执行\n按照计划书，先生成第一部分（预处理）的 .do 文件并运行。\n适合：对计划不太确定，想逐步检查。\n\n\n8.4.2 一次执行\n按照计划书全部执行，每步运行完检查 .log 确认无错误后再继续下一步。\n适合：对计划比较有信心，想提高效率。",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>先计划、后执行：数据处理工作流</span>"
+    ]
+  },
+  {
+    "objectID": "body/07_data_workflow.html#这种方法的好处",
+    "href": "body/07_data_workflow.html#这种方法的好处",
+    "title": "8  先计划、后执行：数据处理工作流",
+    "section": "8.5 这种方法的好处",
+    "text": "8.5 这种方法的好处\n\n计划书是写出来的文档，你可以直接审阅、修改\n计划书里会包含具体的变量名、过滤条件，不会再有模糊之处\n如果哪一步你想调整，改计划书然后让 Claude Code 按改后的计划执行就行\n计划书本身也是很好的工作记录",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>先计划、后执行：数据处理工作流</span>"
+    ]
+  },
+  {
+    "objectID": "body/07_data_workflow.html#常见陷阱",
+    "href": "body/07_data_workflow.html#常见陷阱",
+    "title": "8  先计划、后执行：数据处理工作流",
+    "section": "8.6 常见陷阱",
+    "text": "8.6 常见陷阱\n\n\n\n\n\n\nCaution避免模糊指令\n\n\n\n直接在 plan mode 输入模糊的指令（如”对数据做一些清洗”），AI 可能需要花很长时间探索数据结构。例如，一次模糊指令导致 AI 的 Explore 阶段运行了 21 分钟。而如果先给出具体的数据描述，同样的探索只需要几分钟。\n\n\n下一章将通过一个完整的实战案例，演示这个工作流的具体应用。",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>先计划、后执行：数据处理工作流</span>"
+    ]
+  },
+  {
+    "objectID": "body/08_data_demo.html",
+    "href": "body/08_data_demo.html",
+    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
+    "section": "",
+    "text": "9.1 任务说明\n本章通过一个完整的实战案例，演示如何使用 Claude Code 清洗 CSMAR（国泰安）企业财务数据，计算常用的公司特征变量。\n目标：从企业基本信息和财务报表数据中，计算 5 个企业特征变量：\n额外要求：",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+    ]
+  },
+  {
+    "objectID": "body/08_data_demo.html#任务说明",
+    "href": "body/08_data_demo.html#任务说明",
+    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
+    "section": "",
+    "text": "变量\n含义\n计算公式\n\n\n\n\nSize\n公司规模\nln(总资产)\n\n\nAge\n公司年龄\n当年年份 - 上市年份\n\n\nLev\n资产负债率\n负债合计 / 资产总计\n\n\nGrowth\n营业收入增长率\n(本期营收 - 上期营收) / |上期营收|\n\n\nROA\n资产收益率\n净利润 / 资产总计\n\n\n\n\n\n删除金融行业（行业代码 J 开头）\n计算出的指标需进行缩尾处理\n输出：.do 文件、.dta 数据集、.md 工作小结",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+    ]
+  },
+  {
+    "objectID": "body/08_data_demo.html#数据概况",
+    "href": "body/08_data_demo.html#数据概况",
+    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
+    "section": "9.2 数据概况",
+    "text": "9.2 数据概况\n本次使用的数据来自 CSMAR 数据库，包含 4 个数据集：\n\n\n\n\n\n\n\n\n数据集\n文件名\n主要内容\n\n\n\n\n资产负债表\nFS_Combas.csv\n资产、负债、所有者权益等 154 个变量\n\n\n利润表\nFS_Comins.csv\n营业收入、净利润等 80 个变量\n\n\n现金流量表（间接法）\nFS_Comscfi.csv\n经营/投资/筹资现金流等 27 个变量\n\n\n上市公司基本信息年度表\nSTK_LISTEDCOINFOANL.csv\n股票代码、行业分类、上市日期等\n\n\n\n每个数据集都附有 [DES][csv].txt 说明文件，包含完整的变量定义。",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+    ]
+  },
+  {
+    "objectID": "body/08_data_demo.html#探索阶段",
+    "href": "body/08_data_demo.html#探索阶段",
+    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
+    "section": "9.3 探索阶段",
+    "text": "9.3 探索阶段\n在 plan mode 下输入任务需求后，AI 首先会探索数据结构。\n\n9.3.1 关键发现\nAI 通过读取说明文件和导入样本行，发现了以下关键信息：\n1. 变量名不统一\n不同数据集使用不同的变量名来表示相同的概念：\n\n股票代码：基本信息表用 Symbol，其他表用 Stkcd\n报告期：现金流量表用 EndDate，其他表用 Accper\n\n2. 金额以字符串存储\nCSMAR 的 CSV 文件中，金额类字段以字符串格式存储（如 \"19802000000.00\"），Stata 导入后需要通过 destring 转为数值型。\n3. 报表类型区分\n每家公司同时有合并报表（Typrep = \"A\"）和母公司报表（Typrep = \"B\"），需要筛选保留合并报表。\n4. 报告期频率\n数据包含年度（12-31）和季度报告，实证研究通常只保留年度数据。\n\n\n9.3.2 探索用的 Stata 代码示例\n* 导入少量样本行，确认数据结构\nimport delimited \"C:/path/FS_Combas.csv\", clear rowfirst(5) ///\n    encoding(\"utf8\") bindquote(strict)\ndescribe\nlist stkcd accper typrep a001000000 in 1/3\n\n\n\n\n\n\nNote探索阶段的原则\n\n\n\n使用 rowfirst(5) 限制导入行数，避免加载整个大数据集（资产负债表可达 300+ MB）。优先读取 .txt 说明文件了解变量定义，再用 Stata 确认。",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+    ]
+  },
+  {
+    "objectID": "body/08_data_demo.html#计划阶段",
+    "href": "body/08_data_demo.html#计划阶段",
+    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
+    "section": "9.4 计划阶段",
+    "text": "9.4 计划阶段\nAI 根据探索结果生成详细的数据处理计划书，包含以下步骤：\n\n预处理：导入 4 个数据集，保留合并报表（typrep == \"A\"）、保留年度数据（accper 以 “12” 结尾）\n变量准备：重命名统一标识符（Symbol → Stkcd，EndDate → Accper），字符串转数值（destring）\n去重：以 stkcd + year 为键去重\n合并：以 stkcd + year 为键，依次合并 4 个数据集\n样本筛选：剔除金融行业（行业代码 J 开头）、剔除 ST 股票、剔除总资产为负的异常值\n变量计算：计算 Size、Age、Lev、Growth、ROA\n缩尾：对计算的指标在 1%/99% 分位数进行缩尾\n描述性统计：输出均值、标准差、最小值、最大值等",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+    ]
+  },
+  {
+    "objectID": "body/08_data_demo.html#执行阶段",
+    "href": "body/08_data_demo.html#执行阶段",
+    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
+    "section": "9.5 执行阶段",
+    "text": "9.5 执行阶段\n确认计划无误后，AI 开始执行。整个过程约 10 分钟。\n\n9.5.1 核心代码片段\n导入并筛选年度数据：\nimport delimited \"C:/path/FS_Combas.csv\", clear ///\n    encoding(\"utf8\") bindquote(strict)\n* 保留年度数据（12月31日）\ngen year = real(substr(accper, 1, 4))\nkeep if substr(accper, 6, 2) == \"12\"\n* 保留合并报表\nkeep if typrep == \"A\"\n变量计算：\n* 公司规模\ngen Size = ln(a001000000)\n\n* 公司年龄\ngen Age = year - real(substr(listingdate, 1, 4))\n\n* 资产负债率\ngen Lev = a002000000 / a001000000\n\n* 资产收益率\ngen ROA = b002000000 / a001000000\n\n* 营业收入增长率（需滞后一期）\nsort stkcd year\nby stkcd: gen Growth = (b001101000 - b001101000[_n-1]) ///\n    / abs(b001101000[_n-1]) if _n &gt; 1 & b001101000[_n-1] != 0\n剔除金融行业和 ST 股票：\n* 剔除金融行业（行业代码 J 开头）\ndrop if substr(industrycode, 1, 1) == \"J\"\n\n* 剔除 ST 股票\ngen is_st = (strpos(shortname, \"ST\") &gt; 0)\ndrop if is_st == 1\ndrop is_st\n缩尾处理：\nforeach var of varlist Size Lev Growth ROA {\n    _pctile `var', percentiles(1 99)\n    local p1 = r(r1)\n    local p99 = r(r2)\n    replace `var' = `p1' if `var' &lt; `p1' & !missing(`var')\n    replace `var' = `p99' if `var' &gt; `p99' & !missing(`var')\n}\n描述性统计：\ntabstat Size Age Lev Growth ROA, stat(n mean sd min p25 p50 p75 max) ///\n    col(stat) format(%9.4f)",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+    ]
+  },
+  {
+    "objectID": "body/08_data_demo.html#输出结果",
+    "href": "body/08_data_demo.html#输出结果",
+    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
+    "section": "9.6 输出结果",
+    "text": "9.6 输出结果\n执行完成后，AI 生成以下文件：\n\n\n\n\n\n\n\n\n输出文件\n位置\n说明\n\n\n\n\n数据处理代码\ncode/\n完整的、带注释的 .do 文件\n\n\n清洗后数据\ndata/processed/\n.dta 格式的清洗数据集\n\n\n工作小结\nfile/\n.md 格式的处理报告，包含每步操作和描述性统计结果",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+    ]
+  },
+  {
+    "objectID": "body/08_data_demo.html#经验总结",
+    "href": "body/08_data_demo.html#经验总结",
+    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
+    "section": "9.7 经验总结",
+    "text": "9.7 经验总结\n\nCLAUDE.md 至关重要：提前写明路径规范和目录约定，可以避免大量重复沟通\nplan mode 是效率关键：先探索数据、生成计划，再执行，比直接让 AI 动手效率高得多\n表达不确定性是可以的：在 prompt 中写明”我不确定具体需要哪些操作”，AI 会根据数据结构自行判断并给出建议",
+    "crumbs": [
+      "**数据处理实战**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+    ]
+  },
+  {
+    "objectID": "body/09_skill_intro.html",
+    "href": "body/09_skill_intro.html",
+    "title": "10  为什么要创建数据处理 Skill",
+    "section": "",
+    "text": "10.1 动机\n使用 Claude Code 进行数据处理时，你会发现很多操作是重复性的：\n将这些标准化的流程打包为一个 Skill，可以：",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>为什么要创建数据处理 Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/09_skill_intro.html#动机",
+    "href": "body/09_skill_intro.html#动机",
+    "title": "10  为什么要创建数据处理 Skill",
+    "section": "",
+    "text": "每次都要说明”剔除 ST 股、剔除金融业、指标要缩尾”\n每次都要提醒 AI 使用 Windows 路径格式\n每次都要告诉它输出 .do 文件、.dta 数据和 .md 小结\n\n\n\n避免重复说明：Skill 中已经包含了所有常规要求\n提高稳定性：Skill 定义了明确的工作流程，AI 不会遗漏步骤\n积累经验：每次使用后可以不断完善 Skill，沉淀最佳实践",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>为什么要创建数据处理 Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/09_skill_intro.html#数据处理-skill-应该做什么",
+    "href": "body/09_skill_intro.html#数据处理-skill-应该做什么",
+    "title": "10  为什么要创建数据处理 Skill",
+    "section": "10.2 数据处理 Skill 应该做什么",
+    "text": "10.2 数据处理 Skill 应该做什么\n一个完善的数据处理 Skill 应具备以下功能：\n\n自动探索数据结构 — 通过读取说明文件或导入少量样本，快速了解数据的变量、类型、编码方式\n全面检查数据质量问题 — 包括但不限于：保留合并报表、保留年度数据、统一变量名、字符型转数值型、剔除金融行业样本、剔除 ST 样本、剔除异常值、去重、缩尾等\n关注缺失值风险 — 合并数据集后会不会大量缺失？计算某个指标时会不会因某个变量的缺失导致大量缺失？\n主动询问用户 — 对于不确定的操作，向用户提问而不是自行决定\n灵活适配需求 — 判断是处理单个数据集还是合并多个数据集\n按需计算变量 — 根据用户需求保留和计算指定变量\n输出描述性统计 — 清洗完成后对重要变量进行描述性统计",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>为什么要创建数据处理 Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/09_skill_intro.html#设计考量单个-skill-vs-多个-skill",
+    "href": "body/09_skill_intro.html#设计考量单个-skill-vs-多个-skill",
+    "title": "10  为什么要创建数据处理 Skill",
+    "section": "10.3 设计考量：单个 Skill vs 多个 Skill",
+    "text": "10.3 设计考量：单个 Skill vs 多个 Skill\n上述功能可以放在一个综合性的 Skill 中，也可以拆分为多个专注的 Skill：\n单 Skill 方案：\n\n优点：使用简单，一个 Skill 涵盖所有功能\n缺点：SKILL.md 可能很长，消耗较多 token\n\n多 Skill 方案：\n\n优点：每个 Skill 聚焦特定任务（如”数据探索”、“数据清洗”、“变量计算”），更灵活\n缺点：需要管理多个 Skill 之间的协作\n\n\n\n\n\n\n\nNote本书的方案\n\n\n\n在接下来的演示中，我们采用单 Skill 方案——将所有功能整合到一个 stata-data-cleaner Skill 中。这是因为数据处理的各个环节（探索、清洗、合并、计算）紧密关联，拆分反而增加协调成本。Skill 内部通过 5 个阶段（Phase）来组织工作流，既保持了灵活性，又避免了过度拆分。",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>为什么要创建数据处理 Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/09_skill_intro.html#stata-data-cleaner-skill-概览",
+    "href": "body/09_skill_intro.html#stata-data-cleaner-skill-概览",
+    "title": "10  为什么要创建数据处理 Skill",
+    "section": "10.4 stata-data-cleaner Skill 概览",
+    "text": "10.4 stata-data-cleaner Skill 概览\nstata-data-cleaner 是我们创建的数据处理 Skill，其核心是一个 5 阶段工作流：\nPhase 1: Explore  → 快速了解数据结构（只读，不修改）\nPhase 2: Diagnose → 诊断数据质量问题\nPhase 3: Consult  → 向用户确认不确定的决策\nPhase 4: Execute  → 生成并执行 Stata 代码\nPhase 5: Document → 输出 .do、.dta、.md 文件\n每个阶段的输出会指导下一阶段的工作。下一章将详细介绍这个 Skill 的创建和使用过程。",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>为什么要创建数据处理 Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/10_skill_demo.html",
+    "href": "body/10_skill_demo.html",
+    "title": "11  创建与使用 stata-data-cleaner Skill",
+    "section": "",
+    "text": "11.1 创建 Skill\n本章详细介绍 stata-data-cleaner Skill 的创建过程、工作原理和使用方法。",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/10_skill_demo.html#创建-skill",
+    "href": "body/10_skill_demo.html#创建-skill",
+    "title": "11  创建与使用 stata-data-cleaner Skill",
+    "section": "",
+    "text": "11.1.1 创建 prompt\n在 plan mode 下输入以下 prompt，让 AI 根据已有的数据处理经验创建 Skill：\n现在 data/raw/ 里面的数据清洗完了。请你把清洗数据的流程打包成一个\nskill，放在当前项目文件夹。参考之前的清洗流程和清洗代码，让 skill\n实现以下功能：\n\n1. 自己探索数据结构（尽可能快速，不要扫描整个大型数据集）\n2. 全面检查数据预处理操作（保留合并报表、保留年度数据、统一变量名、\n   字符型转数值型、剔除金融行业、剔除 ST 样本、剔除异常值、去重、\n   缩尾等）是否需要进行\n3. 尤其关注缺失值的情况\n4. 如果不确定某个操作是否需要进行，要向我提问\n5. 根据需求判断是处理单个数据集还是合并多个数据集\n6. 根据需求保留和计算需要的变量\n7. 清洗完成后进行描述性统计\n\n最终输出：.do 文档、.dta 文件、数据处理工作小结 .md 文档\n\n用 stata mcp 调用 stata，不要用命令行调用。\n因为每次处理的数据结构可能不一样，考虑到的情况要尽可能全面。\n\n\n11.1.2 创建过程\nAI 会分析之前的清洗代码和工作小结，提炼出通用的数据处理流程，然后生成：\n\nSKILL.md：核心定义文件，包含元数据和 5 阶段工作流\nreferences/operations-guide.md：详细操作参考手册\n\n创建过程约 7 分钟。",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/10_skill_demo.html#生成的-skill-结构",
+    "href": "body/10_skill_demo.html#生成的-skill-结构",
+    "title": "11  创建与使用 stata-data-cleaner Skill",
+    "section": "11.2 生成的 Skill 结构",
+    "text": "11.2 生成的 Skill 结构\n.claude/skills/stata-data-cleaner/\n├── SKILL.md                    # 核心文件\n└── references/\n    └── operations-guide.md     # 操作参考手册",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/10_skill_demo.html#阶段工作流详解",
+    "href": "body/10_skill_demo.html#阶段工作流详解",
+    "title": "11  创建与使用 stata-data-cleaner Skill",
+    "section": "11.3 5 阶段工作流详解",
+    "text": "11.3 5 阶段工作流详解\n\n11.3.1 Phase 1：Explore — 探索数据结构\n目标：快速了解数据，不导入整个大数据集（有些文件超过 300 MB）。\n步骤：\n\n扫描数据目录 — 列出所有文件和子目录，识别文件格式和目录结构\n读取说明文件（最快途径） — CSMAR 数据有 [DES][csv].txt 文件，包含完整的变量定义\n用 Stata 确认 — 导入少量样本行确认文档描述\n\nimport delimited \"C:/path/file.csv\", clear rowfirst(2) ///\n    encoding(\"utf8\") bindquote(strict)\ndescribe\nlist in 1/3\n关键确认事项：\n\n变量名在 Stata 中会被 import delimited 全部小写化\n金额是否以字符串存储\n日期格式和标识符格式\n\n\n\n11.3.2 Phase 2：Diagnose — 诊断数据质量问题\n对每个数据集进行针对性检查：\n\n\n\n检查项\n方法\n关注点\n\n\n\n\n重复记录\nduplicates report\n是否有多种报表类型或重述报告\n\n\n缺失值\nmisstable summarize\n缺失率 &gt;10% 的变量需报告给用户\n\n\n类型问题\ndescribe\n数值是否被存储为字符串\n\n\n报表类型分布\ntab typrep\n合并 vs 母公司报表比例\n\n\n行业分布\ntab substr(industrycode,1,1)\n金融业占比\n\n\n特殊情况\ncount if strpos(shortname,\"ST\")\nST 股、负资产、极端值\n\n\n\n缺失值的关键分析：\n\n合并风险：数据集 A 的变量 X 有 5% 缺失，数据集 B 的变量 Y 有 8% 缺失，合并后至少有一个缺失的比例可能达到 13%\n计算风险：ROA = 净利润 / 总资产，如果净利润有高缺失率，计算出的 ROA 缺失率会更高\n\n\n\n11.3.3 Phase 3：Consult — 向用户确认\n只询问真正不确定的事情。如果数据中没有 ST 股票，就不需要问是否要剔除。\n必问项：\n\n需要计算哪些变量？—— 用户的研究问题决定一切\n需要合并哪些数据集？—— 确认合并键\n\n条件性询问（仅当数据中存在该问题时才问）：\n\n是否剔除金融行业？（默认：是）\n是否剔除 ST 股票？（默认：是）\n缩尾比例？（默认：1%/99%）\n时间范围？\n年度还是季度？\n\n\n\n\n\n\n\nTip合并前必须告知\n\n\n\n在执行合并前，Skill 会向用户报告每个数据集的观测数和预计匹配率，以及可能丢失的观测数量。例如：“资产负债表有 43,292 条年报，利润表有 43,292 条。合并后预计匹配约 43,000 条。”\n\n\n\n\n11.3.4 Phase 4：Execute — 生成并执行代码\nSkill 会生成一个结构化的 .do 文件：\n* ============================================================\n* [描述处理目的]\n* ============================================================\nclear all\nset more off\n\n* --- 1. 导入数据 ---\n* --- 2. 变量准备 ---     (rename, destring, 日期提取)\n* --- 3. 筛选 ---         (报表类型、时间范围、行业)\n* --- 4. 去重 ---\n* --- 5. 合并 ---         (含 _merge 诊断)\n* --- 6. 样本筛选 ---     (金融、ST、负资产等)\n* --- 7. 变量计算 ---\n* --- 8. 缺失值处理 ---\n* --- 9. 缩尾 ---\n* --- 10. 变量标签 ---\n* --- 11. 描述性统计 ---\n* --- 12. 保存 ---\n如果执行出错，Skill 会读取错误信息、修复代码并重新执行，不会盲目重试。\n\n\n11.3.5 Phase 5：Document — 输出与文档\n\n\n\n输出\n位置\n说明\n\n\n\n\n.do 文件\ncode/\n完整的、带注释的 Stata 代码\n\n\n.dta 文件\ndata/processed/\n清洗后的数据集\n\n\n.md 文件\nfile/\n处理报告（操作记录 + 描述性统计）",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/10_skill_demo.html#关键-stata-代码模式",
+    "href": "body/10_skill_demo.html#关键-stata-代码模式",
+    "title": "11  创建与使用 stata-data-cleaner Skill",
+    "section": "11.4 关键 Stata 代码模式",
+    "text": "11.4 关键 Stata 代码模式\nSkill 中内置了以下常用模式：\n导入 CSV（处理 CSMAR 编码和引号）：\nimport delimited \"C:/path/file.csv\", clear encoding(\"utf8\") bindquote(strict)\n从日期字符串提取年份：\ngen year = real(substr(datevar, 1, 4))\n筛选年度 + 合并报表（CSMAR 惯例）：\nkeep if substr(accper, 6, 2) == \"12\" & typrep == \"A\"\n不依赖外部包的缩尾：\nforeach var of varlist var1 var2 var3 {\n    _pctile `var', percentiles(1 99)\n    local p1 = r(r1)\n    local p99 = r(r2)\n    replace `var' = `p1' if `var' &lt; `p1' & !missing(`var')\n    replace `var' = `p99' if `var' &gt; `p99' & !missing(`var')\n}\n计算增长率（安全版本）：\nsort stkcd year\nby stkcd: gen growth = (revenue - revenue[_n-1]) ///\n    / abs(revenue[_n-1]) if _n &gt; 1 & revenue[_n-1] != 0\n注意使用 abs() 和 != 0 检查来处理基期为负值或零的情况。\n带诊断的合并：\nmerge 1:1 stkcd year using `other'\ntab _merge\ndrop if _merge != 3\ndrop _merge",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/10_skill_demo.html#常见陷阱与排错",
+    "href": "body/10_skill_demo.html#常见陷阱与排错",
+    "title": "11  创建与使用 stata-data-cleaner Skill",
+    "section": "11.5 常见陷阱与排错",
+    "text": "11.5 常见陷阱与排错\n\n\n\n\n\n\n\n\n陷阱\n原因\n解决方法\n\n\n\n\n变量名找不到\nimport delimited 会将所有变量名小写化\n代码中统一使用小写变量名\n\n\nCSV 导入引号错误\nCSMAR 的值被双引号包裹\n使用 bindquote(strict)\n\n\n空字符串 ≠ 缺失值\nCSMAR 用空 \"\" 表示缺失，导入后是空字符串不是 Stata 缺失值\n对数值列执行 destring, replace force\n\n\n路径错误\nStata MCP 运行在 Windows 端\n始终使用 C:/Users/...，不用 /mnt/c/...\n\n\n内存不足\n资产负债表可达 300+ MB\n先筛选（保留年度+合并报表）再处理\n\n\n增长率分母为零\n上期营收为零或负值\n使用 abs() 并添加 != 0 检查\n\n\n合并键类型不匹配\n一边是字符串，一边是数值\n合并前确保两边类型一致",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/10_skill_demo.html#使用-skill-清洗数据",
+    "href": "body/10_skill_demo.html#使用-skill-清洗数据",
+    "title": "11  创建与使用 stata-data-cleaner Skill",
+    "section": "11.6 使用 Skill 清洗数据",
+    "text": "11.6 使用 Skill 清洗数据\n创建完成后，使用这个 Skill 清洗数据的流程非常简单：\n\n将原始数据放入 data/raw/\n在 Claude Code 中描述你的需求（例如”清洗这些数据并计算 Size、ROA”）\nSkill 自动触发，执行 5 阶段工作流\n在 Phase 3 确认 Skill 提出的问题\n等待执行完成，查看输出文件\n\n使用 Skill 清洗同样的 CSMAR 数据，全程约 7 分钟，比从零开始快得多。",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/11_references.html",
+    "href": "body/11_references.html",
+    "title": "12  参考资料",
+    "section": "",
+    "text": "12.1 Claude Code 相关",
     "crumbs": [
       "**参考资料**",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>教程和参考资料</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>参考资料</span>"
     ]
   },
   {
-    "objectID": "body/05_references.html#quarto-book-相关的资源",
-    "href": "body/05_references.html#quarto-book-相关的资源",
-    "title": "6  教程和参考资料",
+    "objectID": "body/11_references.html#claude-code-相关",
+    "href": "body/11_references.html#claude-code-相关",
+    "title": "12  参考资料",
     "section": "",
-    "text": "Quarto Book 官方指南 | 中文 | Options\nHow to self-publish a technical book on Leanpub and Amazon using Quarto\n李东风，2023，R 语言教程. 22 Quarto格式文件\nR for Data Science, 2024. Chapter 25: Quarto. Github, _quarto.yml",
+    "text": "Claude Code 官方文档\nClaude Code GitHub 仓库 — Anthropic 官方技能包仓库\nClaude Code 快速入门",
     "crumbs": [
       "**参考资料**",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>教程和参考资料</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>参考资料</span>"
     ]
   },
   {
-    "objectID": "body/05_references.html#发布",
-    "href": "body/05_references.html#发布",
-    "title": "6  教程和参考资料",
-    "section": "6.2 发布",
-    "text": "6.2 发布\n\nQuarto: Publishing to GitHub Pages\nHow to Create and Publish a Quarto Book on GitHub\nQuarto 官网：GitHub Pages\n\nNote:\n\n考虑到国内很多读者无法访问 GitHub Pages，可以使用 Gitee 或 Coding 等国内平台进行发布。\n我个人是将编译后的 docs 文件夹上传到 GitHub 的 gh-pages 分支中，这样可以直接通过 https://&lt;username&gt;.github.io/&lt;repository&gt;/ 访问。",
+    "objectID": "body/11_references.html#stata-mcp-相关",
+    "href": "body/11_references.html#stata-mcp-相关",
+    "title": "12  参考资料",
+    "section": "12.2 Stata MCP 相关",
+    "text": "12.2 Stata MCP 相关\n\nStata MCP 插件 — VS Code 扩展商店\nMCP 协议介绍 — Model Context Protocol 官方文档",
     "crumbs": [
       "**参考资料**",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>教程和参考资料</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>参考资料</span>"
     ]
   },
   {
-    "objectID": "body/05_references.html#用-quarto-book-写的书",
-    "href": "body/05_references.html#用-quarto-book-写的书",
-    "title": "6  教程和参考资料",
-    "section": "6.3 用 Quarto book 写的书",
-    "text": "6.3 用 Quarto book 写的书\n你可以选择自己喜欢的风格，然后将对应的仓库克隆下来，修改 _quarto.yml 文件和 index.qmd 文件，添加自己的内容。\n\n数据分析与 Python 应用\n\n我自己写的第一本 Quarto Book，可以很好地支持中文。\n\nhttps://style.tidyverse.org/\n\n不涉及任何 R 代码的执行问题，可以视为一个 Quarto-book 模板\n\nR for Data Science | Code\nVisualization Curriculum | Code\nOscar Baruffa, 2024, Big Book for R. Read, Github\n\ninclude-after-body: footer.html\n\nThe Epidemiologist R Handbook, 2024. Read, Github\n\nR 安装和帮助文件等写的非常细致\n\nScheuch, C., Voigt, S., & Weiss, P. (2023). Tidy Finance with R (1st ed.). Chapman and Hall/CRC. -Link-. Read, github, Quarto book\n\n_quarto.yml\n\nNicholas Tierney. Quarto for Scientists . 2024 . book, github, _quarto.yml\n使用 Quarto Website 的形式写的书\n\nto be added\n\n更多：awesome-quarto",
+    "objectID": "body/11_references.html#skills-相关",
+    "href": "body/11_references.html#skills-相关",
+    "title": "12  参考资料",
+    "section": "12.3 Skills 相关",
+    "text": "12.3 Skills 相关\n\nAnthropic Skills 仓库 — 官方技能包集合\nClaude Code Skills 文档 — Skills 的创建和使用指南",
     "crumbs": [
       "**参考资料**",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>教程和参考资料</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>参考资料</span>"
     ]
   },
   {
-    "objectID": "body/05_references.html#一些-github-仓库",
-    "href": "body/05_references.html#一些-github-仓库",
-    "title": "6  教程和参考资料",
-    "section": "6.4 一些 Github 仓库",
-    "text": "6.4 一些 Github 仓库\n这些仓库提供了形式各样的 Quarto Book 模板，你可以根据自己的需要进行修改。\n\ncoatless-tutorials / quarto-book-template\n\nTemplate repository for creating a book powered by Quarto and Rendered by GitHub Actions onto GitHub Pages.\n介绍了如何使用 github page 发布你的书稿\n\ntufte-quarto → website\n\nTufte book layout for Quarto. 可以将部分图片显示在网页的右侧边栏处。\n\nNOAA-quarto-book\n\nA Quarto book project with html, pdf and Word output types.",
+    "objectID": "body/11_references.html#stata-与实证研究",
+    "href": "body/11_references.html#stata-与实证研究",
+    "title": "12  参考资料",
+    "section": "12.4 Stata 与实证研究",
+    "text": "12.4 Stata 与实证研究\n\n连享会 — Stata 经管实证研究社区\n连享会寒假班 — 系统的 Stata 实证课程\n连享会视频 — 在线视频教程",
     "crumbs": [
       "**参考资料**",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>教程和参考资料</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>参考资料</span>"
     ]
   },
   {
-    "objectID": "body/05_references.html#quarto-for-scientists-中提到的资料",
-    "href": "body/05_references.html#quarto-for-scientists-中提到的资料",
-    "title": "6  教程和参考资料",
-    "section": "6.5 Quarto for Scientists 中提到的资料",
-    "text": "6.5 Quarto for Scientists 中提到的资料\n\nSource: Nicholas Tierney. Quarto for Scientists . 2024 . book, github, _quarto.yml\n\nHere are some resources that I really liked for learning Quarto:\n\nThe Quarto “get started” guide\nThe Quarto guide “Quarto manuscripts”\nThe Quarto chapter in “R for data science”\nMaking shareable documents with Quarto from, from OpenScapes\nAlison Hill’s blog post: “we don’t talk about Quarto”\nMine Çentinkaya-Rundel’s talk “Quarto for academics”",
+    "objectID": "body/11_references.html#数据来源",
+    "href": "body/11_references.html#数据来源",
+    "title": "12  参考资料",
+    "section": "12.5 数据来源",
+    "text": "12.5 数据来源\n\nCSMAR 数据库 — 国泰安金融数据库\nWind 金融终端 — 万得金融数据",
     "crumbs": [
       "**参考资料**",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>教程和参考资料</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>参考资料</span>"
     ]
   },
   {
-    "objectID": "body/A01_markdown.html",
-    "href": "body/A01_markdown.html",
-    "title": "7  Markdown",
+    "objectID": "body/11_references.html#工具下载",
+    "href": "body/11_references.html#工具下载",
+    "title": "12  参考资料",
+    "section": "12.6 工具下载",
+    "text": "12.6 工具下载\n\nQuarto — 技术文档和书籍出版工具\nVS Code — 推荐的代码编辑器\nGit — 版本控制工具",
+    "crumbs": [
+      "**参考资料**",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>参考资料</span>"
+    ]
+  },
+  {
+    "objectID": "body/A01_claude_md_template.html",
+    "href": "body/A01_claude_md_template.html",
+    "title": "13  附录 A：CLAUDE.md 模板",
     "section": "",
-    "text": "7.1 何谓 Markdown？\nMarkdown 是一种轻量级的标记语言，允许你使用易读易写的纯文本格式编写文档，然后转换成结构化的 HTML, PDF, Word 等多种格式的文档。Markdown 语法简单易学，适合用来撰写笔记、文档、幻灯片等。\n大家在网上看到的很多博客文章，程序说明文档，甚至是在线书籍 (Python for Data Analysis, 3E)，都是用 Markdown 写的。",
+    "text": "13.1 模板一：命令行模式\n本附录提供两个 CLAUDE.md 模板，分别适用于命令行模式和 Stata MCP 模式。你可以根据自己的使用方式选择对应的模板，复制到项目根目录并根据实际情况修改。\n适用于没有 Stata MCP 或不想安装 MCP 的用户。",
     "crumbs": [
       "**附录**",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Markdown</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>附录 A：CLAUDE.md 模板</span>"
     ]
   },
   {
-    "objectID": "body/A01_markdown.html#语法速览",
-    "href": "body/A01_markdown.html#语法速览",
-    "title": "7  Markdown",
-    "section": "7.2 语法速览",
-    "text": "7.2 语法速览\n\n\n\n\n\n\nFigure 7.1: Markdown 语法对照\n\n\n\n你可以在如下网站按部就班地学习 Markdown 的基本用法，大概五分钟后你就可以掌握常用 Markdown 语法规则了：\n\nhttps://www.markdowntutorial.com/zh-cn",
-    "crumbs": [
-      "**附录**",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Markdown</span>"
-    ]
-  },
-  {
-    "objectID": "body/A01_markdown.html#markdown-基本语法",
-    "href": "body/A01_markdown.html#markdown-基本语法",
-    "title": "7  Markdown",
-    "section": "7.3 Markdown 基本语法",
-    "text": "7.3 Markdown 基本语法\n\nSource: markdownguide.org/cheat-sheet/\n\n这份 Markdown 备忘单介绍了常用的 Markdown 语法。为了便于您快速了解基本的语法规则，这里略去了很多细节信息，详情参见：基础语法 和 扩展语法。\n以下是 John Gruber 原始设计文档中列出的基本元素，所有 Markdown 应用程序都支持这些元素。\n\n\n\n\n\n\n\n元素\nMarkdown 语法\n\n\n\n\n标题\n# 一级标题## 二级标题### 三级标题\n\n\n粗体\n**粗体文本**\n\n\n斜体\n*斜体文本*\n\n\n引用块\n&gt; 引用内容\n\n\n有序列表\n1. 第一项2. 第二项3. 第三项\n\n\n无序列表\n- 第一项  -  第一条- 第二项- 第三项\n\n\n代码高亮显示\n`代码` (`xtreg` → xtreg)\n\n\n水平线\n---\n\n\n链接\n[连享会主页](https://www.lianxh.cn)\n\n\n图片\n![图片标题](/Fig/image.jpg) 或 ![](图片网址)\n\n\n\n\n7.3.1 表格\n| 命令    | 范例                 |\n| :------ | :------------------- |\n| xtreg   | `xtreg y x, fe`      |\n| reghdfe | `reghdfe y x, a(id)` |\n\n\n\n命令\n范例\n\n\n\n\nxtreg\nxtreg y x, fe\n\n\nreghdfe\nreghdfe y x, a(id)\n\n\n\n\n\n7.3.2 数学公式\n\n单行数学公式用 $$ 符号包围起来；\n行内数学公式用 $ 符号包围起来；\n包围符号内侧不要有空格，否则在有些 Markdown 编辑器中无法正常显示公式\n\n正确：$y = f(x)$\n错误：$ y = f(x) $ 或 $y = f(x) $\n\n有关 LaTeX 数学公式的语法和工具，参见：\n\nMarkdown常用LaTex数学公式\n神器-数学公式识别工具-mathpix\n\n\n模型设定为：\n\n$$y_{it} = \\alpha_i + x_{it}\\beta + u_{it}$$\n\n其中，$y_{it}$ 为被解释变量，$\\alpha_i$ 为个体效应。\n模型设定为：\n\\[y_{it} = \\alpha_i + x_{it}\\beta + u_{it}\\]\n其中，\\(y_{it}\\) 为被解释变量，\\(\\alpha_i\\) 为个体效应。\n\n\n7.3.3 代码块\n```python\nimport pandas as pd\n\ndf = pd.DataFrame({\n    'A': [1, 2, 3],\n    'B': [4, 5, 6]\n})\n```\n\n```stata\nsysuse \"auto.dta\", clear\nregress mpg weight\ndisplay \"Results: \" 2 + 3\n```\n渲染效果：\nimport pandas as pd\n\ndf = pd.DataFrame({\n    'A': [1, 2, 3],\n    'B': [4, 5, 6]\n})\nsysuse \"auto.dta\", clear\nregress mpg weight\ndisplay \"Results: \" 2 + 3\n\n\n7.3.4 扩展阅读\n\n初虹, 2024, 让「记录」变得简单：Markdown使用详解, 连享会 No.1456.\n初虹, 2021, 学术论文写作新武器：Markdown-上篇, 连享会 No.603.\n初虹, 2021, 学术论文写作新武器：Markdown-下篇, 连享会 No.604.\n初虹, 2021, 学术论文写作新武器：Markdown-中篇, 连享会 No.605.\n连玉君, 2024, VScode插件：安装、配置和使用, 连享会 No.1490.\n连玉君, 2024, VScode：实用 Markdown 插件推荐, 连享会 No.1390.",
-    "crumbs": [
-      "**附录**",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Markdown</span>"
-    ]
-  },
-  {
-    "objectID": "body/A01_markdown.html#marp-幻灯片",
-    "href": "body/A01_markdown.html#marp-幻灯片",
-    "title": "7  Markdown",
-    "section": "7.4 Marp 幻灯片",
-    "text": "7.4 Marp 幻灯片\n在 VScode 中安装 Marp 插件后，你可以使用 Markdown 语法来创建幻灯片。使用 Marp 最大的好处是你可以专注于内容，而不必担心幻灯片的格式和样式。Marp 会自动将你的 Markdown 文档转换为美观的幻灯片。\n\n\n7.4.1 安装\n1. VScode 编辑器\n2. Marp 插件 - 在 VScode 中打开扩展市场，搜索 Marp for VS Code，点击安装。\n3. 如需使用 PDF 导出功能，还需要安装 Marp CLI： - 打开终端 (TERMINAL)：在 VScode 中，点击左侧活动栏的终端图标，或使用快捷键 Ctrl + ~（反引号）打开终端。 - 在终端中运行以下命令安装 Marp CLI： bash      npm install -g @marp-team/marp-cli\n扩展阅读：\n\n连玉君, 2024, VScode插件：安装、配置和使用, 连享会 No.1490.\n连玉君, 2024, VScode：实用 Markdown 插件推荐, 连享会 No.1390.\n\n\n\n7.4.2 模版 1：最基本的设定\n以下是一个简单的 Marp 幻灯片模板，你只需要新建一个 .md 文件，输入如下内容，然后在 VScode 中打开该文件即可：\n---\nmarp: true\n---\n\n# 幻灯片标题\n\n---\n\n## 第一页幻灯片\n\n- xxx\n- xxx\n\n---\n\n## 第二页幻灯片\n\n- xxx\n- xxx\n\n\n\n7.4.3 模版 2：更多的设定\n\n\n\n\n\n\n该模板的主要功能包括：\n\n\n\n\n幻灯片的标题、作者、页码、脚注\n自定义幻灯片的正文字号\n标题的颜色和页面背景颜色\n\n\n\n---\n### ------------------- 幻灯片还是普通网页\nmarp: true\n#marp: false\n\n### ------------------- 幻灯片尺寸，宽版：4:3\nsize: 16:9\n#size: 4:3\n\n### ------------------- 是否显示页码\npaginate: true  \n#paginate: false\n\n### ------------------- 页脚 (备选的用 '#' 注释掉)\n#footer: 'lianx.cn Marp 模板'\nfooter: '[www.lianxh.cn](https://www.lianxh.cn)&ensp;|&ensp;[Books](https://www.lianxh.cn/Books.html)'\n---\n\n&lt;!-- Global style: 设置标题字号、颜色 --&gt;\n&lt;!-- Global style: 正文字号、颜色 --&gt;\n&lt;style&gt;\n/*一级标题局中*/\nsection.lead h1 {\n  text-align: center; /*其他参数：left, right*/\n  /*使用方法：\n  &lt;!-- _class: lead --&gt;\n  */\n}\nsection {\n  font-size: 23px; \n}\nh1 {\n  color: blackyellow;\n}\nh2 {\n  color: green;\n}\nh3 {\n  color: darkblue;\n}\nh4 {\n  color: brown;\n  /*font-size: 28px; */\n}\n/* 右下角添加页码 */\nsection::after {\n  content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total); \n}\nheader,\nfooter {\n  position: absolute;\n  left: 50px;\n  right: 50px;\n  height: 25px;\n}\n&lt;/style&gt;\n\n&lt;!--顶部文字--&gt;\n[lianxh.cn](https://www.lianxh.cn/KC.html) \n\n&lt;br&gt;\n\n&lt;!--封面图片--&gt;\n![bg right:50% w:400 brightness:. sepia:50%](https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20220524091346.png)\n\n&lt;br&gt;\n\n&lt;br&gt;\n\n&lt;!--幻灯片标题--&gt;\n# 动态面板数据模型\n\n## Dynamic Panel Data Models\n\n&lt;br&gt;\n\n&lt;!--作者信息--&gt;\n#### [连玉君](https://www.lianxh.cn) (中山大学)\n\n&lt;arlionn@163.com&gt;\n\n&lt;br&gt;\n\n---\n&lt;!-- backgroundColor: #FFFFF9 --&gt;\n## 第一页幻灯片\n\n- 背景是淡黄色的，可以根据需要修改颜色\n\n---\n&lt;!-- backgroundColor:white --&gt;\n## 第二页幻灯片\n\n- 背景是纯白色\n- 下面的图片在右侧，占页面 60% 的宽度\n\n![bg right:60% w:800](图片网址)\n详情参见：\n\n宋森安, 2021, 用Markdown制作幻灯片-五分钟学会Marp（上篇）, 连享会 No.656.\n宋森安, 2021, 用Markdown制作幻灯片-五分钟学会Marp（下篇）, 连享会 No.657.\n连玉君, 2022, Marp幻灯片模板：用Markdown快速写幻灯片, 连享会 No.1059.",
-    "crumbs": [
-      "**附录**",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Markdown</span>"
-    ]
-  },
-  {
-    "objectID": "body/A01_markdown.html#用-markdown-编写个人网站和简历",
-    "href": "body/A01_markdown.html#用-markdown-编写个人网站和简历",
-    "title": "7  Markdown",
-    "section": "7.5 用 Markdown 编写个人网站和简历",
-    "text": "7.5 用 Markdown 编写个人网站和简历\n使用 Markdown 语法，你可以轻松地创建个人网站和简历。\n你可以参考如下推文，轻松创建个人主页 (无需购买域名，也无需学习 HTML 和 CSS)：\n\n连小白, 2025, 50 分钟搞定个人主页：Fork 模板 + GitHub Pages + Quarto 完整教程\n\nMarkdown 也可以用来制作简历，参见：\n\nlapis-cv.bingyan.net，github\nresume.todev.cc/，github",
-    "crumbs": [
-      "**附录**",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Markdown</span>"
-    ]
-  },
-  {
-    "objectID": "body/A02_JupyterNotebook.html",
-    "href": "body/A02_JupyterNotebook.html",
-    "title": "8  Jupyter Notebook",
+    "objectID": "body/A01_claude_md_template.html#模板一命令行模式",
+    "href": "body/A01_claude_md_template.html#模板一命令行模式",
+    "title": "13  附录 A：CLAUDE.md 模板",
     "section": "",
-    "text": "8.1 Python 代码\nQuarto book 也支持 .ipynb 文件。你可以在 Quarto book 中直接使用 Jupyter Notebook 文件。\nJupyter Notebook 文档中的代码块可以直接运行，输出的图片会被自动存储在 ./_static 目录下。当你通过 github pages 发布时，这些图片会被自动上传到 GitHub。\n一个 Jupyter Notebook 文档中可以支持多种编程语言。\n绘制函数图 \\(y = x^2\\) 的代码如下：\n# 绘制一幅简单的函数图\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.linspace(-10, 10, 200)\ny = x ** 2\n\nplt.figure(figsize=(3, 2.5))\nplt.plot(x, y)\nplt.title(\"y = x^2\")\nplt.xlabel(\"x\")\nplt.ylabel(\"y\")\nplt.grid(True)\nplt.show()",
+    "text": "## Stata 数据处理规范\n\n### Stata 配置\n- Stata 安装路径：D:/stata18/StataMP-64.exe\n  （请替换为你的实际安装路径）\n- 运行 dofile 命令格式：\n  \"D:/stata18/StataMP-64.exe\" /e do \"script.do\"\n- 运行前需先 cd 到项目目录，否则日志会写到默认路径\n\n### 路径规范\n- 必须使用 Windows 路径格式（D:/...）\n- 不能使用 WSL 的 /mnt/d/... 格式\n- Stata 无法识别 WSL 路径，会报 r(601) file not found\n\n### 目录约定\n- 原始数据放在 data/raw/，不要修改或覆盖\n- 清洗后的数据放在 data/processed/\n- 代码放在 code/\n- 说明文档放在 file/\n\n### 工作流程\n- 每次执行 Stata 分三步：Write(.do) → Bash(execute) → Read(.log)\n- 运行完成后检查 .log 文件中是否有 r( 开头的错误代码\n- 如果有错误，分析原因后修改 .do 文件重新运行",
     "crumbs": [
       "**附录**",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Jupyter Notebook</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>附录 A：CLAUDE.md 模板</span>"
     ]
   },
   {
-    "objectID": "body/A02_JupyterNotebook.html#stata-代码",
-    "href": "body/A02_JupyterNotebook.html#stata-代码",
-    "title": "8  Jupyter Notebook",
-    "section": "8.2 Stata 代码",
-    "text": "8.2 Stata 代码\n使用 Stata 自带的 sysuse auto 数据集，绘制汽车价格与重量的散点图：\n\nsysuse \"auto.dta\", clear\ntwoway scatter mpg weight, scheme(cleanplots)\n\n(1978 automobile data)",
+    "objectID": "body/A01_claude_md_template.html#模板二stata-mcp-模式",
+    "href": "body/A01_claude_md_template.html#模板二stata-mcp-模式",
+    "title": "13  附录 A：CLAUDE.md 模板",
+    "section": "13.2 模板二：Stata MCP 模式",
+    "text": "13.2 模板二：Stata MCP 模式\n适用于已安装 Stata MCP 的用户（推荐）。\n## Stata 数据处理规范\n\n### 调用方式\n- 通过 Stata MCP 调用 Stata，不要用命令行\n- 使用 stata_run_selection 运行代码片段\n- 使用 stata_run_file 运行 .do 文件\n\n### 路径规范\n- Stata MCP 运行在 Windows 端，必须使用 Windows 路径格式\n  （C:/Users/...），不能用 WSL 的 /mnt/c/... 格式\n- 否则会报 r(601) file not found\n\n### 目录约定\n- 原始数据放在 data/raw/，不要修改或覆盖\n- 清洗过程中以及清洗后的数据存入 data/processed/\n- 代码放在 code/\n- 说明文档放在 file/\n\n### 输出要求\n- 数据处理的代码保存为 .do 文件\n- 处理后的数据保存为 .dta 文件\n- 数据处理工作小结保存为 .md 文档\n  （包含进行了哪些操作，以及最后的描述性统计）",
     "crumbs": [
       "**附录**",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Jupyter Notebook</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>附录 A：CLAUDE.md 模板</span>"
     ]
   },
   {
-    "objectID": "body/A04_display_ipynb_file.html",
-    "href": "body/A04_display_ipynb_file.html",
-    "title": "9  如何在 Quarto 中优雅地展示 .ipynb 文件？",
+    "objectID": "body/A01_claude_md_template.html#使用建议",
+    "href": "body/A01_claude_md_template.html#使用建议",
+    "title": "13  附录 A：CLAUDE.md 模板",
+    "section": "13.3 使用建议",
+    "text": "13.3 使用建议\n\n选择适合你的模板，复制到项目根目录，文件名为 CLAUDE.md\n修改路径信息：将示例路径替换为你本地的实际路径\n补充项目特定需求：比如数据来源说明、特殊变量定义等\n持续完善：在 AI 执行任务后，问它是否遇到了问题，让它总结经验更新 CLAUDE.md",
+    "crumbs": [
+      "**附录**",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>附录 A：CLAUDE.md 模板</span>"
+    ]
+  },
+  {
+    "objectID": "body/A02_stata_mcp_guide.html",
+    "href": "body/A02_stata_mcp_guide.html",
+    "title": "14  附录 B：Stata MCP 安装与配置指南",
     "section": "",
-    "text": "9.1 问题：原始 .ipynb 显示效果很糟\n在撰写 Quarto 教学材料或公开笔记时，我们经常会附上 Jupyter Notebook 文件（.ipynb）供读者参考。然而，直接使用相对路径链接往往导致显示异常，影响阅读体验。\n最常见的做法是使用如下相对路径：\n链接虽然有效，但 Quarto 渲染后，读者点击跳转的是 .ipynb 文件的原始 JSON 内容，页面混乱难读：\n这并不是一个理想的展示方式。",
+    "text": "14.1 前提条件\n本附录提供 Stata MCP 的详细安装步骤和常见问题解决方法。",
     "crumbs": [
       "**附录**",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>如何在 Quarto 中优雅地展示 `.ipynb` 文件？</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>附录 B：Stata MCP 安装与配置指南</span>"
     ]
   },
   {
-    "objectID": "body/A04_display_ipynb_file.html#问题原始-.ipynb-显示效果很糟",
-    "href": "body/A04_display_ipynb_file.html#问题原始-.ipynb-显示效果很糟",
-    "title": "9  如何在 Quarto 中优雅地展示 .ipynb 文件？",
+    "objectID": "body/A02_stata_mcp_guide.html#前提条件",
+    "href": "body/A02_stata_mcp_guide.html#前提条件",
+    "title": "14  附录 B：Stata MCP 安装与配置指南",
     "section": "",
-    "text": "[点击查看原始 .ipynb 文件](../examples/sample_notebook_python.ipynb)\n\n{\n \"cells\": [\n  {\n   \"cell_type\": \"markdown\",\n   \"id\": \"7c5e1f3e\",\n   \"source\": [\"## 标题\", \"第一段说明\"]\n  },\n  ...",
+    "text": "有效的 Stata 授权文件（stata.lic）\nVS Code 编辑器\nClaude Code CLI",
     "crumbs": [
       "**附录**",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>如何在 Quarto 中优雅地展示 `.ipynb` 文件？</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>附录 B：Stata MCP 安装与配置指南</span>"
     ]
   },
   {
-    "objectID": "body/A04_display_ipynb_file.html#good-1用-github-的仓库链接",
-    "href": "body/A04_display_ipynb_file.html#good-1用-github-的仓库链接",
-    "title": "9  如何在 Quarto 中优雅地展示 .ipynb 文件？",
-    "section": "9.2 Good 1：用 GitHub 的仓库链接",
-    "text": "9.2 Good 1：用 GitHub 的仓库链接\nGitHub 提供了对 .ipynb 文件的原生支持，能将其渲染为结构化、可阅读、可复制的 notebook 页面，非常适合教学阅读与代码学习。推荐链接格式如下：\n[点击查看 notebook](https://github.com/lianxhcn/research_with_AI/blob/main/examples/sample_notebook_python.ipynb)\n读者点击后会看到类似 Jupyter Lab 的网页视图，代码、Markdown 和输出完整呈现，体验良好。\n缺点是默认字体不是等宽字体，导致代码的排版，尤其是对齐效果不佳。",
+    "objectID": "body/A02_stata_mcp_guide.html#安装步骤",
+    "href": "body/A02_stata_mcp_guide.html#安装步骤",
+    "title": "14  附录 B：Stata MCP 安装与配置指南",
+    "section": "14.2 安装步骤",
+    "text": "14.2 安装步骤\n\n14.2.1 第一步：安装 VS Code 扩展\n\n打开 VS Code\n进入扩展商店（Ctrl+Shift+X）\n搜索 “Stata MCP”\n点击安装\n\n\n\n14.2.2 第二步：配置 Stata 路径\n\n打开 VS Code 设置（Ctrl+,）\n搜索 “Stata MCP”\n在 Stata 安装路径设置中填入你的 Stata 可执行文件路径\n\nWindows 示例：D:/stata18/StataMP-64.exe\n\n保存设置后，检查 VS Code 右下角状态栏\n如果显示 “Stata: Connected”，说明连接成功\n\n\n\n14.2.3 第三步：在 Claude Code 中注册 MCP 服务器\n在终端中运行以下命令：\nclaude mcp add --transport sse stata-mcp http://localhost:4000/mcp --scope user\n\n--scope user 表示全局注册，所有项目都可以使用\n如果只想在当前项目中使用，改用 --scope project\n\n\n\n14.2.4 第四步：验证\n启动 Claude Code，尝试运行一段简单的 Stata 代码：\ndisplay \"Hello from Stata MCP!\"\n如果结果正常返回到对话中，说明配置成功。",
     "crumbs": [
       "**附录**",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>如何在 Quarto 中优雅地展示 `.ipynb` 文件？</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>附录 B：Stata MCP 安装与配置指南</span>"
     ]
   },
   {
-    "objectID": "body/A04_display_ipynb_file.html#good-2使用-nbviewer-进行在线预览",
-    "href": "body/A04_display_ipynb_file.html#good-2使用-nbviewer-进行在线预览",
-    "title": "9  如何在 Quarto 中优雅地展示 .ipynb 文件？",
-    "section": "9.3 Good 2：使用 nbviewer 进行在线预览",
-    "text": "9.3 Good 2：使用 nbviewer 进行在线预览\n如果你希望 notebook 的展示界面更加简洁、无干扰，可以使用 nbviewer.org 提供的免费服务。只需将 GitHub 上的 .ipynb 链接粘贴进去，即可获得更清爽的预览链接：\n[在线预览 notebook](https://nbviewer.org/github/lianxhcn/research_with_AI/blob/main/examples/sample_notebook_python.ipynb)\nnbviewer 的亮点 包括：\n\n页面专注，仅保留 notebook 主体内容\n加载稳定，兼容性好，适合公开教学资料\n无需额外插件，直接生成纯 HTML 页面\n由 Project Jupyter 官方支持，长期稳定\n\n适用于希望发布静态网站、课程材料或展示成果时提供「无 GitHub 视觉干扰」的 notebook 预览。\n下图对比了 GitHub 渲染 和 nbviewer 预览 的差异：\n\n此外，nbviewer 还支持多种其他功能，如：\n\n直接从 URL 加载 notebook\n支持多种渲染主题\n在线执行代码",
+    "objectID": "body/A02_stata_mcp_guide.html#常见问题",
+    "href": "body/A02_stata_mcp_guide.html#常见问题",
+    "title": "14  附录 B：Stata MCP 安装与配置指南",
+    "section": "14.3 常见问题",
+    "text": "14.3 常见问题\n\n14.3.1 问题一：“Stata: Connected” 不显示\n可能原因：\n\nStata 路径配置错误\nStata 授权文件缺失或过期\nVS Code 扩展未正确加载\n\n解决方法：\n\n确认 Stata 路径正确（在文件管理器中验证路径是否存在）\n检查 stata.lic 文件是否在 Stata 安装目录下\n重启 VS Code\n\n\n\n14.3.2 问题二：Claude Code 提示找不到 stata-mcp\n可能原因：\n\nMCP 服务器未注册\nStata MCP 服务未启动\n\n解决方法：\n\n重新运行注册命令\n确认 VS Code 中 Stata MCP 扩展已启用\n运行 claude mcp list 查看已注册的 MCP 服务器\n\n\n\n14.3.3 问题三：路径错误 r(601)\n可能原因：\n\nClaude Code 使用了 WSL 路径格式（/mnt/c/...）\n\n解决方法：\n在项目 CLAUDE.md 中明确写明：\nStata MCP 运行在 Windows 端，必须使用 Windows 路径格式\n（C:/Users/...），不能用 WSL 的 /mnt/c/... 格式\n\n\n14.3.4 问题四：大型数据集运行缓慢\n解决方法：\n\n先用 rowfirst(5) 导入少量样本行进行探索\n确认变量和筛选条件后再导入完整数据\n优先筛选（保留年度+合并报表）以减少数据量",
     "crumbs": [
       "**附录**",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>如何在 Quarto 中优雅地展示 `.ipynb` 文件？</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>附录 B：Stata MCP 安装与配置指南</span>"
     ]
   },
   {
-    "objectID": "body/A04_display_ipynb_file.html#仅提供源文件下载",
-    "href": "body/A04_display_ipynb_file.html#仅提供源文件下载",
-    "title": "9  如何在 Quarto 中优雅地展示 .ipynb 文件？",
-    "section": "9.4 仅提供源文件下载？",
-    "text": "9.4 仅提供源文件下载？\n若你希望读者能下载 notebook 文件进行本地运行，则可以保留相对路径链接，但务必提示读者「右键另存为」，防止误点后进入 JSON 混乱页面。如下写法更稳妥：\n[下载原始 .ipynb 文件](../examples/sample_notebook_python.ipynb) ←（右键另存为）\n并配合一个提示框：\n::: {.callout-warning title=\"注意\"}\n\n此链接指向的是 `.ipynb` 原始文件（JSON 格式），直接点击可能乱码。   \n\n建议：右键另存为以下载文件。\n\n:::",
+    "objectID": "body/A02_stata_mcp_guide.html#mcp-管理命令",
+    "href": "body/A02_stata_mcp_guide.html#mcp-管理命令",
+    "title": "14  附录 B：Stata MCP 安装与配置指南",
+    "section": "14.4 MCP 管理命令",
+    "text": "14.4 MCP 管理命令\n# 查看已注册的 MCP 服务器\nclaude mcp list\n\n# 移除 MCP 服务器\nclaude mcp remove stata-mcp\n\n# 查看 MCP 服务器详情\nclaude mcp get stata-mcp",
     "crumbs": [
       "**附录**",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>如何在 Quarto 中优雅地展示 `.ipynb` 文件？</span>"
-    ]
-  },
-  {
-    "objectID": "body/A04_display_ipynb_file.html#总结三种场景推荐链接",
-    "href": "body/A04_display_ipynb_file.html#总结三种场景推荐链接",
-    "title": "9  如何在 Quarto 中优雅地展示 .ipynb 文件？",
-    "section": "9.5 总结：三种场景推荐链接",
-    "text": "9.5 总结：三种场景推荐链接\n\n\n\n\n\n\n\n\n使用目的\n推荐链接方式\n示例格式\n\n\n\n\n在线阅读\nGitHub 渲染视图\ngithub.com/.../xxx.ipynb\n\n\n清爽展示\nnbviewer 在线预览\nnbviewer.org/github/.../xxx.ipynb\n\n\n下载使用\n相对路径 + 提示说明\n../examples/xxx.ipynb",
-    "crumbs": [
-      "**附录**",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>如何在 Quarto 中优雅地展示 `.ipynb` 文件？</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>附录 B：Stata MCP 安装与配置指南</span>"
     ]
   }
 ]

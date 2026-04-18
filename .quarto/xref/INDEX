@@ -25,5 +25,41 @@
   },
   "body/A04_display_ipynb_file.ipynb": {
     "A04_display_ipynb_file.html": "01019a7c"
+  },
+  "body/02_claude_md.md": {
+    "02_claude_md.html": "3f340f51"
+  },
+  "body/03_stata_mcp.md": {
+    "03_stata_mcp.html": "9fb1c890"
+  },
+  "body/04_permissions.md": {
+    "04_permissions.html": "15e5d3b7"
+  },
+  "body/05_skills.md": {
+    "05_skills.html": "06200bc2"
+  },
+  "body/06_slash_commands.md": {
+    "06_slash_commands.html": "4a1172c0"
+  },
+  "body/07_data_workflow.md": {
+    "07_data_workflow.html": "ae34ebfe"
+  },
+  "body/08_data_demo.md": {
+    "08_data_demo.html": "1ae1d04c"
+  },
+  "body/09_skill_intro.md": {
+    "09_skill_intro.html": "ddbad280"
+  },
+  "body/10_skill_demo.md": {
+    "10_skill_demo.html": "eda62fcf"
+  },
+  "body/11_references.md": {
+    "11_references.html": "0edbbaf6"
+  },
+  "body/A01_claude_md_template.md": {
+    "A01_claude_md_template.html": "ea976d85"
+  },
+  "body/A02_stata_mcp_guide.md": {
+    "A02_stata_mcp_guide.html": "b8345a84"
   }
 }

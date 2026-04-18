@@ -1,39 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lianxhcn.github.io/quarto_book/index.html</loc>
-    <lastmod>2025-07-24T18:16:36.742Z</lastmod>
+    <loc>https://jasonli357.github.io/quarto_book/index.html</loc>
+    <lastmod>2026-04-18T09:32:25.705Z</lastmod>
   </url>
   <url>
-    <loc>https://lianxhcn.github.io/quarto_book/body/01_intro.html</loc>
-    <lastmod>2025-06-09T10:36:17.722Z</lastmod>
+    <loc>https://jasonli357.github.io/quarto_book/body/01_intro.html</loc>
+    <lastmod>2026-04-18T09:34:11.995Z</lastmod>
   </url>
   <url>
-    <loc>https://lianxhcn.github.io/quarto_book/body/02_install_setting.html</loc>
-    <lastmod>2025-06-09T07:47:08.556Z</lastmod>
+    <loc>https://jasonli357.github.io/quarto_book/body/02_claude_md.html</loc>
+    <lastmod>2026-04-18T09:34:12.101Z</lastmod>
   </url>
   <url>
-    <loc>https://lianxhcn.github.io/quarto_book/body/03_YML_file.html</loc>
-    <lastmod>2025-06-09T07:30:11.505Z</lastmod>
+    <loc>https://jasonli357.github.io/quarto_book/body/03_stata_mcp.html</loc>
+    <lastmod>2026-04-18T09:34:12.187Z</lastmod>
   </url>
   <url>
-    <loc>https://lianxhcn.github.io/quarto_book/body/04_github_page.html</loc>
-    <lastmod>2025-06-09T10:32:58.028Z</lastmod>
+    <loc>https://jasonli357.github.io/quarto_book/body/04_permissions.html</loc>
+    <lastmod>2026-04-18T09:35:49.926Z</lastmod>
   </url>
   <url>
-    <loc>https://lianxhcn.github.io/quarto_book/body/05_references.html</loc>
-    <lastmod>2025-06-09T07:30:11.506Z</lastmod>
+    <loc>https://jasonli357.github.io/quarto_book/body/05_skills.html</loc>
+    <lastmod>2026-04-18T09:35:50.050Z</lastmod>
   </url>
   <url>
-    <loc>https://lianxhcn.github.io/quarto_book/body/A01_markdown.html</loc>
-    <lastmod>2025-07-31T14:41:03.156Z</lastmod>
+    <loc>https://jasonli357.github.io/quarto_book/body/06_slash_commands.html</loc>
+    <lastmod>2026-04-18T09:35:50.160Z</lastmod>
   </url>
   <url>
-    <loc>https://lianxhcn.github.io/quarto_book/body/A02_JupyterNotebook.html</loc>
-    <lastmod>2025-06-09T07:30:11.508Z</lastmod>
+    <loc>https://jasonli357.github.io/quarto_book/body/07_data_workflow.html</loc>
+    <lastmod>2026-04-18T09:39:56.123Z</lastmod>
   </url>
   <url>
-    <loc>https://lianxhcn.github.io/quarto_book/body/A04_display_ipynb_file.html</loc>
-    <lastmod>2025-07-29T19:27:53.117Z</lastmod>
+    <loc>https://jasonli357.github.io/quarto_book/body/08_data_demo.html</loc>
+    <lastmod>2026-04-18T09:39:56.221Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonli357.github.io/quarto_book/body/09_skill_intro.html</loc>
+    <lastmod>2026-04-18T09:41:53.466Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonli357.github.io/quarto_book/body/10_skill_demo.html</loc>
+    <lastmod>2026-04-18T09:41:53.599Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonli357.github.io/quarto_book/body/11_references.html</loc>
+    <lastmod>2026-04-18T09:42:51.771Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonli357.github.io/quarto_book/body/A01_claude_md_template.html</loc>
+    <lastmod>2026-04-18T09:42:51.869Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jasonli357.github.io/quarto_book/body/A02_stata_mcp_guide.html</loc>
+    <lastmod>2026-04-18T09:42:51.955Z</lastmod>
   </url>
 </urlset>

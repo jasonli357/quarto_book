@@ -3,25 +3,25 @@ project:
   output-dir: docs  # 输出目录, 生成的 HTML 文件会放在 docs 目录下
 
 book:
-  title: "Quarto Book"
-  reader-mode: true 
-  author: "连玉君"
+  title: "Claude Code 协同 Stata"
+  reader-mode: true
+  author: "黎佳迅"
   date: today
   date-format: iso
 #  lang: zh  # 不要设置这个，会导致很多问题
-  
+
   sidebar:    # 侧边栏配置
-    title: "Quarto Book"
+    title: "Claude Code x Stata"
     logo: images/book-logo.png
-    logo-href: https://lianxhcn.github.io/quarto_book/
+    logo-href: https://jasonli357.github.io/quarto_book/
     style: floating  #docked
     search: true
     tools:
       - icon: github
-        href: https://github.com/lianxhcn/quarto_book
+        href: https://github.com/jasonli357/quarto_book
 
   favicon: images/book-logo.png   # URL logo
-  site-url: https://lianxhcn.github.io/quarto_book/ # 主页地址, 否则点击右上角链接会乱码
+  site-url: https://jasonli357.github.io/quarto_book/
   editor: source    # 始终采用源代码模式编辑
 
 #----------------------- Chapters ---------------
@@ -29,32 +29,42 @@ book:
 
     - index.qmd
 
-    - part: "**Quarto 简介**"
-      chapters: 
+    - part: "**Stata 环境配置**"
+      chapters:
         - body/01_intro.md
-        - body/02_install_setting.md
+        - body/02_claude_md.md
+        - body/03_stata_mcp.md
 
-    - part: "**创建 Quarto-book**"
-      chapters: 
-        - body/03_YML_file.md
-        - body/04_github_page.md
-      
+    - part: "**Claude Code 基本交互技巧**"
+      chapters:
+        - body/04_permissions.md
+        - body/05_skills.md
+        - body/06_slash_commands.md
+
+    - part: "**数据处理实战**"
+      chapters:
+        - body/07_data_workflow.md
+        - body/08_data_demo.md
+
+    - part: "**Skill 创建与复用**"
+      chapters:
+        - body/09_skill_intro.md
+        - body/10_skill_demo.md
+
     - part: "**参考资料**"
-      chapters: 
-        - body/05_references.md
+      chapters:
+        - body/11_references.md
 
     - part: "**附录**"
-      chapters: 
-        - body/A01_markdown.md
-        - body/A02_JupyterNotebook.ipynb
-        - body/A04_display_ipynb_file.ipynb
+      chapters:
+        - body/A01_stata_mcp_guide.md
 
 format:
   html:
     toc: true            # 启用目录
     toc-depth: 3         # 三级以上 sections 才伸缩
     theme: cosmo         # 可选：cosmo, flatly, litera, litera, yeti 等  主题模版
-    linestretch: 1.6          # 行间距   1.7   
+    linestretch: 1.6          # 行间距   1.7
     fontsize: 11.5pt          # 字号
     number-sections: true     # 自动章节编号
     link-external-newwindow: true
@@ -62,10 +72,9 @@ format:
     highlight-style: atom-one  # 语法高亮, atom-one, breezy, github, tango, solarized-light
     code-fold: false           # （可选）代码默认不折叠
     code-line-numbers: false   # （可选）关闭行号
-    code-overflow: wrap        # 控制长代码的换行   
+    code-overflow: wrap        # 控制长代码的换行
     css: styles.css
     callout-appearance: default        # 启用 callout 默认渲染样式
     md-extensions:
       - callout                        # 确保 markdown 支持 callout 块语法
 editor: visual
-

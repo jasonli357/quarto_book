@@ -1,1 +1,1 @@
-{"entries":[],"headings":["使用模板创建书稿-推荐","从头开始创建书稿","quarto-book-项目结构","参考资料"],"options":{"chapters":true}}
+{"entries":[{"caption":"2  概述：Claude Code 与 Stata 协同","key":"sec-intro","order":{"number":1,"section":[2,0,0,0,0,0,0]}}],"headings":["为什么用-claude-code-配合-stata","常见的配置问题","问题一claude-code-找不到-stata","问题二路径格式不兼容","两种解决方案","sec-intro"],"options":{"chapter-id":"sec-intro","chapters":true}}

@@ -1,2 +1,13 @@
 /.quarto/
-/temp/
+
+/data/raw/
+*.csv
+*.txt
+*.xlsx
+*.xls
+
+.claude/settings.local.json
+
+**/*.quarto_ipynb
+
+todo.md
