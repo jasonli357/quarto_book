@@ -9,7 +9,7 @@
 - **数据处理实践**：清洗 CSMAR 企业财务数据
 - **Skill 创建与复用**：将数据处理流程打包为可复用的 Skill
 
-在线阅读：<https://jasonli357.github.io/quarto_book/>
+在线阅读：<https://jasonli357.github.io/Claudecode_Stata/>
 
 ## 项目结构
 
