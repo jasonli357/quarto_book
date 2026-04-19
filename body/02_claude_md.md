@@ -6,11 +6,11 @@
 
 通过在 `CLAUDE.md` 中写明 Stata 的使用规则，可以让 Claude Code 正确地找到 Stata 并以正确的方式执行代码。
 
-## 配置内容
+## CLAUDE.md 内容
 
 在 `CLAUDE.md` 中，至少应包含以下内容：
 
-### 1. 说明 Stata 安装路径
+### 说明 Stata 安装路径
 
 告诉 Claude Code Stata 可执行文件的确切位置：
 
@@ -18,7 +18,7 @@
 Stata 安装路径：D:/stata18/StataMP-64.exe
 ```
 
-### 2. 指定运行 dofile 的终端命令
+### 指定运行 dofile 的终端命令
 
 明确告诉 Claude Code 应该用什么命令来执行 Stata dofile：
 
@@ -28,10 +28,13 @@ Stata 安装路径：D:/stata18/StataMP-64.exe
 
 注意事项：
 - 路径使用 Windows 格式（D:/...），不能使用 WSL 格式（/mnt/d/...）
-- /e 参数表示 batch 模式，运行完自动关闭
 ```
 
-### 3. 规定日志（.log）生成位置
+::: callout-note
+在我的测试中，上述命令有时候会报错，然后 Claude Code 会自行修改，把修改后的命令更新到 CLAUDE.md 即可。
+:::
+
+### 规定日志（.log）生成位置
 
 ```markdown
 日志文件：
@@ -39,7 +42,7 @@ Stata 安装路径：D:/stata18/StataMP-64.exe
 - 运行完成后，读取同名的 .log 文件查看结果
 ```
 
-### 4. 错误检测规则
+### 错误检测规则
 
 ```markdown
 错误检测：
@@ -57,26 +60,17 @@ Stata 安装路径：D:/stata18/StataMP-64.exe
 
 这样随着使用，`CLAUDE.md` 会不断完善，AI 的工作效率和准确度也会逐步提升。
 
-## 完整示例
+## CLAUDE.md 示例
 
 以下是一个适用于命令行模式的 `CLAUDE.md` 示例：
 
 ```markdown
-## Stata 数据处理规范
+## Stata 使用规范
 
-- Stata 安装路径：D:/stata18/StataMP-64.exe
-- 运行 dofile 命令："D:/stata18/StataMP-64.exe" /e do "script.do"
-- 运行前需先 cd 到项目目录
-- 路径格式必须使用 Windows 格式（D:/...），不能用 WSL 的 /mnt/d/... 格式
-
-- 原始数据在 data/raw/ 目录下，不要修改或覆盖
-- 清洗过程中以及清洗后的数据存入 data/processed/
-- 代码放在 code/
-- 说明文档放在 file/
-
-- 运行完成后，读取 .log 文件检查是否有 r( 开头的错误代码
+- 路径：`D:\stata18\StataMP-64.exe`
+- 批量运行：`"/d/stata18/StataMP-64.exe" /e do "script.do"`
+- 运行前先 cd 到 .do 文件所在目录，日志自动生成到该目录，文件名为 `script.log`
+- 代码错误检测
+  - Stata 退出码不可靠，应检查 .log 文件
+  - 若 .log 文件含 `r(` 或缺少 `end of do-file`，说明有代码错误
 ```
-
-::: callout-note
-方案一虽然简单，但每次执行 Stata 代码都需要经历"写 .do 文件 → 执行命令 → 读 .log 文件"三个步骤，且每次运行都会启动一个新的 Stata 进程。如果希望更高效的交互体验，推荐使用方案二（Stata MCP）。
-:::

@@ -1,4 +1,4 @@
-# 技能包：发现、安装与管理 {#sec-skills}
+# Skills 简介 {#sec-skills}
 
 ## 什么是 Skills
 
@@ -21,34 +21,13 @@ Skills 的核心优势：
         ├── scripts/        # 可选 — 程序脚本（Python 等）
         ├── assets/         # 可选 — 模板和资源文件
         ├── references/     # 可选 — 参考文档（说明手册、规范文档）
-        └── agents/         # 可选 — 子代理定义
+        └── 其他文件夹，如 agents/    # 可选 — 因 skill 需求而已
 ```
 
 其中 **`SKILL.md`** 是核心定义文件，包含：
 
 - **元数据**：名称、简介、触发条件（description 字段中的关键词）
 - **Prompt 内容**：指导 AI 如何执行这个 Skill 的详细指令
-
-## 发现与安装 Skills
-
-### 方法一：通过 /plugin 命令
-
-在 Claude Code 中使用 `/plugin` 命令来浏览、下载和管理官方及第三方技能包。
-
-### 方法二：发送 URL 给 AI
-
-直接用自然语言把技能包的网址发给 AI，让它下载并安装。例如：
-
-```
-请帮我安装这个 Skill：https://github.com/anthropics/skills.git
-```
-
-### 方法三：手动下载
-
-手动下载网页上的 Skill 文件，移动到系统级或项目级的 `.claude/skills` 文件夹：
-
-- **系统级**：`~/.claude/skills/`（Windows：`C:\Users\用户名\.claude\skills\`）
-- **项目级**：`项目目录/.claude/skills/`
 
 ## 示例：skill-creator
 
@@ -90,12 +69,10 @@ Skills 的核心优势：
 - **`references/`**：提供背景及规范知识库
 - **`agents/`**：对技能进行评估、对比和打分的子代理
 
-## 为什么要创建数据处理 Skill
+## 发现与安装 Skills
 
-对于经常使用 Stata 进行实证研究的经管类研究者而言，创建一个专门的数据处理 Skill 可以：
+详见 [常用斜杠命令](05_slash_commands.md)【发现与安装 Skills】部分
 
-- 向 AI 说明数据处理的具体要求（例如剔除哪些样本）
-- 给 AI 制定工作规范（例如变量标签怎么写、最后输出什么文件）
-- 避免每次都重复说明"剔除 ST 股、剔除金融业、指标要缩尾"等常规操作
+> skill-creator 也包含在 Anthropic 官方技能包 https://github.com/anthropics/skills.git 里面
 
-下一章将介绍 Claude Code 的常用斜杠命令，后续章节将详细演示如何创建和使用数据处理 Skill。
+

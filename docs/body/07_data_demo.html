@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; 实战演示：清洗 CSMAR 企业财务数据 – Claude Code 协同 Stata</title>
+<title>8&nbsp; 实战演示：清洗 CSMAR 企业财务数据 – Claude Code x Stata</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -68,8 +33,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../body/09_skill_intro.html" rel="next">
-<link href="../body/07_data_workflow.html" rel="prev">
+<link href="../body/08_skills.html" rel="next">
+<link href="../body/06_data_workflow.html" rel="prev">
 <link href="../images/book-logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -122,7 +87,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/07_data_workflow.html"><strong>数据处理实战</strong></a></li><li class="breadcrumb-item"><a href="../body/08_data_demo.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/06_data_workflow.html"><strong>数据处理实战</strong></a></li><li class="breadcrumb-item"><a href="../body/07_data_demo.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -136,14 +101,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="https://jasonli357.github.io/quarto_book/" class="sidebar-logo-link">
+      <a href="https://jasonli357.github.io/Claudecode_Stata/" class="sidebar-logo-link">
       <img src="../images/book-logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
       <img src="../images/book-logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Claude Code x Stata</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/jasonli357/quarto_book" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://github.com/jasonli357/Claudecode_Stata" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -211,14 +176,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/05_skills.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">技能包：发现、安装与管理</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/06_slash_commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">常用斜杠命令</span></span></a>
+  <a href="../body/05_slash_commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">常用斜杠命令</span></span></a>
   </div>
 </li>
       </ul>
@@ -234,14 +193,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/07_data_workflow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">先计划、后执行：数据处理工作流</span></span></a>
+  <a href="../body/06_data_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">数据处理实践</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/08_data_demo.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></span></a>
+  <a href="../body/07_data_demo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></span></a>
   </div>
 </li>
       </ul>
@@ -257,14 +216,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/09_skill_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">为什么要创建数据处理 Skill</span></span></a>
+  <a href="../body/08_skills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Skills 简介</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/10_skill_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">创建与使用 stata-data-cleaner Skill</span></span></a>
+  <a href="../body/09_skill_demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">创建与使用 stata-data-cleaner Skill</span></span></a>
   </div>
 </li>
       </ul>
@@ -280,8 +239,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/11_references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">参考资料</span></span></a>
+  <a href="../body/10_references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">相关链接</span></span></a>
   </div>
 </li>
       </ul>
@@ -297,14 +256,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/A01_claude_md_template.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">附录 A：CLAUDE.md 模板</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/A02_stata_mcp_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">附录 B：Stata MCP 安装与配置指南</span></span></a>
+  <a href="../body/A01_stata_mcp_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">附录 A：Stata MCP 安装与配置指南</span></span></a>
   </div>
 </li>
       </ul>
@@ -319,29 +272,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#任务说明" id="toc-任务说明" class="nav-link active" data-scroll-target="#任务说明"><span class="header-section-number">9.1</span> 任务说明</a></li>
-  <li><a href="#数据概况" id="toc-数据概况" class="nav-link" data-scroll-target="#数据概况"><span class="header-section-number">9.2</span> 数据概况</a></li>
-  <li><a href="#探索阶段" id="toc-探索阶段" class="nav-link" data-scroll-target="#探索阶段"><span class="header-section-number">9.3</span> 探索阶段</a>
+  <li><a href="#任务说明" id="toc-任务说明" class="nav-link active" data-scroll-target="#任务说明"><span class="header-section-number">8.1</span> 任务说明</a></li>
+  <li><a href="#数据概况" id="toc-数据概况" class="nav-link" data-scroll-target="#数据概况"><span class="header-section-number">8.2</span> 数据概况</a></li>
+  <li><a href="#prompt" id="toc-prompt" class="nav-link" data-scroll-target="#prompt"><span class="header-section-number">8.3</span> prompt</a>
   <ul class="collapse">
-  <li><a href="#关键发现" id="toc-关键发现" class="nav-link" data-scroll-target="#关键发现"><span class="header-section-number">9.3.1</span> 关键发现</a></li>
-  <li><a href="#探索用的-stata-代码示例" id="toc-探索用的-stata-代码示例" class="nav-link" data-scroll-target="#探索用的-stata-代码示例"><span class="header-section-number">9.3.2</span> 探索用的 Stata 代码示例</a></li>
+  <li><a href="#关键发现" id="toc-关键发现" class="nav-link" data-scroll-target="#关键发现"><span class="header-section-number">8.3.1</span> 关键发现</a></li>
   </ul></li>
-  <li><a href="#计划阶段" id="toc-计划阶段" class="nav-link" data-scroll-target="#计划阶段"><span class="header-section-number">9.4</span> 计划阶段</a></li>
-  <li><a href="#执行阶段" id="toc-执行阶段" class="nav-link" data-scroll-target="#执行阶段"><span class="header-section-number">9.5</span> 执行阶段</a>
-  <ul class="collapse">
-  <li><a href="#核心代码片段" id="toc-核心代码片段" class="nav-link" data-scroll-target="#核心代码片段"><span class="header-section-number">9.5.1</span> 核心代码片段</a></li>
-  </ul></li>
-  <li><a href="#输出结果" id="toc-输出结果" class="nav-link" data-scroll-target="#输出结果"><span class="header-section-number">9.6</span> 输出结果</a></li>
-  <li><a href="#经验总结" id="toc-经验总结" class="nav-link" data-scroll-target="#经验总结"><span class="header-section-number">9.7</span> 经验总结</a></li>
+  <li><a href="#计划阶段" id="toc-计划阶段" class="nav-link" data-scroll-target="#计划阶段"><span class="header-section-number">8.4</span> 计划阶段</a></li>
+  <li><a href="#执行阶段" id="toc-执行阶段" class="nav-link" data-scroll-target="#执行阶段"><span class="header-section-number">8.5</span> 执行阶段</a></li>
+  <li><a href="#输出结果" id="toc-输出结果" class="nav-link" data-scroll-target="#输出结果"><span class="header-section-number">8.6</span> 输出结果</a></li>
+  <li><a href="#经验小结" id="toc-经验小结" class="nav-link" data-scroll-target="#经验小结"><span class="header-section-number">8.7</span> 经验小结</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/07_data_workflow.html"><strong>数据处理实战</strong></a></li><li class="breadcrumb-item"><a href="../body/08_data_demo.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/06_data_workflow.html"><strong>数据处理实战</strong></a></li><li class="breadcrumb-item"><a href="../body/07_data_demo.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-data-demo" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></span></h1>
+<h1 class="title"><span id="sec-data-demo" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></span></h1>
 </div>
 
 
@@ -359,8 +308,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>本章通过一个完整的实战案例，演示如何使用 Claude Code 清洗 CSMAR（国泰安）企业财务数据，计算常用的公司特征变量。</p>
-<section id="任务说明" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="任务说明"><span class="header-section-number">9.1</span> 任务说明</h2>
+<section id="任务说明" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="任务说明"><span class="header-section-number">8.1</span> 任务说明</h2>
 <p><strong>目标</strong>：从企业基本信息和财务报表数据中，计算 5 个企业特征变量：</p>
 <table class="caption-top table">
 <thead>
@@ -405,8 +354,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>输出：<code>.do</code> 文件、<code>.dta</code> 数据集、<code>.md</code> 工作小结</li>
 </ul>
 </section>
-<section id="数据概况" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="数据概况"><span class="header-section-number">9.2</span> 数据概况</h2>
+<section id="数据概况" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="数据概况"><span class="header-section-number">8.2</span> 数据概况</h2>
 <p>本次使用的数据来自 CSMAR 数据库，包含 4 个数据集：</p>
 <table class="caption-top table">
 <colgroup>
@@ -446,11 +395,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p>每个数据集都附有 <code>[DES][csv].txt</code> 说明文件，包含完整的变量定义。</p>
 </section>
-<section id="探索阶段" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="探索阶段"><span class="header-section-number">9.3</span> 探索阶段</h2>
-<p>在 plan mode 下输入任务需求后，AI 首先会探索数据结构。</p>
-<section id="关键发现" class="level3" data-number="9.3.1">
-<h3 data-number="9.3.1" class="anchored" data-anchor-id="关键发现"><span class="header-section-number">9.3.1</span> 关键发现</h3>
+<section id="prompt" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="prompt"><span class="header-section-number">8.3</span> prompt</h2>
+<pre><code>【data/】里面是实证金融研究用的 A 股上市公司数据，需要清洗合并后计算常用控制变量（Size、Age、Lev、Growth、ROA），对这些指标进行描述性统计。用 stata 完成。
+
+注意事项：删除金融行业（行业代码J*）、计算出的指标要缩尾
+
+- 我不确定具体要执行哪些数据清洗操作，需要你结合数据结构和数据处理的惯例判断
+
+最后输出三个文件：处理数据的.do文档；处理后数据集.dta文件；数据处理工作小结.md文档（包含数据处理操作和最后的描述性统计结果）</code></pre>
+<section id="关键发现" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="关键发现"><span class="header-section-number">8.3.1</span> 关键发现</h3>
 <p>AI 通过读取说明文件和导入样本行，发现了以下关键信息：</p>
 <p><strong>1. 变量名不统一</strong></p>
 <p>不同数据集使用不同的变量名来表示相同的概念：</p>
@@ -465,30 +420,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>4. 报告期频率</strong></p>
 <p>数据包含年度（<code>12-31</code>）和季度报告，实证研究通常只保留年度数据。</p>
 </section>
-<section id="探索用的-stata-代码示例" class="level3" data-number="9.3.2">
-<h3 data-number="9.3.2" class="anchored" data-anchor-id="探索用的-stata-代码示例"><span class="header-section-number">9.3.2</span> 探索用的 Stata 代码示例</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>* 导入少量样本行，确认数据结构</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>import delimited <span class="st">"C:/path/FS_Combas.csv"</span>, <span class="kw">clear</span> <span class="fu">rowfirst</span>(5) <span class="co">///</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    encoding(<span class="st">"utf8"</span>) bindquote(<span class="ot">strict</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">describe</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ot">list</span> stkcd accper typrep a001000000 <span class="kw">in</span> 1/3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>探索阶段的原则
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>使用 <code>rowfirst(5)</code> 限制导入行数，避免加载整个大数据集（资产负债表可达 300+ MB）。优先读取 <code>.txt</code> 说明文件了解变量定义，再用 Stata 确认。</p>
-</div>
-</div>
 </section>
-</section>
-<section id="计划阶段" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="计划阶段"><span class="header-section-number">9.4</span> 计划阶段</h2>
+<section id="计划阶段" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="计划阶段"><span class="header-section-number">8.4</span> 计划阶段</h2>
 <p>AI 根据探索结果生成详细的数据处理计划书，包含以下步骤：</p>
 <ol type="1">
 <li><strong>预处理</strong>：导入 4 个数据集，保留合并报表（<code>typrep == "A"</code>）、保留年度数据（<code>accper</code> 以 “12” 结尾）</li>
@@ -501,59 +435,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>描述性统计</strong>：输出均值、标准差、最小值、最大值等</li>
 </ol>
 </section>
-<section id="执行阶段" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="执行阶段"><span class="header-section-number">9.5</span> 执行阶段</h2>
+<section id="执行阶段" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="执行阶段"><span class="header-section-number">8.5</span> 执行阶段</h2>
 <p>确认计划无误后，AI 开始执行。整个过程约 10 分钟。</p>
-<section id="核心代码片段" class="level3" data-number="9.5.1">
-<h3 data-number="9.5.1" class="anchored" data-anchor-id="核心代码片段"><span class="header-section-number">9.5.1</span> 核心代码片段</h3>
-<p><strong>导入并筛选年度数据：</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>import delimited <span class="st">"C:/path/FS_Combas.csv"</span>, <span class="kw">clear</span> <span class="co">///</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    encoding(<span class="st">"utf8"</span>) bindquote(<span class="ot">strict</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>* 保留年度数据（12月31日）</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> <span class="fu">year</span> = <span class="fu">real</span>(<span class="fu">substr</span>(accper, 1, 4))</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">keep</span> <span class="kw">if</span> <span class="fu">substr</span>(accper, 6, 2) == <span class="st">"12"</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>* 保留合并报表</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">keep</span> <span class="kw">if</span> typrep == <span class="st">"A"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>变量计算：</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>* 公司规模</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> Size = <span class="fu">ln</span>(a001000000)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>* 公司年龄</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> Age = <span class="fu">year</span> - <span class="fu">real</span>(<span class="fu">substr</span>(listingdate, 1, 4))</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>* 资产负债率</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> Lev = a002000000 / a001000000</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>* 资产收益率</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> ROA = b002000000 / a001000000</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>* 营业收入增长率（需滞后一期）</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="kw">sort</span> stkcd <span class="fu">year</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="kw">by</span> stkcd: <span class="kw">gen</span> Growth = (b001101000 - b001101000[<span class="dt">_n</span>-1]) <span class="co">///</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    / <span class="fu">abs</span>(b001101000[<span class="dt">_n</span>-1]) <span class="kw">if</span> <span class="dt">_n</span> &gt; 1 &amp; b001101000[<span class="dt">_n</span>-1] != 0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>剔除金融行业和 ST 股票：</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>* 剔除金融行业（行业代码 <span class="fu">J</span> 开头）</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">drop</span> <span class="kw">if</span> <span class="fu">substr</span>(industrycode, 1, 1) == <span class="st">"J"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>* 剔除 ST 股票</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> is_st = (<span class="fu">strpos</span>(shortname, <span class="st">"ST"</span>) &gt; 0)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">drop</span> <span class="kw">if</span> is_st == 1</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">drop</span> is_st</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>缩尾处理：</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="kw">var</span> <span class="kw">of</span> <span class="kw">varlist</span> Size Lev Growth ROA {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    _pctile <span class="ot">`var'</span>, percentiles(1 99)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">local</span> p1 = <span class="fu">r</span>(r1)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">local</span> p99 = <span class="fu">r</span>(r2)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">replace</span> <span class="ot">`var'</span> = <span class="ot">`p1'</span> <span class="kw">if</span> <span class="ot">`var'</span> &lt; <span class="ot">`p1'</span> &amp; !<span class="fu">missing</span>(<span class="ot">`var'</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">replace</span> <span class="ot">`var'</span> = <span class="ot">`p99'</span> <span class="kw">if</span> <span class="ot">`var'</span> &gt; <span class="ot">`p99'</span> &amp; !<span class="fu">missing</span>(<span class="ot">`var'</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>描述性统计：</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">tabstat</span> Size Age Lev Growth ROA, stat(n <span class="kw">mean</span> <span class="fu">sd</span> <span class="fu">min</span> p25 p50 p75 <span class="fu">max</span>) <span class="co">///</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    col(stat) <span class="kw">format</span>(%9.4f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-</section>
-<section id="输出结果" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="输出结果"><span class="header-section-number">9.6</span> 输出结果</h2>
+<section id="输出结果" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="输出结果"><span class="header-section-number">8.6</span> 输出结果</h2>
 <p>执行完成后，AI 生成以下文件：</p>
 <table class="caption-top table">
 <colgroup>
@@ -587,12 +474,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="经验总结" class="level2" data-number="9.7">
-<h2 data-number="9.7" class="anchored" data-anchor-id="经验总结"><span class="header-section-number">9.7</span> 经验总结</h2>
+<section id="经验小结" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="经验小结"><span class="header-section-number">8.7</span> 经验小结</h2>
 <ol type="1">
-<li><strong>CLAUDE.md 至关重要</strong>：提前写明路径规范和目录约定，可以避免大量重复沟通</li>
-<li><strong>plan mode 是效率关键</strong>：先探索数据、生成计划，再执行，比直接让 AI 动手效率高得多</li>
-<li><strong>表达不确定性是可以的</strong>：在 prompt 中写明”我不确定具体需要哪些操作”，AI 会根据数据结构自行判断并给出建议</li>
+<li>在 CLAUDE.md 提前写明路径规范和目录约定，可以避免重复沟通或者试错</li>
+<li>对计划或者完整流程不确定的时候，可以用 plan mode，把确定的部分写下来，让 AI 完善</li>
 </ol>
 
 
@@ -672,7 +558,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/jasonli357\.github\.io\/quarto_book\/");
+        var filterRegex = new RegExp("https:\/\/jasonli357\.github\.io\/Claudecode_Stata\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1006,13 +892,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../body/07_data_workflow.html" class="pagination-link" aria-label="先计划、后执行：数据处理工作流">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">先计划、后执行：数据处理工作流</span></span>
+      <a href="../body/06_data_workflow.html" class="pagination-link" aria-label="数据处理实践">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">数据处理实践</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../body/09_skill_intro.html" class="pagination-link" aria-label="为什么要创建数据处理 Skill">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">为什么要创建数据处理 Skill</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../body/08_skills.html" class="pagination-link" aria-label="Skills 简介">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Skills 简介</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

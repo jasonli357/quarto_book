@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; 附录 A：CLAUDE.md 模板 – Claude Code 协同 Stata</title>
+<title>6&nbsp; 常用斜杠命令 – Claude Code x Stata</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -68,8 +68,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../body/A02_stata_mcp_guide.html" rel="next">
-<link href="../body/11_references.html" rel="prev">
+<link href="../body/06_data_workflow.html" rel="next">
+<link href="../body/04_permissions.html" rel="prev">
 <link href="../images/book-logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -122,7 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/A01_claude_md_template.html"><strong>附录</strong></a></li><li class="breadcrumb-item"><a href="../body/A01_claude_md_template.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">附录 A：CLAUDE.md 模板</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/04_permissions.html"><strong>Claude Code 基本交互技巧</strong></a></li><li class="breadcrumb-item"><a href="../body/05_slash_commands.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">常用斜杠命令</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -136,14 +136,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="https://jasonli357.github.io/quarto_book/" class="sidebar-logo-link">
+      <a href="https://jasonli357.github.io/Claudecode_Stata/" class="sidebar-logo-link">
       <img src="../images/book-logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
       <img src="../images/book-logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Claude Code x Stata</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/jasonli357/quarto_book" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://github.com/jasonli357/Claudecode_Stata" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -211,14 +211,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/05_skills.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">技能包：发现、安装与管理</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/06_slash_commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">常用斜杠命令</span></span></a>
+  <a href="../body/05_slash_commands.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">常用斜杠命令</span></span></a>
   </div>
 </li>
       </ul>
@@ -234,14 +228,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/07_data_workflow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">先计划、后执行：数据处理工作流</span></span></a>
+  <a href="../body/06_data_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">数据处理实践</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/08_data_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></span></a>
+  <a href="../body/07_data_demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></span></a>
   </div>
 </li>
       </ul>
@@ -257,14 +251,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/09_skill_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">为什么要创建数据处理 Skill</span></span></a>
+  <a href="../body/08_skills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Skills 简介</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/10_skill_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">创建与使用 stata-data-cleaner Skill</span></span></a>
+  <a href="../body/09_skill_demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">创建与使用 stata-data-cleaner Skill</span></span></a>
   </div>
 </li>
       </ul>
@@ -280,8 +274,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/11_references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">参考资料</span></span></a>
+  <a href="../body/10_references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">相关链接</span></span></a>
   </div>
 </li>
       </ul>
@@ -297,14 +291,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/A01_claude_md_template.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">附录 A：CLAUDE.md 模板</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/A02_stata_mcp_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">附录 B：Stata MCP 安装与配置指南</span></span></a>
+  <a href="../body/A01_stata_mcp_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">附录 A：Stata MCP 安装与配置指南</span></span></a>
   </div>
 </li>
       </ul>
@@ -319,18 +307,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#模板一命令行模式" id="toc-模板一命令行模式" class="nav-link active" data-scroll-target="#模板一命令行模式"><span class="header-section-number">13.1</span> 模板一：命令行模式</a></li>
-  <li><a href="#模板二stata-mcp-模式" id="toc-模板二stata-mcp-模式" class="nav-link" data-scroll-target="#模板二stata-mcp-模式"><span class="header-section-number">13.2</span> 模板二：Stata MCP 模式</a></li>
-  <li><a href="#使用建议" id="toc-使用建议" class="nav-link" data-scroll-target="#使用建议"><span class="header-section-number">13.3</span> 使用建议</a></li>
+  <li><a href="#resume查看与恢复历史会话" id="toc-resume查看与恢复历史会话" class="nav-link active" data-scroll-target="#resume查看与恢复历史会话"><span class="header-section-number">6.1</span> /resume：查看与恢复历史会话</a></li>
+  <li><a href="#btw运行时旁注对话" id="toc-btw运行时旁注对话" class="nav-link" data-scroll-target="#btw运行时旁注对话"><span class="header-section-number">6.2</span> /btw：运行时旁注对话</a></li>
+  <li><a href="#branch创建分支" id="toc-branch创建分支" class="nav-link" data-scroll-target="#branch创建分支"><span class="header-section-number">6.3</span> /branch：创建分支</a></li>
+  <li><a href="#rewind回退" id="toc-rewind回退" class="nav-link" data-scroll-target="#rewind回退"><span class="header-section-number">6.4</span> /rewind：回退</a></li>
+  <li><a href="#export导出会话记录" id="toc-export导出会话记录" class="nav-link" data-scroll-target="#export导出会话记录"><span class="header-section-number">6.5</span> /export：导出会话记录</a></li>
+  <li><a href="#insights使用习惯分析" id="toc-insights使用习惯分析" class="nav-link" data-scroll-target="#insights使用习惯分析"><span class="header-section-number">6.6</span> /insights：使用习惯分析</a></li>
+  <li><a href="#发现与安装-skills" id="toc-发现与安装-skills" class="nav-link" data-scroll-target="#发现与安装-skills"><span class="header-section-number">6.7</span> 发现与安装 Skills</a>
+  <ul class="collapse">
+  <li><a href="#方法一通过-plugin-命令" id="toc-方法一通过-plugin-命令" class="nav-link" data-scroll-target="#方法一通过-plugin-命令"><span class="header-section-number">6.7.1</span> 方法一：通过 /plugin 命令</a></li>
+  <li><a href="#方法二发送-url-给-ai" id="toc-方法二发送-url-给-ai" class="nav-link" data-scroll-target="#方法二发送-url-给-ai"><span class="header-section-number">6.7.2</span> 方法二：发送 URL 给 AI</a></li>
+  <li><a href="#方法三手动下载" id="toc-方法三手动下载" class="nav-link" data-scroll-target="#方法三手动下载"><span class="header-section-number">6.7.3</span> 方法三：手动下载</a></li>
+  </ul></li>
+  <li><a href="#常用快捷键" id="toc-常用快捷键" class="nav-link" data-scroll-target="#常用快捷键"><span class="header-section-number">6.8</span> 常用快捷键</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/A01_claude_md_template.html"><strong>附录</strong></a></li><li class="breadcrumb-item"><a href="../body/A01_claude_md_template.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">附录 A：CLAUDE.md 模板</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/04_permissions.html"><strong>Claude Code 基本交互技巧</strong></a></li><li class="breadcrumb-item"><a href="../body/05_slash_commands.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">常用斜杠命令</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-a1-claude-md" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">附录 A：CLAUDE.md 模板</span></span></h1>
+<h1 class="title"><span id="sec-slash-commands" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">常用斜杠命令</span></span></h1>
 </div>
 
 
@@ -347,70 +345,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>本附录提供两个 <code>CLAUDE.md</code> 模板，分别适用于命令行模式和 Stata MCP 模式。你可以根据自己的使用方式选择对应的模板，复制到项目根目录并根据实际情况修改。</p>
-<section id="模板一命令行模式" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="模板一命令行模式"><span class="header-section-number">13.1</span> 模板一：命令行模式</h2>
-<p>适用于没有 Stata MCP 或不想安装 MCP 的用户。</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Stata 数据处理规范</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stata 配置</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Stata 安装路径：D:/stata18/StataMP-64.exe</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  （请替换为你的实际安装路径）</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>运行 dofile 命令格式：</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  "D:/stata18/StataMP-64.exe" /e do "script.do"</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>运行前需先 cd 到项目目录，否则日志会写到默认路径</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">### 路径规范</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>必须使用 Windows 路径格式（D:/...）</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>不能使用 WSL 的 /mnt/d/... 格式</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Stata 无法识别 WSL 路径，会报 r(601) file not found</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">### 目录约定</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>原始数据放在 data/raw/，不要修改或覆盖</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>清洗后的数据放在 data/processed/</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>代码放在 code/</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>说明文档放在 file/</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### 工作流程</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>每次执行 Stata 分三步：Write(.do) → Bash(execute) → Read(.log)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>运行完成后检查 .log 文件中是否有 r( 开头的错误代码</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>如果有错误，分析原因后修改 .do 文件重新运行</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Claude Code 提供了一系列斜杠命令（Slash Commands），可以帮助你更高效地管理会话和工作流。以下是几个常用的命令。</p>
+<section id="resume查看与恢复历史会话" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="resume查看与恢复历史会话"><span class="header-section-number">6.1</span> /resume：查看与恢复历史会话</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/resume</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Claude Code 会列出你最近的对话历史，你可以选择恢复之前的某个会话，继续之前的工作。</p>
+<p>这在以下场景特别有用：</p>
+<ul>
+<li>昨天进行到一半的数据处理任务，今天想继续</li>
+<li>之前的工作结果需要微调或扩展</li>
+</ul>
 </section>
-<section id="模板二stata-mcp-模式" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="模板二stata-mcp-模式"><span class="header-section-number">13.2</span> 模板二：Stata MCP 模式</h2>
-<p>适用于已安装 Stata MCP 的用户（推荐）。</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Stata 数据处理规范</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### 调用方式</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>通过 Stata MCP 调用 Stata，不要用命令行</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>使用 stata_run_selection 运行代码片段</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>使用 stata_run_file 运行 .do 文件</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">### 路径规范</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Stata MCP 运行在 Windows 端，必须使用 Windows 路径格式</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  （C:/Users/...），不能用 WSL 的 /mnt/c/... 格式</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>否则会报 r(601) file not found</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">### 目录约定</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>原始数据放在 data/raw/，不要修改或覆盖</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>清洗过程中以及清洗后的数据存入 data/processed/</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>代码放在 code/</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>说明文档放在 file/</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">### 输出要求</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>数据处理的代码保存为 .do 文件</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>处理后的数据保存为 .dta 文件</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>数据处理工作小结保存为 .md 文档</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  （包含进行了哪些操作，以及最后的描述性统计）</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="btw运行时旁注对话" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="btw运行时旁注对话"><span class="header-section-number">6.2</span> /btw：运行时旁注对话</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/btw</span> 你觉得刚才生成的代码还可以怎么优化？</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>/btw</code> 允许你在 Claude Code 运行过程中插入对话，而<strong>不打断当前进程</strong>。你的问题和回答完成后会自动消失，不会污染主上下文。</p>
+<p>这在以下场景特别有用：</p>
+<ul>
+<li>AI 正在执行一个耗时较长的任务，你想顺便问它一个问题</li>
+<li>不确定 AI 正在做什么，想快速了解一下进度</li>
+</ul>
 </section>
-<section id="使用建议" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="使用建议"><span class="header-section-number">13.3</span> 使用建议</h2>
-<ol type="1">
-<li><strong>选择适合你的模板</strong>，复制到项目根目录，文件名为 <code>CLAUDE.md</code></li>
-<li><strong>修改路径信息</strong>：将示例路径替换为你本地的实际路径</li>
-<li><strong>补充项目特定需求</strong>：比如数据来源说明、特殊变量定义等</li>
-<li><strong>持续完善</strong>：在 AI 执行任务后，问它是否遇到了问题，让它总结经验更新 <code>CLAUDE.md</code></li>
-</ol>
+<section id="branch创建分支" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="branch创建分支"><span class="header-section-number">6.3</span> /branch：创建分支</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/branch</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>在当前工作状态下创建一个 Git 分支。这对于在不确定方案是否可行的情况下进行实验很有用——如果方案失败，可以轻松回退。</p>
+</section>
+<section id="rewind回退" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="rewind回退"><span class="header-section-number">6.4</span> /rewind：回退</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/rewind</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>将对话状态回退到之前的某个节点。如果你发现 AI 走了弯路，可以用这个命令回到之前的状态重新开始。</p>
+</section>
+<section id="export导出会话记录" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="export导出会话记录"><span class="header-section-number">6.5</span> /export：导出会话记录</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/export</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>将当前会话的完整记录导出为文件。这对于以下场景很有用：</p>
+<ul>
+<li>保存工作日志</li>
+<li>与同事分享你和 AI 的交互过程</li>
+<li>将 AI 的输出结果归档</li>
+</ul>
+</section>
+<section id="insights使用习惯分析" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="insights使用习惯分析"><span class="header-section-number">6.6</span> /insights：使用习惯分析</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/insights</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>生成一份 HTML 报告，分析你过去一个月使用 Claude Code 的习惯，包括：</p>
+<ul>
+<li>你最常用的操作类型</li>
+<li>哪些任务耗时最长</li>
+<li>工作效率的变化趋势</li>
+<li>改进建议</li>
+</ul>
+<p>这个命令可以帮助你反思和优化自己的 AI 协作方式。</p>
+</section>
+<section id="发现与安装-skills" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="发现与安装-skills"><span class="header-section-number">6.7</span> 发现与安装 Skills</h2>
+<section id="方法一通过-plugin-命令" class="level3" data-number="6.7.1">
+<h3 data-number="6.7.1" class="anchored" data-anchor-id="方法一通过-plugin-命令"><span class="header-section-number">6.7.1</span> 方法一：通过 /plugin 命令</h3>
+<p>在 Claude Code 中使用 <code>/plugin</code> 命令来浏览、下载和管理官方及第三方技能包。</p>
+</section>
+<section id="方法二发送-url-给-ai" class="level3" data-number="6.7.2">
+<h3 data-number="6.7.2" class="anchored" data-anchor-id="方法二发送-url-给-ai"><span class="header-section-number">6.7.2</span> 方法二：发送 URL 给 AI</h3>
+<p>直接用自然语言把技能包的网址发给 AI，让它下载并安装。例如：</p>
+<pre><code>请帮我安装这个技能包：https://github.com/anthropics/skills.git</code></pre>
+</section>
+<section id="方法三手动下载" class="level3" data-number="6.7.3">
+<h3 data-number="6.7.3" class="anchored" data-anchor-id="方法三手动下载"><span class="header-section-number">6.7.3</span> 方法三：手动下载</h3>
+<p>手动下载网页上的 Skill 文件，移动到系统级或项目级的 <code>.claude/skills</code> 文件夹：</p>
+<ul>
+<li><strong>系统级</strong>：<code>~/.claude/skills/</code>（Windows：<code>C:\Users\用户名\.claude\skills\</code>）</li>
+<li><strong>项目级</strong>：<code>项目目录/.claude/skills/</code></li>
+</ul>
+</section>
+</section>
+<section id="常用快捷键" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="常用快捷键"><span class="header-section-number">6.8</span> 常用快捷键</h2>
+<ul>
+<li>Esc：打断当前工作</li>
+<li>双击 Esc：清空输入框</li>
+<li><code>\</code> + 回车：换行</li>
+<li><code>?</code>：查看快捷键</li>
+</ul>
 
 
 </section>
@@ -489,7 +504,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/jasonli357\.github\.io\/quarto_book\/");
+        var filterRegex = new RegExp("https:\/\/jasonli357\.github\.io\/Claudecode_Stata\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -823,13 +838,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../body/11_references.html" class="pagination-link" aria-label="参考资料">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">参考资料</span></span>
+      <a href="../body/04_permissions.html" class="pagination-link" aria-label="执行权限控制">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">执行权限控制</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../body/A02_stata_mcp_guide.html" class="pagination-link" aria-label="附录 B：Stata MCP 安装与配置指南">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">附录 B：Stata MCP 安装与配置指南</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../body/06_data_workflow.html" class="pagination-link" aria-label="数据处理实践">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">数据处理实践</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

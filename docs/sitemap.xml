@@ -1,59 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jasonli357.github.io/quarto_book/index.html</loc>
-    <lastmod>2026-04-18T09:32:25.705Z</lastmod>
+    <loc>https://jasonli357.github.io/Claudecode_Stata/index.html</loc>
+    <lastmod>2026-04-18T15:10:55.053Z</lastmod>
   </url>
   <url>
-    <loc>https://jasonli357.github.io/quarto_book/body/01_intro.html</loc>
-    <lastmod>2026-04-18T09:34:11.995Z</lastmod>
+    <loc>https://jasonli357.github.io/Claudecode_Stata/body/01_intro.html</loc>
+    <lastmod>2026-04-18T15:42:47.755Z</lastmod>
   </url>
   <url>
-    <loc>https://jasonli357.github.io/quarto_book/body/02_claude_md.html</loc>
-    <lastmod>2026-04-18T09:34:12.101Z</lastmod>
+    <loc>https://jasonli357.github.io/Claudecode_Stata/body/02_claude_md.html</loc>
+    <lastmod>2026-04-19T01:22:43.802Z</lastmod>
   </url>
   <url>
-    <loc>https://jasonli357.github.io/quarto_book/body/03_stata_mcp.html</loc>
-    <lastmod>2026-04-18T09:34:12.187Z</lastmod>
+    <loc>https://jasonli357.github.io/Claudecode_Stata/body/03_stata_mcp.html</loc>
+    <lastmod>2026-04-18T16:00:04.959Z</lastmod>
   </url>
   <url>
-    <loc>https://jasonli357.github.io/quarto_book/body/04_permissions.html</loc>
-    <lastmod>2026-04-18T09:35:49.926Z</lastmod>
+    <loc>https://jasonli357.github.io/Claudecode_Stata/body/04_permissions.html</loc>
+    <lastmod>2026-04-18T16:15:27.084Z</lastmod>
   </url>
   <url>
-    <loc>https://jasonli357.github.io/quarto_book/body/05_skills.html</loc>
-    <lastmod>2026-04-18T09:35:50.050Z</lastmod>
+    <loc>https://jasonli357.github.io/Claudecode_Stata/body/05_slash_commands.html</loc>
+    <lastmod>2026-04-19T01:12:39.666Z</lastmod>
   </url>
   <url>
-    <loc>https://jasonli357.github.io/quarto_book/body/06_slash_commands.html</loc>
-    <lastmod>2026-04-18T09:35:50.160Z</lastmod>
+    <loc>https://jasonli357.github.io/Claudecode_Stata/body/06_data_workflow.html</loc>
+    <lastmod>2026-04-18T16:36:51.043Z</lastmod>
   </url>
   <url>
-    <loc>https://jasonli357.github.io/quarto_book/body/07_data_workflow.html</loc>
-    <lastmod>2026-04-18T09:39:56.123Z</lastmod>
+    <loc>https://jasonli357.github.io/Claudecode_Stata/body/07_data_demo.html</loc>
+    <lastmod>2026-04-19T01:04:41.143Z</lastmod>
   </url>
   <url>
-    <loc>https://jasonli357.github.io/quarto_book/body/08_data_demo.html</loc>
-    <lastmod>2026-04-18T09:39:56.221Z</lastmod>
+    <loc>https://jasonli357.github.io/Claudecode_Stata/body/08_skills.html</loc>
+    <lastmod>2026-04-19T01:31:07.435Z</lastmod>
   </url>
   <url>
-    <loc>https://jasonli357.github.io/quarto_book/body/09_skill_intro.html</loc>
-    <lastmod>2026-04-18T09:41:53.466Z</lastmod>
+    <loc>https://jasonli357.github.io/Claudecode_Stata/body/09_skill_demo.html</loc>
+    <lastmod>2026-04-19T01:17:56.485Z</lastmod>
   </url>
   <url>
-    <loc>https://jasonli357.github.io/quarto_book/body/10_skill_demo.html</loc>
-    <lastmod>2026-04-18T09:41:53.599Z</lastmod>
+    <loc>https://jasonli357.github.io/Claudecode_Stata/body/10_references.html</loc>
+    <lastmod>2026-04-18T15:05:13.141Z</lastmod>
   </url>
   <url>
-    <loc>https://jasonli357.github.io/quarto_book/body/11_references.html</loc>
-    <lastmod>2026-04-18T09:42:51.771Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jasonli357.github.io/quarto_book/body/A01_claude_md_template.html</loc>
-    <lastmod>2026-04-18T09:42:51.869Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jasonli357.github.io/quarto_book/body/A02_stata_mcp_guide.html</loc>
-    <lastmod>2026-04-18T09:42:51.955Z</lastmod>
+    <loc>https://jasonli357.github.io/Claudecode_Stata/body/A01_stata_mcp_guide.html</loc>
+    <lastmod>2026-04-18T15:05:13.143Z</lastmod>
   </url>
 </urlset>

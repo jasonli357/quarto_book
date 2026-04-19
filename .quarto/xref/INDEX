@@ -61,5 +61,26 @@
   },
   "body/A02_stata_mcp_guide.md": {
     "A02_stata_mcp_guide.html": "b8345a84"
+  },
+  "body/A01_stata_mcp_guide.md": {
+    "A01_stata_mcp_guide.html": "3815d35c"
+  },
+  "body/05_slash_commands.md": {
+    "05_slash_commands.html": "8f94ac16"
+  },
+  "body/06_data_workflow.md": {
+    "06_data_workflow.html": "c0d533a4"
+  },
+  "body/07_data_demo.md": {
+    "07_data_demo.html": "8423f7d8"
+  },
+  "body/08_skills.md": {
+    "08_skills.html": "79c8793d"
+  },
+  "body/09_skill_demo.md": {
+    "09_skill_demo.html": "56d40d8a"
+  },
+  "body/10_references.md": {
+    "10_references.html": "12b91484"
   }
 }

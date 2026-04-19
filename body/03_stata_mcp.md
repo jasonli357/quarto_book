@@ -2,13 +2,11 @@
 
 ## 什么是 Stata MCP
 
-MCP（Model Context Protocol）是一种让 AI 模型与外部工具交互的协议。Stata MCP 是基于此协议开发的工具，它将 Stata 变成了一个**可交互的服务**，而不是每次冷启动一个独立进程。
+MCP（Model Context Protocol）是一种让 AI 模型与外部工具交互的协议。Stata MCP 是基于此协议开发的工具，它增强了 AI 与 Stata 的交互能力。
 
 ## 安装步骤
 
 安装 Stata MCP 需要以下步骤：
-
-![Stata MCP 架构](https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20260407205148.png)
 
 ### 1. 在 VS Code 安装 Stata MCP 插件
 
@@ -29,8 +27,10 @@ claude mcp add --transport sse stata-mcp http://localhost:4000/mcp --scope user
 ::: callout-important
 ## 前提条件
 
-使用 Stata MCP 需要有效的 Stata 授权文件（`stata.lic`）。如果没有授权，请使用方案一（CLAUDE.md 配置）。
+使用 Stata MCP 需要有效的 Stata 授权文件（`STATA.LIC`）。如果没有授权，请使用方案一（CLAUDE.md 配置）。
 :::
+
+![STATA.LIC文件如图](https://fig-lianxh.oss-cn-shenzhen.aliyuncs.com/20260407205148.png)
 
 ## Stata MCP 的功能
 
@@ -42,7 +42,7 @@ Stata MCP 提供两个核心工具：
 
 ## 命令行 vs Stata MCP 对比
 
-既然 Claude Code 可以用命令行方式执行 Stata（`"/d/stata18/StataMP-64.exe" /e do "script.do"`），那 Stata MCP 还有什么意义？
+既然 Claude Code 可以用命令行方式运行 Stata（`"/d/stata18/StataMP-64.exe" /e do "script.do"`），那 Stata MCP 还有什么意义？
 
 ### 命令行方式的流程
 
@@ -52,7 +52,7 @@ Stata MCP 提供两个核心工具：
 2. `Bash` — 执行 `StataMP-64.exe /e do script.do`
 3. `Read` — 读取 `.log` 文件查看结果
 
-而且每次运行都是**启动一个新的 Stata 进程**，上次加载数据的状态不会保留。
+而且每次运行都是**启动一个新的 Stata 进程**（相当于新打开一个 Stata 窗口），上次加载数据的状态不会保留。
 
 ### Stata MCP 的流程
 
@@ -86,7 +86,7 @@ summarize income        // 直接对已加载的数据做分析
 reg y x1 x2            // 继续在同一个数据上回归
 ```
 
-而命令行方式每次都得重新加载数据，对于大数据集来说非常浪费时间。
+而命令行方式每次都要重新加载数据，对于大数据集来说非常浪费时间。
 
 ## 小结
 

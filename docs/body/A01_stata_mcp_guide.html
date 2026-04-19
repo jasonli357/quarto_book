@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; 创建与使用 stata-data-cleaner Skill – Claude Code 协同 Stata</title>
+<title>12&nbsp; 附录 A：Stata MCP 安装与配置指南 – Claude Code x Stata</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -68,8 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../body/11_references.html" rel="next">
-<link href="../body/09_skill_intro.html" rel="prev">
+<link href="../body/10_references.html" rel="prev">
 <link href="../images/book-logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -122,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/09_skill_intro.html"><strong>Skill 创建与复用</strong></a></li><li class="breadcrumb-item"><a href="../body/10_skill_demo.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">创建与使用 stata-data-cleaner Skill</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/A01_stata_mcp_guide.html"><strong>附录</strong></a></li><li class="breadcrumb-item"><a href="../body/A01_stata_mcp_guide.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">附录 A：Stata MCP 安装与配置指南</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -136,14 +135,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="https://jasonli357.github.io/quarto_book/" class="sidebar-logo-link">
+      <a href="https://jasonli357.github.io/Claudecode_Stata/" class="sidebar-logo-link">
       <img src="../images/book-logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
       <img src="../images/book-logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Claude Code x Stata</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/jasonli357/quarto_book" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://github.com/jasonli357/Claudecode_Stata" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -211,14 +210,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/05_skills.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">技能包：发现、安装与管理</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/06_slash_commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">常用斜杠命令</span></span></a>
+  <a href="../body/05_slash_commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">常用斜杠命令</span></span></a>
   </div>
 </li>
       </ul>
@@ -234,14 +227,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/07_data_workflow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">先计划、后执行：数据处理工作流</span></span></a>
+  <a href="../body/06_data_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">数据处理实践</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/08_data_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></span></a>
+  <a href="../body/07_data_demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></span></a>
   </div>
 </li>
       </ul>
@@ -257,14 +250,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/09_skill_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">为什么要创建数据处理 Skill</span></span></a>
+  <a href="../body/08_skills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Skills 简介</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/10_skill_demo.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">创建与使用 stata-data-cleaner Skill</span></span></a>
+  <a href="../body/09_skill_demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">创建与使用 stata-data-cleaner Skill</span></span></a>
   </div>
 </li>
       </ul>
@@ -280,8 +273,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/11_references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">参考资料</span></span></a>
+  <a href="../body/10_references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">相关链接</span></span></a>
   </div>
 </li>
       </ul>
@@ -297,14 +290,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/A01_claude_md_template.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">附录 A：CLAUDE.md 模板</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/A02_stata_mcp_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">附录 B：Stata MCP 安装与配置指南</span></span></a>
+  <a href="../body/A01_stata_mcp_guide.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">附录 A：Stata MCP 安装与配置指南</span></span></a>
   </div>
 </li>
       </ul>
@@ -319,32 +306,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#创建-skill" id="toc-创建-skill" class="nav-link active" data-scroll-target="#创建-skill"><span class="header-section-number">11.1</span> 创建 Skill</a>
+  <li><a href="#前提条件" id="toc-前提条件" class="nav-link active" data-scroll-target="#前提条件"><span class="header-section-number">12.1</span> 前提条件</a></li>
+  <li><a href="#安装步骤" id="toc-安装步骤" class="nav-link" data-scroll-target="#安装步骤"><span class="header-section-number">12.2</span> 安装步骤</a>
   <ul class="collapse">
-  <li><a href="#创建-prompt" id="toc-创建-prompt" class="nav-link" data-scroll-target="#创建-prompt"><span class="header-section-number">11.1.1</span> 创建 prompt</a></li>
-  <li><a href="#创建过程" id="toc-创建过程" class="nav-link" data-scroll-target="#创建过程"><span class="header-section-number">11.1.2</span> 创建过程</a></li>
+  <li><a href="#第一步安装-vs-code-扩展" id="toc-第一步安装-vs-code-扩展" class="nav-link" data-scroll-target="#第一步安装-vs-code-扩展"><span class="header-section-number">12.2.1</span> 第一步：安装 VS Code 扩展</a></li>
+  <li><a href="#第二步配置-stata-路径" id="toc-第二步配置-stata-路径" class="nav-link" data-scroll-target="#第二步配置-stata-路径"><span class="header-section-number">12.2.2</span> 第二步：配置 Stata 路径</a></li>
+  <li><a href="#第三步在-claude-code-中注册-mcp-服务器" id="toc-第三步在-claude-code-中注册-mcp-服务器" class="nav-link" data-scroll-target="#第三步在-claude-code-中注册-mcp-服务器"><span class="header-section-number">12.2.3</span> 第三步：在 Claude Code 中注册 MCP 服务器</a></li>
+  <li><a href="#第四步验证" id="toc-第四步验证" class="nav-link" data-scroll-target="#第四步验证"><span class="header-section-number">12.2.4</span> 第四步：验证</a></li>
   </ul></li>
-  <li><a href="#生成的-skill-结构" id="toc-生成的-skill-结构" class="nav-link" data-scroll-target="#生成的-skill-结构"><span class="header-section-number">11.2</span> 生成的 Skill 结构</a></li>
-  <li><a href="#阶段工作流详解" id="toc-阶段工作流详解" class="nav-link" data-scroll-target="#阶段工作流详解"><span class="header-section-number">11.3</span> 5 阶段工作流详解</a>
+  <li><a href="#常见问题" id="toc-常见问题" class="nav-link" data-scroll-target="#常见问题"><span class="header-section-number">12.3</span> 常见问题</a>
   <ul class="collapse">
-  <li><a href="#phase-1explore-探索数据结构" id="toc-phase-1explore-探索数据结构" class="nav-link" data-scroll-target="#phase-1explore-探索数据结构"><span class="header-section-number">11.3.1</span> Phase 1：Explore — 探索数据结构</a></li>
-  <li><a href="#phase-2diagnose-诊断数据质量问题" id="toc-phase-2diagnose-诊断数据质量问题" class="nav-link" data-scroll-target="#phase-2diagnose-诊断数据质量问题"><span class="header-section-number">11.3.2</span> Phase 2：Diagnose — 诊断数据质量问题</a></li>
-  <li><a href="#phase-3consult-向用户确认" id="toc-phase-3consult-向用户确认" class="nav-link" data-scroll-target="#phase-3consult-向用户确认"><span class="header-section-number">11.3.3</span> Phase 3：Consult — 向用户确认</a></li>
-  <li><a href="#phase-4execute-生成并执行代码" id="toc-phase-4execute-生成并执行代码" class="nav-link" data-scroll-target="#phase-4execute-生成并执行代码"><span class="header-section-number">11.3.4</span> Phase 4：Execute — 生成并执行代码</a></li>
-  <li><a href="#phase-5document-输出与文档" id="toc-phase-5document-输出与文档" class="nav-link" data-scroll-target="#phase-5document-输出与文档"><span class="header-section-number">11.3.5</span> Phase 5：Document — 输出与文档</a></li>
+  <li><a href="#问题一stata-connected-不显示" id="toc-问题一stata-connected-不显示" class="nav-link" data-scroll-target="#问题一stata-connected-不显示"><span class="header-section-number">12.3.1</span> 问题一：“Stata: Connected” 不显示</a></li>
+  <li><a href="#问题二claude-code-提示找不到-stata-mcp" id="toc-问题二claude-code-提示找不到-stata-mcp" class="nav-link" data-scroll-target="#问题二claude-code-提示找不到-stata-mcp"><span class="header-section-number">12.3.2</span> 问题二：Claude Code 提示找不到 stata-mcp</a></li>
+  <li><a href="#问题三路径错误-r601" id="toc-问题三路径错误-r601" class="nav-link" data-scroll-target="#问题三路径错误-r601"><span class="header-section-number">12.3.3</span> 问题三：路径错误 r(601)</a></li>
   </ul></li>
-  <li><a href="#关键-stata-代码模式" id="toc-关键-stata-代码模式" class="nav-link" data-scroll-target="#关键-stata-代码模式"><span class="header-section-number">11.4</span> 关键 Stata 代码模式</a></li>
-  <li><a href="#常见陷阱与排错" id="toc-常见陷阱与排错" class="nav-link" data-scroll-target="#常见陷阱与排错"><span class="header-section-number">11.5</span> 常见陷阱与排错</a></li>
-  <li><a href="#使用-skill-清洗数据" id="toc-使用-skill-清洗数据" class="nav-link" data-scroll-target="#使用-skill-清洗数据"><span class="header-section-number">11.6</span> 使用 Skill 清洗数据</a></li>
+  <li><a href="#mcp-管理命令" id="toc-mcp-管理命令" class="nav-link" data-scroll-target="#mcp-管理命令"><span class="header-section-number">12.4</span> MCP 管理命令</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/09_skill_intro.html"><strong>Skill 创建与复用</strong></a></li><li class="breadcrumb-item"><a href="../body/10_skill_demo.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">创建与使用 stata-data-cleaner Skill</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/A01_stata_mcp_guide.html"><strong>附录</strong></a></li><li class="breadcrumb-item"><a href="../body/A01_stata_mcp_guide.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">附录 A：Stata MCP 安装与配置指南</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-skill-demo" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">创建与使用 stata-data-cleaner Skill</span></span></h1>
+<h1 class="title"><span id="sec-a1-stata-mcp" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">附录 A：Stata MCP 安装与配置指南</span></span></h1>
 </div>
 
 
@@ -361,296 +346,115 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>本章详细介绍 <code>stata-data-cleaner</code> Skill 的创建过程、工作原理和使用方法。</p>
-<section id="创建-skill" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="创建-skill"><span class="header-section-number">11.1</span> 创建 Skill</h2>
-<section id="创建-prompt" class="level3" data-number="11.1.1">
-<h3 data-number="11.1.1" class="anchored" data-anchor-id="创建-prompt"><span class="header-section-number">11.1.1</span> 创建 prompt</h3>
-<p>在 plan mode 下输入以下 prompt，让 AI 根据已有的数据处理经验创建 Skill：</p>
-<pre><code>现在 data/raw/ 里面的数据清洗完了。请你把清洗数据的流程打包成一个
-skill，放在当前项目文件夹。参考之前的清洗流程和清洗代码，让 skill
-实现以下功能：
-
-1. 自己探索数据结构（尽可能快速，不要扫描整个大型数据集）
-2. 全面检查数据预处理操作（保留合并报表、保留年度数据、统一变量名、
-   字符型转数值型、剔除金融行业、剔除 ST 样本、剔除异常值、去重、
-   缩尾等）是否需要进行
-3. 尤其关注缺失值的情况
-4. 如果不确定某个操作是否需要进行，要向我提问
-5. 根据需求判断是处理单个数据集还是合并多个数据集
-6. 根据需求保留和计算需要的变量
-7. 清洗完成后进行描述性统计
-
-最终输出：.do 文档、.dta 文件、数据处理工作小结 .md 文档
-
-用 stata mcp 调用 stata，不要用命令行调用。
-因为每次处理的数据结构可能不一样，考虑到的情况要尽可能全面。</code></pre>
-</section>
-<section id="创建过程" class="level3" data-number="11.1.2">
-<h3 data-number="11.1.2" class="anchored" data-anchor-id="创建过程"><span class="header-section-number">11.1.2</span> 创建过程</h3>
-<p>AI 会分析之前的清洗代码和工作小结，提炼出通用的数据处理流程，然后生成：</p>
+<p>本附录提供 Stata MCP 的详细安装步骤和常见问题解决方法。</p>
+<section id="前提条件" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="前提条件"><span class="header-section-number">12.1</span> 前提条件</h2>
 <ul>
-<li><code>SKILL.md</code>：核心定义文件，包含元数据和 5 阶段工作流</li>
-<li><code>references/operations-guide.md</code>：详细操作参考手册</li>
+<li>有效的 Stata 授权文件（<code>stata.lic</code>）</li>
+<li>VS Code 编辑器</li>
+<li>Claude Code CLI</li>
 </ul>
-<p>创建过程约 7 分钟。</p>
 </section>
-</section>
-<section id="生成的-skill-结构" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="生成的-skill-结构"><span class="header-section-number">11.2</span> 生成的 Skill 结构</h2>
-<pre><code>.claude/skills/stata-data-cleaner/
-├── SKILL.md                    # 核心文件
-└── references/
-    └── operations-guide.md     # 操作参考手册</code></pre>
-</section>
-<section id="阶段工作流详解" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="阶段工作流详解"><span class="header-section-number">11.3</span> 5 阶段工作流详解</h2>
-<section id="phase-1explore-探索数据结构" class="level3" data-number="11.3.1">
-<h3 data-number="11.3.1" class="anchored" data-anchor-id="phase-1explore-探索数据结构"><span class="header-section-number">11.3.1</span> Phase 1：Explore — 探索数据结构</h3>
-<p>目标：快速了解数据，<strong>不导入整个大数据集</strong>（有些文件超过 300 MB）。</p>
-<p><strong>步骤：</strong></p>
+<section id="安装步骤" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="安装步骤"><span class="header-section-number">12.2</span> 安装步骤</h2>
+<section id="第一步安装-vs-code-扩展" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="第一步安装-vs-code-扩展"><span class="header-section-number">12.2.1</span> 第一步：安装 VS Code 扩展</h3>
 <ol type="1">
-<li><strong>扫描数据目录</strong> — 列出所有文件和子目录，识别文件格式和目录结构</li>
-<li><strong>读取说明文件</strong>（最快途径） — CSMAR 数据有 <code>[DES][csv].txt</code> 文件，包含完整的变量定义</li>
-<li><strong>用 Stata 确认</strong> — 导入少量样本行确认文档描述</li>
+<li>打开 VS Code</li>
+<li>进入扩展商店（Ctrl+Shift+X）</li>
+<li>搜索 “Stata MCP”</li>
+<li>点击安装</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>import delimited <span class="st">"C:/path/file.csv"</span>, <span class="kw">clear</span> <span class="fu">rowfirst</span>(2) <span class="co">///</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    encoding(<span class="st">"utf8"</span>) bindquote(<span class="ot">strict</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">describe</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ot">list</span> <span class="kw">in</span> 1/3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>关键确认事项：</strong></p>
-<ul>
-<li>变量名在 Stata 中会被 <code>import delimited</code> <strong>全部小写化</strong></li>
-<li>金额是否以字符串存储</li>
-<li>日期格式和标识符格式</li>
-</ul>
 </section>
-<section id="phase-2diagnose-诊断数据质量问题" class="level3" data-number="11.3.2">
-<h3 data-number="11.3.2" class="anchored" data-anchor-id="phase-2diagnose-诊断数据质量问题"><span class="header-section-number">11.3.2</span> Phase 2：Diagnose — 诊断数据质量问题</h3>
-<p>对每个数据集进行针对性检查：</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>检查项</th>
-<th>方法</th>
-<th>关注点</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>重复记录</td>
-<td><code>duplicates report</code></td>
-<td>是否有多种报表类型或重述报告</td>
-</tr>
-<tr class="even">
-<td>缺失值</td>
-<td><code>misstable summarize</code></td>
-<td>缺失率 &gt;10% 的变量需报告给用户</td>
-</tr>
-<tr class="odd">
-<td>类型问题</td>
-<td><code>describe</code></td>
-<td>数值是否被存储为字符串</td>
-</tr>
-<tr class="even">
-<td>报表类型分布</td>
-<td><code>tab typrep</code></td>
-<td>合并 vs 母公司报表比例</td>
-</tr>
-<tr class="odd">
-<td>行业分布</td>
-<td><code>tab substr(industrycode,1,1)</code></td>
-<td>金融业占比</td>
-</tr>
-<tr class="even">
-<td>特殊情况</td>
-<td><code>count if strpos(shortname,"ST")</code></td>
-<td>ST 股、负资产、极端值</td>
-</tr>
-</tbody>
-</table>
-<p><strong>缺失值的关键分析：</strong></p>
-<ul>
-<li><strong>合并风险</strong>：数据集 A 的变量 X 有 5% 缺失，数据集 B 的变量 Y 有 8% 缺失，合并后至少有一个缺失的比例可能达到 13%</li>
-<li><strong>计算风险</strong>：ROA = 净利润 / 总资产，如果净利润有高缺失率，计算出的 ROA 缺失率会更高</li>
-</ul>
-</section>
-<section id="phase-3consult-向用户确认" class="level3" data-number="11.3.3">
-<h3 data-number="11.3.3" class="anchored" data-anchor-id="phase-3consult-向用户确认"><span class="header-section-number">11.3.3</span> Phase 3：Consult — 向用户确认</h3>
-<p>只询问<strong>真正不确定</strong>的事情。如果数据中没有 ST 股票，就不需要问是否要剔除。</p>
-<p><strong>必问项：</strong></p>
+<section id="第二步配置-stata-路径" class="level3" data-number="12.2.2">
+<h3 data-number="12.2.2" class="anchored" data-anchor-id="第二步配置-stata-路径"><span class="header-section-number">12.2.2</span> 第二步：配置 Stata 路径</h3>
 <ol type="1">
-<li>需要计算哪些变量？—— 用户的研究问题决定一切</li>
-<li>需要合并哪些数据集？—— 确认合并键</li>
+<li>打开 VS Code 设置（Ctrl+,）</li>
+<li>搜索 “Stata MCP”</li>
+<li>在 Stata 安装路径设置中填入你的 Stata 可执行文件所在文件夹（而不是可执行文件本身的路径）
+<ul>
+<li>Windows 示例：<code>D:/stata18</code></li>
+<li>错误示例：<code>D:/stata18/StataMP-64.exe</code></li>
+</ul></li>
+<li>保存设置后，检查 VS Code <strong>右下角状态栏</strong></li>
+<li>如果显示 <strong>“Stata: Connected”</strong>，说明连接成功</li>
 </ol>
-<p><strong>条件性询问</strong>（仅当数据中存在该问题时才问）：</p>
-<ol start="3" type="1">
-<li>是否剔除金融行业？（默认：是）</li>
-<li>是否剔除 ST 股票？（默认：是）</li>
-<li>缩尾比例？（默认：1%/99%）</li>
-<li>时间范围？</li>
-<li>年度还是季度？</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>合并前必须告知
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>在执行合并前，Skill 会向用户报告每个数据集的观测数和预计匹配率，以及可能丢失的观测数量。例如：“资产负债表有 43,292 条年报，利润表有 43,292 条。合并后预计匹配约 43,000 条。”</p>
-</div>
-</div>
 </section>
-<section id="phase-4execute-生成并执行代码" class="level3" data-number="11.3.4">
-<h3 data-number="11.3.4" class="anchored" data-anchor-id="phase-4execute-生成并执行代码"><span class="header-section-number">11.3.4</span> Phase 4：Execute — 生成并执行代码</h3>
-<p>Skill 会生成一个结构化的 <code>.do</code> 文件：</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>* ============================================================</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>* [描述处理目的]</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>* ============================================================</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">clear</span> <span class="ot">all</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">set</span> <span class="kw">more</span> <span class="kw">off</span></span>
+<section id="第三步在-claude-code-中注册-mcp-服务器" class="level3" data-number="12.2.3">
+<h3 data-number="12.2.3" class="anchored" data-anchor-id="第三步在-claude-code-中注册-mcp-服务器"><span class="header-section-number">12.2.3</span> 第三步：在 Claude Code 中注册 MCP 服务器</h3>
+<p>在终端中运行以下命令：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse stata-mcp http://localhost:4000/mcp <span class="at">--scope</span> user</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p>此命令以及 Stata MCP 服务器在其他代码编辑器（如 Cursor）的配置方式可在 <a href="https://github.com/hanlulong/stata-mcp">Stata MCP 的 Github 主页</a> 的 “Detailed Configurations” 处找到</p>
+</blockquote>
+<ul>
+<li><code>--scope user</code> 表示全局注册，所有项目都可以使用</li>
+<li>如果只想在当前项目中使用，改用 <code>--scope project</code></li>
+</ul>
+</section>
+<section id="第四步验证" class="level3" data-number="12.2.4">
+<h3 data-number="12.2.4" class="anchored" data-anchor-id="第四步验证"><span class="header-section-number">12.2.4</span> 第四步：验证</h3>
+<p>重启 VS Code 及终端，对 Claude Code 说：“测试一下能否运行 Stata MCP”。</p>
+<p>或者尝试手动运行一段简单的 Stata 代码：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">display</span> <span class="st">"Hello from Stata MCP!"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>如果结果正常返回到对话中，说明配置成功。</p>
+</section>
+</section>
+<section id="常见问题" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="常见问题"><span class="header-section-number">12.3</span> 常见问题</h2>
+<section id="问题一stata-connected-不显示" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="问题一stata-connected-不显示"><span class="header-section-number">12.3.1</span> 问题一：“Stata: Connected” 不显示</h3>
+<p><strong>可能原因：</strong></p>
+<ul>
+<li>Stata 路径配置错误</li>
+<li>Stata 授权文件缺失或过期</li>
+<li>VS Code 扩展未正确加载</li>
+</ul>
+<p><strong>解决方法：</strong></p>
+<ol type="1">
+<li>确认 Stata 路径正确（在文件管理器中验证路径是否存在）</li>
+<li>检查 <code>stata.lic</code> 文件是否在 Stata 安装目录下</li>
+<li>重启 VS Code</li>
+</ol>
+</section>
+<section id="问题二claude-code-提示找不到-stata-mcp" class="level3" data-number="12.3.2">
+<h3 data-number="12.3.2" class="anchored" data-anchor-id="问题二claude-code-提示找不到-stata-mcp"><span class="header-section-number">12.3.2</span> 问题二：Claude Code 提示找不到 stata-mcp</h3>
+<p><strong>可能原因：</strong></p>
+<ul>
+<li>MCP 服务器未注册</li>
+<li>Stata MCP 服务未启动</li>
+</ul>
+<p><strong>解决方法：</strong></p>
+<ol type="1">
+<li>没有重启 VS Code 或终端</li>
+<li>重新运行注册命令</li>
+<li>确认 VS Code 中 Stata MCP 扩展已启用</li>
+<li>运行 <code>claude mcp list</code> 查看已注册的 MCP 服务器</li>
+</ol>
+</section>
+<section id="问题三路径错误-r601" class="level3" data-number="12.3.3">
+<h3 data-number="12.3.3" class="anchored" data-anchor-id="问题三路径错误-r601"><span class="header-section-number">12.3.3</span> 问题三：路径错误 r(601)</h3>
+<p><strong>可能原因：</strong></p>
+<ul>
+<li>Claude Code 使用了 WSL 路径格式（<code>/mnt/c/...</code>）</li>
+</ul>
+<p><strong>解决方法：</strong></p>
+<p>在项目 <code>CLAUDE.md</code> 中明确写明：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Stata MCP 运行在 Windows 端，必须使用 Windows 路径格式</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>（C:/Users/...），不能用 WSL 的 /mnt/c/... 格式</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="mcp-管理命令" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="mcp-管理命令"><span class="header-section-number">12.4</span> MCP 管理命令</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看已注册的 MCP 服务器</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp list</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 移除 MCP 服务器</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp remove stata-mcp</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>* --- 1. 导入数据 ---</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>* --- 2. 变量准备 ---     (<span class="kw">rename</span>, <span class="kw">destring</span>, 日期提取)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>* --- 3. 筛选 ---         (报表类型、时间范围、行业)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>* --- 4. 去重 ---</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>* --- 5. 合并 ---         (含 <span class="dt">_merge</span> 诊断)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>* --- 6. 样本筛选 ---     (金融、ST、负资产等)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>* --- 7. 变量计算 ---</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>* --- 8. 缺失值处理 ---</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>* --- 9. 缩尾 ---</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>* --- 10. 变量标签 ---</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>* --- 11. 描述性统计 ---</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>* --- 12. 保存 ---</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>如果执行出错，Skill 会读取错误信息、修复代码并重新执行，不会盲目重试。</p>
-</section>
-<section id="phase-5document-输出与文档" class="level3" data-number="11.3.5">
-<h3 data-number="11.3.5" class="anchored" data-anchor-id="phase-5document-输出与文档"><span class="header-section-number">11.3.5</span> Phase 5：Document — 输出与文档</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>输出</th>
-<th>位置</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>.do</code> 文件</td>
-<td><code>code/</code></td>
-<td>完整的、带注释的 Stata 代码</td>
-</tr>
-<tr class="even">
-<td><code>.dta</code> 文件</td>
-<td><code>data/processed/</code></td>
-<td>清洗后的数据集</td>
-</tr>
-<tr class="odd">
-<td><code>.md</code> 文件</td>
-<td><code>file/</code></td>
-<td>处理报告（操作记录 + 描述性统计）</td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="关键-stata-代码模式" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="关键-stata-代码模式"><span class="header-section-number">11.4</span> 关键 Stata 代码模式</h2>
-<p>Skill 中内置了以下常用模式：</p>
-<p><strong>导入 CSV（处理 CSMAR 编码和引号）：</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>import delimited <span class="st">"C:/path/file.csv"</span>, <span class="kw">clear</span> encoding(<span class="st">"utf8"</span>) bindquote(<span class="ot">strict</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>从日期字符串提取年份：</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> <span class="fu">year</span> = <span class="fu">real</span>(<span class="fu">substr</span>(datevar, 1, 4))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>筛选年度 + 合并报表（CSMAR 惯例）：</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">keep</span> <span class="kw">if</span> <span class="fu">substr</span>(accper, 6, 2) == <span class="st">"12"</span> &amp; typrep == <span class="st">"A"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>不依赖外部包的缩尾：</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">foreach</span> <span class="kw">var</span> <span class="kw">of</span> <span class="kw">varlist</span> var1 var2 var3 {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    _pctile <span class="ot">`var'</span>, percentiles(1 99)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">local</span> p1 = <span class="fu">r</span>(r1)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">local</span> p99 = <span class="fu">r</span>(r2)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">replace</span> <span class="ot">`var'</span> = <span class="ot">`p1'</span> <span class="kw">if</span> <span class="ot">`var'</span> &lt; <span class="ot">`p1'</span> &amp; !<span class="fu">missing</span>(<span class="ot">`var'</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">replace</span> <span class="ot">`var'</span> = <span class="ot">`p99'</span> <span class="kw">if</span> <span class="ot">`var'</span> &gt; <span class="ot">`p99'</span> &amp; !<span class="fu">missing</span>(<span class="ot">`var'</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>计算增长率（安全版本）：</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">sort</span> stkcd <span class="fu">year</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">by</span> stkcd: <span class="kw">gen</span> growth = (revenue - revenue[<span class="dt">_n</span>-1]) <span class="co">///</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    / <span class="fu">abs</span>(revenue[<span class="dt">_n</span>-1]) <span class="kw">if</span> <span class="dt">_n</span> &gt; 1 &amp; revenue[<span class="dt">_n</span>-1] != 0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>注意使用 <code>abs()</code> 和 <code>!= 0</code> 检查来处理基期为负值或零的情况。</p>
-<p><strong>带诊断的合并：</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">merge</span> 1:1 stkcd <span class="fu">year</span> <span class="kw">using</span> <span class="ot">`other'</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">tab</span> <span class="dt">_merge</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">drop</span> <span class="kw">if</span> <span class="dt">_merge</span> != 3</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">drop</span> <span class="dt">_merge</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="常见陷阱与排错" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="常见陷阱与排错"><span class="header-section-number">11.5</span> 常见陷阱与排错</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 27%">
-<col style="width: 27%">
-<col style="width: 45%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>陷阱</th>
-<th>原因</th>
-<th>解决方法</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>变量名找不到</td>
-<td><code>import delimited</code> 会将所有变量名<strong>小写化</strong></td>
-<td>代码中统一使用小写变量名</td>
-</tr>
-<tr class="even">
-<td>CSV 导入引号错误</td>
-<td>CSMAR 的值被双引号包裹</td>
-<td>使用 <code>bindquote(strict)</code></td>
-</tr>
-<tr class="odd">
-<td>空字符串 ≠ 缺失值</td>
-<td>CSMAR 用空 <code>""</code> 表示缺失，导入后是空字符串不是 Stata 缺失值</td>
-<td>对数值列执行 <code>destring, replace force</code></td>
-</tr>
-<tr class="even">
-<td>路径错误</td>
-<td>Stata MCP 运行在 Windows 端</td>
-<td>始终使用 <code>C:/Users/...</code>，不用 <code>/mnt/c/...</code></td>
-</tr>
-<tr class="odd">
-<td>内存不足</td>
-<td>资产负债表可达 300+ MB</td>
-<td>先筛选（保留年度+合并报表）再处理</td>
-</tr>
-<tr class="even">
-<td>增长率分母为零</td>
-<td>上期营收为零或负值</td>
-<td>使用 <code>abs()</code> 并添加 <code>!= 0</code> 检查</td>
-</tr>
-<tr class="odd">
-<td>合并键类型不匹配</td>
-<td>一边是字符串，一边是数值</td>
-<td>合并前确保两边类型一致</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="使用-skill-清洗数据" class="level2" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="使用-skill-清洗数据"><span class="header-section-number">11.6</span> 使用 Skill 清洗数据</h2>
-<p>创建完成后，使用这个 Skill 清洗数据的流程非常简单：</p>
-<ol type="1">
-<li>将原始数据放入 <code>data/raw/</code></li>
-<li>在 Claude Code 中描述你的需求（例如”清洗这些数据并计算 Size、ROA”）</li>
-<li>Skill 自动触发，执行 5 阶段工作流</li>
-<li>在 Phase 3 确认 Skill 提出的问题</li>
-<li>等待执行完成，查看输出文件</li>
-</ol>
-<p>使用 Skill 清洗同样的 CSMAR 数据，全程约 7 分钟，比从零开始快得多。</p>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看 MCP 服务器详情</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp get stata-mcp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>或在 claude code 用斜杠命令：<code>/mcp</code></p>
 
 
 </section>
@@ -729,7 +533,7 @@ skill，放在当前项目文件夹。参考之前的清洗流程和清洗代码
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/jasonli357\.github\.io\/quarto_book\/");
+        var filterRegex = new RegExp("https:\/\/jasonli357\.github\.io\/Claudecode_Stata\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1063,14 +867,11 @@ skill，放在当前项目文件夹。参考之前的清洗流程和清洗代码
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../body/09_skill_intro.html" class="pagination-link" aria-label="为什么要创建数据处理 Skill">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">为什么要创建数据处理 Skill</span></span>
+      <a href="../body/10_references.html" class="pagination-link" aria-label="相关链接">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">相关链接</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../body/11_references.html" class="pagination-link" aria-label="参考资料">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">参考资料</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; 先计划、后执行：数据处理工作流 – Claude Code 协同 Stata</title>
+<title>7&nbsp; 数据处理实践 – Claude Code x Stata</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -68,8 +68,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../body/08_data_demo.html" rel="next">
-<link href="../body/06_slash_commands.html" rel="prev">
+<link href="../body/07_data_demo.html" rel="next">
+<link href="../body/05_slash_commands.html" rel="prev">
 <link href="../images/book-logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -122,7 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/07_data_workflow.html"><strong>数据处理实战</strong></a></li><li class="breadcrumb-item"><a href="../body/07_data_workflow.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">先计划、后执行：数据处理工作流</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/06_data_workflow.html"><strong>数据处理实战</strong></a></li><li class="breadcrumb-item"><a href="../body/06_data_workflow.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">数据处理实践</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -136,14 +136,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="https://jasonli357.github.io/quarto_book/" class="sidebar-logo-link">
+      <a href="https://jasonli357.github.io/Claudecode_Stata/" class="sidebar-logo-link">
       <img src="../images/book-logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
       <img src="../images/book-logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Claude Code x Stata</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/jasonli357/quarto_book" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://github.com/jasonli357/Claudecode_Stata" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -211,14 +211,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/05_skills.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">技能包：发现、安装与管理</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/06_slash_commands.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">常用斜杠命令</span></span></a>
+  <a href="../body/05_slash_commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">常用斜杠命令</span></span></a>
   </div>
 </li>
       </ul>
@@ -234,14 +228,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/07_data_workflow.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">先计划、后执行：数据处理工作流</span></span></a>
+  <a href="../body/06_data_workflow.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">数据处理实践</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/08_data_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></span></a>
+  <a href="../body/07_data_demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></span></a>
   </div>
 </li>
       </ul>
@@ -257,14 +251,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/09_skill_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">为什么要创建数据处理 Skill</span></span></a>
+  <a href="../body/08_skills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Skills 简介</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/10_skill_demo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">创建与使用 stata-data-cleaner Skill</span></span></a>
+  <a href="../body/09_skill_demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">创建与使用 stata-data-cleaner Skill</span></span></a>
   </div>
 </li>
       </ul>
@@ -280,8 +274,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/11_references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">参考资料</span></span></a>
+  <a href="../body/10_references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">相关链接</span></span></a>
   </div>
 </li>
       </ul>
@@ -297,14 +291,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../body/A01_claude_md_template.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">附录 A：CLAUDE.md 模板</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../body/A02_stata_mcp_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">附录 B：Stata MCP 安装与配置指南</span></span></a>
+  <a href="../body/A01_stata_mcp_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">附录 A：Stata MCP 安装与配置指南</span></span></a>
   </div>
 </li>
       </ul>
@@ -319,29 +307,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#整体流程" id="toc-整体流程" class="nav-link active" data-scroll-target="#整体流程"><span class="header-section-number">8.1</span> 整体流程</a></li>
-  <li><a href="#step-1在-claude.md-中明确项目约定" id="toc-step-1在-claude.md-中明确项目约定" class="nav-link" data-scroll-target="#step-1在-claude.md-中明确项目约定"><span class="header-section-number">8.2</span> Step 1：在 CLAUDE.md 中明确项目约定</a></li>
-  <li><a href="#step-2打开-plan-mode说明任务需求" id="toc-step-2打开-plan-mode说明任务需求" class="nav-link" data-scroll-target="#step-2打开-plan-mode说明任务需求"><span class="header-section-number">8.3</span> Step 2：打开 plan mode，说明任务需求</a>
+  <li><a href="#整体流程" id="toc-整体流程" class="nav-link active" data-scroll-target="#整体流程"><span class="header-section-number">7.1</span> 整体流程</a></li>
+  <li><a href="#step-1在-claude.md-中明确项目约定" id="toc-step-1在-claude.md-中明确项目约定" class="nav-link" data-scroll-target="#step-1在-claude.md-中明确项目约定"><span class="header-section-number">7.2</span> Step 1：在 CLAUDE.md 中明确项目约定</a></li>
+  <li><a href="#step-2打开-plan-mode说明任务需求" id="toc-step-2打开-plan-mode说明任务需求" class="nav-link" data-scroll-target="#step-2打开-plan-mode说明任务需求"><span class="header-section-number">7.3</span> Step 2：打开 plan mode，说明任务需求</a>
   <ul class="collapse">
-  <li><a href="#示例-prompt" id="toc-示例-prompt" class="nav-link" data-scroll-target="#示例-prompt"><span class="header-section-number">8.3.1</span> 示例 prompt</a></li>
-  <li><a href="#ai-的工作过程" id="toc-ai-的工作过程" class="nav-link" data-scroll-target="#ai-的工作过程"><span class="header-section-number">8.3.2</span> AI 的工作过程</a></li>
+  <li><a href="#示例-prompt" id="toc-示例-prompt" class="nav-link" data-scroll-target="#示例-prompt"><span class="header-section-number">7.3.1</span> 示例 prompt</a></li>
+  <li><a href="#ai-的工作过程" id="toc-ai-的工作过程" class="nav-link" data-scroll-target="#ai-的工作过程"><span class="header-section-number">7.3.2</span> AI 的工作过程</a></li>
   </ul></li>
-  <li><a href="#step-3确认计划并执行" id="toc-step-3确认计划并执行" class="nav-link" data-scroll-target="#step-3确认计划并执行"><span class="header-section-number">8.4</span> Step 3：确认计划并执行</a>
+  <li><a href="#step-3确认计划并执行" id="toc-step-3确认计划并执行" class="nav-link" data-scroll-target="#step-3确认计划并执行"><span class="header-section-number">7.4</span> Step 3：确认计划并执行</a>
   <ul class="collapse">
-  <li><a href="#逐步执行" id="toc-逐步执行" class="nav-link" data-scroll-target="#逐步执行"><span class="header-section-number">8.4.1</span> 逐步执行</a></li>
-  <li><a href="#一次执行" id="toc-一次执行" class="nav-link" data-scroll-target="#一次执行"><span class="header-section-number">8.4.2</span> 一次执行</a></li>
+  <li><a href="#逐步执行" id="toc-逐步执行" class="nav-link" data-scroll-target="#逐步执行"><span class="header-section-number">7.4.1</span> 逐步执行</a></li>
+  <li><a href="#一次执行" id="toc-一次执行" class="nav-link" data-scroll-target="#一次执行"><span class="header-section-number">7.4.2</span> 一次执行</a></li>
   </ul></li>
-  <li><a href="#这种方法的好处" id="toc-这种方法的好处" class="nav-link" data-scroll-target="#这种方法的好处"><span class="header-section-number">8.5</span> 这种方法的好处</a></li>
-  <li><a href="#常见陷阱" id="toc-常见陷阱" class="nav-link" data-scroll-target="#常见陷阱"><span class="header-section-number">8.6</span> 常见陷阱</a></li>
+  <li><a href="#常见陷阱" id="toc-常见陷阱" class="nav-link" data-scroll-target="#常见陷阱"><span class="header-section-number">7.5</span> 常见陷阱</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/07_data_workflow.html"><strong>数据处理实战</strong></a></li><li class="breadcrumb-item"><a href="../body/07_data_workflow.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">先计划、后执行：数据处理工作流</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../body/06_data_workflow.html"><strong>数据处理实战</strong></a></li><li class="breadcrumb-item"><a href="../body/06_data_workflow.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">数据处理实践</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-data-workflow" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">先计划、后执行：数据处理工作流</span></span></h1>
+<h1 class="title"><span id="sec-data-workflow" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">数据处理实践</span></span></h1>
 </div>
 
 
@@ -358,9 +345,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>使用 Claude Code 进行数据处理时，推荐采用”先计划、后执行”的工作模式。这样可以避免 AI 在模糊指令下浪费大量时间探索数据结构，也能让你在执行前审阅和调整方案。</p>
-<section id="整体流程" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="整体流程"><span class="header-section-number">8.1</span> 整体流程</h2>
+<p>使用 Claude Code 进行数据处理或更复杂的任务时，推荐采用”先计划、后执行”的工作模式。这样可以避免 AI 在模糊指令下浪费大量时间探索数据结构，也能让你在执行前审阅和调整方案。</p>
+<section id="整体流程" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="整体流程"><span class="header-section-number">7.1</span> 整体流程</h2>
 <p>数据处理的标准流程分为三个阶段：</p>
 <pre><code>Step 1：在 CLAUDE.md 中明确项目约定
     ↓
@@ -368,8 +355,8 @@ Step 2：打开 plan mode，说明任务需求
     ↓
 Step 3：确认计划，开始执行</code></pre>
 </section>
-<section id="step-1在-claude.md-中明确项目约定" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="step-1在-claude.md-中明确项目约定"><span class="header-section-number">8.2</span> Step 1：在 CLAUDE.md 中明确项目约定</h2>
+<section id="step-1在-claude.md-中明确项目约定" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="step-1在-claude.md-中明确项目约定"><span class="header-section-number">7.2</span> Step 1：在 CLAUDE.md 中明确项目约定</h2>
 <p>在开始数据处理之前，先在 <code>CLAUDE.md</code> 中写明你的工作习惯和希望 AI 工作的方式。这一步非常重要，它决定了 AI 后续所有操作的基本规范。</p>
 <p>以下是一个适合数据处理项目的 <code>CLAUDE.md</code> 示例：</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Stata 数据处理规范</span></span>
@@ -391,12 +378,12 @@ Step 3：确认计划，开始执行</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>可以在 AI 执行完任务后，问它刚刚有没有遇到问题。然后让它总结经验，写进 <code>CLAUDE.md</code> 里面。随着使用，<code>CLAUDE.md</code> 会不断完善，AI 的工作效率和准确度也会逐步提升。</p>
+<p>可以在 AI 执行完任务后，问它刚刚有没有遇到问题或报错。然后让它总结经验，写进 <code>CLAUDE.md</code> 里面。随着使用，<code>CLAUDE.md</code> 会不断完善，AI 的工作效率和准确度也会逐步提升。</p>
 </div>
 </div>
 </section>
-<section id="step-2打开-plan-mode说明任务需求" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="step-2打开-plan-mode说明任务需求"><span class="header-section-number">8.3</span> Step 2：打开 plan mode，说明任务需求</h2>
+<section id="step-2打开-plan-mode说明任务需求" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="step-2打开-plan-mode说明任务需求"><span class="header-section-number">7.3</span> Step 2：打开 plan mode，说明任务需求</h2>
 <p>在 Claude Code 中使用 plan mode 输入任务需求。好的 prompt 应该包含：</p>
 <ul>
 <li><strong>用什么工具</strong>（Stata、Python 等）</li>
@@ -404,19 +391,15 @@ Step 3：确认计划，开始执行</code></pre>
 <li><strong>最后要输出什么</strong>（.do 文件、.dta 数据、.md 文档）</li>
 <li><strong>自己对需求不确定的地方也可以写明</strong>，让 AI 帮你完善</li>
 </ul>
-<section id="示例-prompt" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="示例-prompt"><span class="header-section-number">8.3.1</span> 示例 prompt</h3>
-<pre><code>【data/】里面是实证金融研究用的 A 股上市公司数据，需要清洗合并后
-计算常用控制变量（Size、Age、Lev、Growth、ROA），
-对这些指标进行描述性统计。用 stata 完成。
+<section id="示例-prompt" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="示例-prompt"><span class="header-section-number">7.3.1</span> 示例 prompt</h3>
+<pre><code>【data/】里面是实证金融研究用的 A 股上市公司数据，需要清洗合并后计算常用控制变量（Size、Age、Lev、Growth、ROA），对这些指标进行描述性统计。用 stata 完成。
 
 注意事项：删除金融行业（行业代码J*）、计算出的指标要缩尾
 
-- 我不确定具体要执行哪些数据清洗操作，
-  需要你结合数据结构和数据处理的惯例判断
+- 我不确定具体要执行哪些数据清洗操作，需要你结合数据结构和数据处理的惯例判断
 
-最后输出三个文件：处理数据的.do文档；处理后数据集.dta文件；
-数据处理工作小结.md文档（包含数据处理操作和最后的描述性统计结果）</code></pre>
+最后输出三个文件：处理数据的.do文档；处理后数据集.dta文件；数据处理工作小结.md文档（包含数据处理操作和最后的描述性统计结果）</code></pre>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -431,8 +414,8 @@ Step 3：确认计划，开始执行</code></pre>
 </div>
 </div>
 </section>
-<section id="ai-的工作过程" class="level3" data-number="8.3.2">
-<h3 data-number="8.3.2" class="anchored" data-anchor-id="ai-的工作过程"><span class="header-section-number">8.3.2</span> AI 的工作过程</h3>
+<section id="ai-的工作过程" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="ai-的工作过程"><span class="header-section-number">7.3.2</span> AI 的工作过程</h3>
 <p>收到 prompt 后，AI 通常会：</p>
 <ol type="1">
 <li><strong>探索数据结构</strong> — 读取数据的说明文件（如 CSMAR 的 <code>.txt</code> 文档），导入少量样本行确认</li>
@@ -447,31 +430,23 @@ Step 3：确认计划，开始执行</code></pre>
 </ul>
 </section>
 </section>
-<section id="step-3确认计划并执行" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="step-3确认计划并执行"><span class="header-section-number">8.4</span> Step 3：确认计划并执行</h2>
-<p>AI 生成计划书后，你有两种执行方式：</p>
-<section id="逐步执行" class="level3" data-number="8.4.1">
-<h3 data-number="8.4.1" class="anchored" data-anchor-id="逐步执行"><span class="header-section-number">8.4.1</span> 逐步执行</h3>
+<section id="step-3确认计划并执行" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="step-3确认计划并执行"><span class="header-section-number">7.4</span> Step 3：确认计划并执行</h2>
+<p>修改计划书有两种方式： 1. 小幅修改，直接在对话的选项 “No” 后面输入要修改的的内容 2. 大幅修改，在对话的选项 “No” 后面让 AI 把计划书保存为 .md 文档，然后再修改这份文档。</p>
+<p>确认计划书后，可以逐步执行或一次执行：</p>
+<section id="逐步执行" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="逐步执行"><span class="header-section-number">7.4.1</span> 逐步执行</h3>
 <pre><code>按照计划书，先生成第一部分（预处理）的 .do 文件并运行。</code></pre>
 <p>适合：对计划不太确定，想逐步检查。</p>
 </section>
-<section id="一次执行" class="level3" data-number="8.4.2">
-<h3 data-number="8.4.2" class="anchored" data-anchor-id="一次执行"><span class="header-section-number">8.4.2</span> 一次执行</h3>
+<section id="一次执行" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="一次执行"><span class="header-section-number">7.4.2</span> 一次执行</h3>
 <pre><code>按照计划书全部执行，每步运行完检查 .log 确认无错误后再继续下一步。</code></pre>
 <p>适合：对计划比较有信心，想提高效率。</p>
 </section>
 </section>
-<section id="这种方法的好处" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="这种方法的好处"><span class="header-section-number">8.5</span> 这种方法的好处</h2>
-<ul>
-<li><strong>计划书是写出来的文档</strong>，你可以直接审阅、修改</li>
-<li>计划书里会包含具体的变量名、过滤条件，不会再有模糊之处</li>
-<li>如果哪一步你想调整，<strong>改计划书</strong>然后让 Claude Code 按改后的计划执行就行</li>
-<li>计划书本身也是很好的<strong>工作记录</strong></li>
-</ul>
-</section>
-<section id="常见陷阱" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="常见陷阱"><span class="header-section-number">8.6</span> 常见陷阱</h2>
+<section id="常见陷阱" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="常见陷阱"><span class="header-section-number">7.5</span> 常见陷阱</h2>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -482,7 +457,7 @@ Step 3：确认计划，开始执行</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>直接在 plan mode 输入模糊的指令（如”对数据做一些清洗”），AI 可能需要花很长时间探索数据结构。例如，一次模糊指令导致 AI 的 Explore 阶段运行了 21 分钟。而如果先给出具体的数据描述，同样的探索只需要几分钟。</p>
+<p>直接在 plan mode 输入模糊的指令（如”对数据做一些清洗”），AI 可能需要花很长时间探索数据结构。例如，一次模糊指令导致 AI 的 Explore 阶段运行了 21 分钟。而如果向 AI 说明，“不要扫描全部数据，迅速探索数据结构”，或者，“用 Stata 探索数据结构，不要用终端命令” 也能节省时间。</p>
 </div>
 </div>
 <p>下一章将通过一个完整的实战案例，演示这个工作流的具体应用。</p>
@@ -564,7 +539,7 @@ Step 3：确认计划，开始执行</code></pre>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/jasonli357\.github\.io\/quarto_book\/");
+        var filterRegex = new RegExp("https:\/\/jasonli357\.github\.io\/Claudecode_Stata\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -898,13 +873,13 @@ Step 3：确认计划，开始执行</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../body/06_slash_commands.html" class="pagination-link" aria-label="常用斜杠命令">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">常用斜杠命令</span></span>
+      <a href="../body/05_slash_commands.html" class="pagination-link" aria-label="常用斜杠命令">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">常用斜杠命令</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../body/08_data_demo.html" class="pagination-link" aria-label="实战演示：清洗 CSMAR 企业财务数据">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../body/07_data_demo.html" class="pagination-link" aria-label="实战演示：清洗 CSMAR 企业财务数据">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">实战演示：清洗 CSMAR 企业财务数据</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

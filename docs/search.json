@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Claude Code 协同 Stata",
+    "title": "Claude Code x Stata",
     "section": "",
     "text": "Claude Code 协同 Stata：环境配置与应用实践\n黎佳迅，中山大学岭南学院硕士研究生，研究方向为公司金融。曾担任连享会 寒假班 助教。",
     "crumbs": [
@@ -12,9 +12,9 @@
   {
     "objectID": "index.html#内容提要",
     "href": "index.html#内容提要",
-    "title": "Claude Code 协同 Stata",
+    "title": "Claude Code x Stata",
     "section": "0.1 内容提要",
-    "text": "0.1 内容提要\nAI Agent 能够显著提升科研效率，实现多步骤任务的自动化执行。但在初次使用 Claude Code 时，无法识别 Stata 软件位置或路径解析失败是常见的配置问题。本书的目的是介绍两种简便的 Stata 配置方案以及 Claude Code 的基本使用技巧，帮助经管研究者将 Claude Code 顺利应用到 Stata 实证流程中。\n\n0.1.1 本书涵盖内容\n\nStata 环境配置的两种方案\n\n在 CLAUDE.md 中配置项目全局规则\n利用 Stata-MCP 实现 AI 与 Stata 的自动连接\n\nClaude Code 基本交互技巧\n\n执行权限控制\n发现、安装并管理官方及第三方技能包\n查看与恢复历史会话\n其他常用斜杠命令（Slash Commands）\n\n数据处理和 Skill 生成演示\n\n演示 “先计划、后执行” 的数据处理全过程\n将数据处理流程沉淀为可复用的 Skill\n\n\n\n\n0.1.2 导航\n  连享会主页 || GitHub 仓库",
+    "text": "0.1 内容提要\nAI Agent 能够显著提升科研效率，实现多步骤任务的自动化执行。但在初次使用 Claude Code 时，无法识别 Stata 软件位置或路径解析失败是常见的配置问题。本书的目的是介绍两种简便的 Stata 配置方案以及 Claude Code 的基本使用技巧，帮助经管研究者将 Claude Code 顺利应用到 Stata 实证流程中。\n\n0.1.1 本书涵盖内容\n\nStata 环境配置的两种方案\n\n在 CLAUDE.md 中配置项目全局规则\n利用 Stata-MCP 实现 AI 与 Stata 的自动连接\n\nClaude Code 基本交互技巧\n\n执行权限控制\n发现、安装并管理官方及第三方技能包\n查看与恢复历史会话\n其他常用斜杠命令（Slash Commands）\n\n数据处理和 Skill 生成演示\n\n演示 “先计划、后执行” 的数据处理全过程\n将数据处理流程总结为可复用的 Skill\n\n\n\n\n0.1.2 导航\n  连享会主页 || GitHub 仓库",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Home</span>"
     ]
@@ -24,7 +24,7 @@
     "href": "body/01_intro.html",
     "title": "2  概述：Claude Code 与 Stata 协同",
     "section": "",
-    "text": "2.1 为什么用 Claude Code 配合 Stata\nAI Agent（智能体）能够显著提升科研效率，实现多步骤任务的自动化执行。Claude Code 是 Anthropic 推出的一款命令行 AI 编程助手，能够直接在终端中理解项目上下文、执行代码、读写文件。对于经管类研究者而言，将 Claude Code 与 Stata 结合，可以实现：",
+    "text": "2.1 为什么用 Claude Code 配合 Stata\nAI Agent（智能体）能够显著提升科研效率，实现多步骤任务的自动化执行。Claude Code 是 Anthropic 推出的一款命令行 AI 编程助手（CLI），能够直接在终端中理解项目上下文、执行代码、读写文件。对于经管类研究者而言，将 Claude Code 与 Stata 结合，可以实现：",
     "crumbs": [
       "**Stata 环境配置**",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>概述：Claude Code 与 Stata 协同</span>"
@@ -46,7 +46,7 @@
     "href": "body/01_intro.html#常见的配置问题",
     "title": "2  概述：Claude Code 与 Stata 协同",
     "section": "2.2 常见的配置问题",
-    "text": "2.2 常见的配置问题\n在初次使用 Claude Code 调用 Stata 时，最常遇到的两个问题是：\n\n2.2.1 问题一：Claude Code 找不到 Stata\n\n\n\nClaude Code 无法识别 Stata 安装位置\n\n\n即使将 Stata 添加到系统环境变量中，Claude Code 有时仍然无法正确定位 Stata 的安装路径。\n\n\n2.2.2 问题二：路径格式不兼容\n如果 Claude Code 安装在 WSL（Windows Subsystem for Linux）环境中，而 Stata 安装在 Windows 上，Claude Code 可能使用 WSL 的路径格式调用 Stata：\n# WSL 路径格式 —— Windows 端的 Stata 无法识别\n\"/d/stata18/StataMP-64.exe\" /e do \"/mnt/d/work/analysis.do\"\n但 Windows 中的 Stata 只能识别 D:/work/analysis.do 这种路径格式，导致路径解析失败。",
+    "text": "2.2 常见的配置问题\n在初次使用 Claude Code 调用 Stata 时，最常遇到的两个问题是：\n\n2.2.1 问题一：Claude Code 找不到 Stata\n\n\n\nClaude Code 无法识别 Stata 安装位置\n\n\n即使将 Stata 添加到系统环境变量中，Claude Code 有时仍然无法正确定位 Stata 的安装路径。因为 Claude Code 可能用 “精确搜索” 命令查找名为 “stata.exe” 的可执行文件，但正确的可执行文件名是 “StataMP-64.exe”。有时候 Claude Code 也会用 “模糊搜索” 命令，这时就能找到环境变量中的 Stata。\n\n\n2.2.2 问题二：路径格式不兼容\n如果 Claude Code 安装在 WSL（Windows Subsystem for Linux）环境中，而 Stata 安装在 Windows 上，Claude Code 可能使用 WSL 的路径格式调用 Stata：\n# WSL 路径格式 —— Windows 端的 Stata 无法识别\n\"/d/stata18/StataMP-64.exe\" /e do \"/mnt/d/work/analysis.do\"\n但 Windows 中的 Stata 只能识别 D:/work/analysis.do 这种路径格式，导致路径解析失败。",
     "crumbs": [
       "**Stata 环境配置**",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>概述：Claude Code 与 Stata 协同</span>"
@@ -57,7 +57,7 @@
     "href": "body/01_intro.html#两种解决方案",
     "title": "2  概述：Claude Code 与 Stata 协同",
     "section": "2.3 两种解决方案",
-    "text": "2.3 两种解决方案\n针对上述问题，本书介绍两种解决方案：\n\n\n\n\n\n\n\n\n\n方案一：CLAUDE.md 配置\n方案二：Stata MCP（推荐）\n\n\n\n\n原理\n在项目配置文件中写明 Stata 路径和运行规则\n通过 MCP 协议让 AI 与 Stata 自动连接\n\n\n优势\n简单，无需安装额外工具\n功能强大，支持会话保持和交互执行\n\n\n适用场景\n临时使用、快速上手\n长期使用、复杂数据处理任务\n\n\n前提条件\n无\n需要 Stata 授权（stata.lic）\n\n\n\n接下来的两章将分别详细介绍这两种方案的配置方法。",
+    "text": "2.3 两种解决方案\n针对上述问题，本书介绍两种解决方案：\n\n\n\n\n\n\n\n\n\n方案一：CLAUDE.md 配置\n方案二：Stata MCP（推荐）\n\n\n\n\n原理\n在项目配置文件中写明 Stata 路径和运行规则\n通过 MCP 协议让 AI 与 Stata 自动连接\n\n\n优势\n简单，无需安装额外工具\n功能强大，支持会话保持和交互执行\n\n\n适用场景\n临时使用、快速上手\n长期使用、复杂数据处理任务\n\n\n前提条件\n无\n需要 Stata 授权文件（stata.lic）\n\n\n\n接下来的两小节将分别详细介绍这两种方案的配置方法。",
     "crumbs": [
       "**Stata 环境配置**",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>概述：Claude Code 与 Stata 协同</span>"
@@ -75,11 +75,11 @@
     ]
   },
   {
-    "objectID": "body/02_claude_md.html#配置内容",
-    "href": "body/02_claude_md.html#配置内容",
+    "objectID": "body/02_claude_md.html#claude.md-内容",
+    "href": "body/02_claude_md.html#claude.md-内容",
     "title": "3  方案一：在 CLAUDE.md 中配置 Stata",
-    "section": "3.2 配置内容",
-    "text": "3.2 配置内容\n在 CLAUDE.md 中，至少应包含以下内容：\n\n3.2.1 1. 说明 Stata 安装路径\n告诉 Claude Code Stata 可执行文件的确切位置：\nStata 安装路径：D:/stata18/StataMP-64.exe\n\n\n3.2.2 2. 指定运行 dofile 的终端命令\n明确告诉 Claude Code 应该用什么命令来执行 Stata dofile：\n运行 Stata dofile 的命令：\n\"D:/stata18/StataMP-64.exe\" /e do \"script.do\"\n\n注意事项：\n- 路径使用 Windows 格式（D:/...），不能使用 WSL 格式（/mnt/d/...）\n- /e 参数表示 batch 模式，运行完自动关闭\n\n\n3.2.3 3. 规定日志（.log）生成位置\n日志文件：\n- 运行 Stata 前，需先 cd 到项目目录，否则日志会写到默认路径\n- 运行完成后，读取同名的 .log 文件查看结果\n\n\n3.2.4 4. 错误检测规则\n错误检测：\n- 检查 .log 文件中是否包含 \"r(\" 开头的错误代码\n- 如果发现错误，分析错误原因并修改 .do 文件后重新运行",
+    "section": "3.2 CLAUDE.md 内容",
+    "text": "3.2 CLAUDE.md 内容\n在 CLAUDE.md 中，至少应包含以下内容：\n\n3.2.1 说明 Stata 安装路径\n告诉 Claude Code Stata 可执行文件的确切位置：\nStata 安装路径：D:/stata18/StataMP-64.exe\n\n\n3.2.2 指定运行 dofile 的终端命令\n明确告诉 Claude Code 应该用什么命令来执行 Stata dofile：\n运行 Stata dofile 的命令：\n\"D:/stata18/StataMP-64.exe\" /e do \"script.do\"\n\n注意事项：\n- 路径使用 Windows 格式（D:/...），不能使用 WSL 格式（/mnt/d/...）\n\n\n\n\n\n\nNote\n\n\n\n在我的测试中，上述命令有时候会报错，然后 Claude Code 会自行修改，把修改后的命令更新到 CLAUDE.md 即可。\n\n\n\n\n3.2.3 规定日志（.log）生成位置\n日志文件：\n- 运行 Stata 前，需先 cd 到项目目录，否则日志会写到默认路径\n- 运行完成后，读取同名的 .log 文件查看结果\n\n\n3.2.4 错误检测规则\n错误检测：\n- 检查 .log 文件中是否包含 \"r(\" 开头的错误代码\n- 如果发现错误，分析错误原因并修改 .do 文件后重新运行",
     "crumbs": [
       "**Stata 环境配置**",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>方案一：在 CLAUDE.md 中配置 Stata</span>"
@@ -97,11 +97,11 @@
     ]
   },
   {
-    "objectID": "body/02_claude_md.html#完整示例",
-    "href": "body/02_claude_md.html#完整示例",
+    "objectID": "body/02_claude_md.html#claude.md-示例",
+    "href": "body/02_claude_md.html#claude.md-示例",
     "title": "3  方案一：在 CLAUDE.md 中配置 Stata",
-    "section": "3.4 完整示例",
-    "text": "3.4 完整示例\n以下是一个适用于命令行模式的 CLAUDE.md 示例：\n## Stata 数据处理规范\n\n- Stata 安装路径：D:/stata18/StataMP-64.exe\n- 运行 dofile 命令：\"D:/stata18/StataMP-64.exe\" /e do \"script.do\"\n- 运行前需先 cd 到项目目录\n- 路径格式必须使用 Windows 格式（D:/...），不能用 WSL 的 /mnt/d/... 格式\n\n- 原始数据在 data/raw/ 目录下，不要修改或覆盖\n- 清洗过程中以及清洗后的数据存入 data/processed/\n- 代码放在 code/\n- 说明文档放在 file/\n\n- 运行完成后，读取 .log 文件检查是否有 r( 开头的错误代码\n\n\n\n\n\n\nNote\n\n\n\n方案一虽然简单，但每次执行 Stata 代码都需要经历”写 .do 文件 → 执行命令 → 读 .log 文件”三个步骤，且每次运行都会启动一个新的 Stata 进程。如果希望更高效的交互体验，推荐使用方案二（Stata MCP）。",
+    "section": "3.4 CLAUDE.md 示例",
+    "text": "3.4 CLAUDE.md 示例\n以下是一个适用于命令行模式的 CLAUDE.md 示例：\n## Stata 使用规范\n\n- 路径：`D:\\stata18\\StataMP-64.exe`\n- 批量运行：`\"/d/stata18/StataMP-64.exe\" /e do \"script.do\"`\n- 运行前先 cd 到 .do 文件所在目录，日志自动生成到该目录，文件名为 `script.log`\n- 代码错误检测\n  - Stata 退出码不可靠，应检查 .log 文件\n  - 若 .log 文件含 `r(` 或缺少 `end of do-file`，说明有代码错误",
     "crumbs": [
       "**Stata 环境配置**",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>方案一：在 CLAUDE.md 中配置 Stata</span>"
@@ -112,7 +112,7 @@
     "href": "body/03_stata_mcp.html",
     "title": "4  方案二：安装 Stata MCP（推荐）",
     "section": "",
-    "text": "4.1 什么是 Stata MCP\nMCP（Model Context Protocol）是一种让 AI 模型与外部工具交互的协议。Stata MCP 是基于此协议开发的工具，它将 Stata 变成了一个可交互的服务，而不是每次冷启动一个独立进程。",
+    "text": "4.1 什么是 Stata MCP\nMCP（Model Context Protocol）是一种让 AI 模型与外部工具交互的协议。Stata MCP 是基于此协议开发的工具，它增强了 AI 与 Stata 的交互能力。",
     "crumbs": [
       "**Stata 环境配置**",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>方案二：安装 Stata MCP（推荐）</span>"
@@ -123,7 +123,7 @@
     "href": "body/03_stata_mcp.html#安装步骤",
     "title": "4  方案二：安装 Stata MCP（推荐）",
     "section": "4.2 安装步骤",
-    "text": "4.2 安装步骤\n安装 Stata MCP 需要以下步骤：\n\n\n\nStata MCP 架构\n\n\n\n4.2.1 1. 在 VS Code 安装 Stata MCP 插件\n在 VS Code 扩展商店中搜索并安装 Stata MCP 插件。\n\n\n4.2.2 2. 设置 Stata 安装路径\n在插件设置中填入 Stata 的安装路径。设置完成后，VS Code 右下角应显示 “Stata: Connected”，表示连接成功。\n\n\n4.2.3 3. 在 Claude Code 中添加 Stata MCP 服务器\n在终端中运行以下命令，将 Stata MCP 注册到 Claude Code：\nclaude mcp add --transport sse stata-mcp http://localhost:4000/mcp --scope user\n\n\n\n\n\n\nImportant前提条件\n\n\n\n使用 Stata MCP 需要有效的 Stata 授权文件（stata.lic）。如果没有授权，请使用方案一（CLAUDE.md 配置）。",
+    "text": "4.2 安装步骤\n安装 Stata MCP 需要以下步骤：\n\n4.2.1 1. 在 VS Code 安装 Stata MCP 插件\n在 VS Code 扩展商店中搜索并安装 Stata MCP 插件。\n\n\n4.2.2 2. 设置 Stata 安装路径\n在插件设置中填入 Stata 的安装路径。设置完成后，VS Code 右下角应显示 “Stata: Connected”，表示连接成功。\n\n\n4.2.3 3. 在 Claude Code 中添加 Stata MCP 服务器\n在终端中运行以下命令，将 Stata MCP 注册到 Claude Code：\nclaude mcp add --transport sse stata-mcp http://localhost:4000/mcp --scope user\n\n\n\n\n\n\nImportant前提条件\n\n\n\n使用 Stata MCP 需要有效的 Stata 授权文件（STATA.LIC）。如果没有授权，请使用方案一（CLAUDE.md 配置）。\n\n\n\n\n\nSTATA.LIC文件如图",
     "crumbs": [
       "**Stata 环境配置**",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>方案二：安装 Stata MCP（推荐）</span>"
@@ -145,7 +145,7 @@
     "href": "body/03_stata_mcp.html#命令行-vs-stata-mcp-对比",
     "title": "4  方案二：安装 Stata MCP（推荐）",
     "section": "4.4 命令行 vs Stata MCP 对比",
-    "text": "4.4 命令行 vs Stata MCP 对比\n既然 Claude Code 可以用命令行方式执行 Stata（\"/d/stata18/StataMP-64.exe\" /e do \"script.do\"），那 Stata MCP 还有什么意义？\n\n4.4.1 命令行方式的流程\n执行一次分析需要 3 步：\n\nWrite — 创建 .do 文件\nBash — 执行 StataMP-64.exe /e do script.do\nRead — 读取 .log 文件查看结果\n\n而且每次运行都是启动一个新的 Stata 进程，上次加载数据的状态不会保留。\n\n\n4.4.2 Stata MCP 的流程\n1 步搞定：\n\nstata_run_selection — 直接传入代码，结果立即返回到对话中\n\n\n\n4.4.3 详细对比\n\n\n\n对比项\n命令行 /e\nStata MCP\n\n\n\n\n工具调用次数\n3 次（Write → Bash → Read）\n1 次\n\n\n需要创建文件\n是\n否（用 stata_run_selection 直接运行代码片段）\n\n\n结果获取\n需手动读 .log\n直接返回到对话\n\n\n会话保持\n每次全新启动\n可复用同一会话\n\n\n数据加载\n每次重新加载\n加载一次，后续复用\n\n\n并行执行\n需手动管理\n用不同 session_id 即可\n\n\n\n\n\n4.4.4 会话保持的关键优势\n最大的实际意义是「会话保持」。在 Stata MCP 中，可以像平时和 Stata 交互一样，在同一个窗口内多次执行命令：\n* 第 1 次运行\nuse \"data.dta\"          // 数据加载到内存\n\n* 第 2 次运行\nsummarize income        // 直接对已加载的数据做分析\n\n* 第 3 次运行\nreg y x1 x2            // 继续在同一个数据上回归\n而命令行方式每次都得重新加载数据，对于大数据集来说非常浪费时间。",
+    "text": "4.4 命令行 vs Stata MCP 对比\n既然 Claude Code 可以用命令行方式运行 Stata（\"/d/stata18/StataMP-64.exe\" /e do \"script.do\"），那 Stata MCP 还有什么意义？\n\n4.4.1 命令行方式的流程\n执行一次分析需要 3 步：\n\nWrite — 创建 .do 文件\nBash — 执行 StataMP-64.exe /e do script.do\nRead — 读取 .log 文件查看结果\n\n而且每次运行都是启动一个新的 Stata 进程（相当于新打开一个 Stata 窗口），上次加载数据的状态不会保留。\n\n\n4.4.2 Stata MCP 的流程\n1 步搞定：\n\nstata_run_selection — 直接传入代码，结果立即返回到对话中\n\n\n\n4.4.3 详细对比\n\n\n\n对比项\n命令行 /e\nStata MCP\n\n\n\n\n工具调用次数\n3 次（Write → Bash → Read）\n1 次\n\n\n需要创建文件\n是\n否（用 stata_run_selection 直接运行代码片段）\n\n\n结果获取\n需手动读 .log\n直接返回到对话\n\n\n会话保持\n每次全新启动\n可复用同一会话\n\n\n数据加载\n每次重新加载\n加载一次，后续复用\n\n\n并行执行\n需手动管理\n用不同 session_id 即可\n\n\n\n\n\n4.4.4 会话保持的关键优势\n最大的实际意义是「会话保持」。在 Stata MCP 中，可以像平时和 Stata 交互一样，在同一个窗口内多次执行命令：\n* 第 1 次运行\nuse \"data.dta\"          // 数据加载到内存\n\n* 第 2 次运行\nsummarize income        // 直接对已加载的数据做分析\n\n* 第 3 次运行\nreg y x1 x2            // 继续在同一个数据上回归\n而命令行方式每次都要重新加载数据，对于大数据集来说非常浪费时间。",
     "crumbs": [
       "**Stata 环境配置**",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>方案二：安装 Stata MCP（推荐）</span>"
@@ -167,7 +167,7 @@
     "href": "body/04_permissions.html",
     "title": "5  执行权限控制",
     "section": "",
-    "text": "5.1 权限模式概述\nClaude Code 在执行某些操作时，会停下来要求用户确认许可。这对于安全性至关重要，但如果频繁弹出确认，会打断工作流。本章介绍三种管理权限的方式。\n当你开启 “accept edits on”（自动接受编辑） 模式时，Claude Code 只会自动修改和保存代码文件。但当它需要执行终端命令（如 npm install、mkdir、git push）、读取环境变量或发起网络请求时，依然会停下来强制要求你同意。",
+    "text": "5.1 权限模式概述\nClaude Code 在执行某些操作时，会停下来要求用户确认许可。这对于安全性至关重要，但如果频繁弹出确认，会打断工作流。本章介绍三种管理权限的方式。\n当你按开启 “accept edits on”（自动接受编辑） 模式时，Claude Code 只会自动修改和保存代码文件。但当它需要执行终端命令（如 npm install、mkdir、git push）、读取环境变量或发起网络请求时，依然会停下来征求你同意。",
     "crumbs": [
       "**Claude Code 基本交互技巧**",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>执行权限控制</span>"
@@ -189,7 +189,7 @@
     "href": "body/04_permissions.html#方法二auto-模式推荐",
     "title": "5  执行权限控制",
     "section": "5.3 方法二：Auto 模式（推荐）",
-    "text": "5.3 方法二：Auto 模式（推荐）\nclaude --permission-mode auto\nAuto 模式使用一个后台 AI 分类器来代替你做决定：\n\n90% 以上的常规安全命令（如 ls、新建文件、跑测试代码）会自动同意并执行\n只有当它试图执行真正危险的操作（比如删除数据库、推送包含密码的代码）时，才会停下来问你\n\n既保证了心流不被打断，又防止了系统崩溃。\n\n\n\n\n\n\nNote模型兼容性\n\n\n\nAuto 模式需要使用 Claude 官方模型（Sonnet/Opus）才能正常工作。如果使用 GLM 等第三方模型，Auto 模式可能不可用。",
+    "text": "5.3 方法二：Auto 模式（推荐）\nclaude --permission-mode auto\nAuto 模式使用一个后台 AI 分类器来代替你做决定：\n\n90% 以上的常规安全命令（如 ls、新建文件、跑测试代码）会自动同意并执行\n只有当它试图执行真正危险的操作（比如删除数据库、推送包含密码的代码）时，才会停下来问你\n\n既保证了工作不被打断，又防止了系统崩溃。\n\n\n\n\n\n\nNote模型兼容性\n\n\n\nAuto 模式需要使用 Claude 官方模型（Sonnet/Opus）才能正常工作。如果使用 GLM 等第三方模型，Auto 模式可能不可用。",
     "crumbs": [
       "**Claude Code 基本交互技巧**",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>执行权限控制</span>"
@@ -200,648 +200,461 @@
     "href": "body/04_permissions.html#方法三settings.json-白名单",
     "title": "5  执行权限控制",
     "section": "5.4 方法三：settings.json 白名单",
-    "text": "5.4 方法三：settings.json 白名单\n在 .claude/settings.json（全局）或 .claude/settings.local.json（项目级）中配置白名单，白名单里的命令不需要询问用户许可。\n\n5.4.1 白名单的自动添加\n每次 Claude Code 询问是否允许某个操作时，如果选择 “Yes, and don’t ask again for …”，Claude Code 会自动在 .claude/settings.local.json 的白名单里添加这个命令。\n\n\n5.4.2 手动配置示例\n{\n  \"permissions\": {\n    \"allow\": [\n      \"Bash(ls:*)\",\n      \"Bash(mkdir:*)\",\n      \"mcp__stata-mcp__stata_run_selection\",\n      \"mcp__stata-mcp__stata_run_file\"\n    ]\n  }\n}\n如果不确认添加某个命令是否有风险，可以先问问 AI。",
+    "text": "5.4 方法三：settings.json 白名单\n在 .claude/settings.json 或 .claude/settings.local.json中配置白名单，白名单里的命令不需要询问用户许可。\n\n\n\n\n\n\nNote补充\n\n\n\n.claude/settings.json 和 .claude/settings.local.json 的设计意图不同 —— settings.json 是团队共享的配置，settings.local.json 是个人本地的配置。只是当项目只有你一个人用、也不上传时，这个区分就无所谓了。\n一般来说，如果项目要上传到 GitHub，应在 .gitignore 中添加 .claude/settings.local.json，避免将个人配置（如自定义权限、API 密钥等）提交到仓库。.claude/settings.json 则作为项目共享配置随仓库一起上传。如果项目不上传到 GitHub，两者在使用效果上没有区别。\n\n\n\n5.4.1 白名单的自动添加\n每次 Claude Code 询问是否允许某个操作时，如果选择 “Yes, and don’t ask again for …”，Claude Code 会自动在 .claude/settings.local.json 的白名单里添加这个命令。\n\n\n5.4.2 手动配置示例\n{\n  \"permissions\": {\n    \"allow\": [\n      \"Bash(ls:*)\",\n      \"Bash(mkdir:*)\",\n      \"mcp__stata-mcp__stata_run_selection\",\n      \"mcp__stata-mcp__stata_run_file\"\n    ]\n  }\n}\n如果不确认添加某个命令是否有风险，可以在 AI 征求某个命令的许可之后，马上用 /btw 问问 AI。",
     "crumbs": [
       "**Claude Code 基本交互技巧**",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>执行权限控制</span>"
     ]
   },
   {
-    "objectID": "body/04_permissions.html#三种方法对比",
-    "href": "body/04_permissions.html#三种方法对比",
-    "title": "5  执行权限控制",
-    "section": "5.5 三种方法对比",
-    "text": "5.5 三种方法对比\n\n\n\n\n\n\n\n\n\n方法\n安全性\n便利性\n适用场景\n\n\n\n\n--dangerously-skip-permissions\n最低\n最高\n快速实验，不涉及敏感操作\n\n\n--permission-mode auto\n较高\n高\n日常使用（推荐）\n\n\nsettings.json 白名单\n最高\n需要配置\n团队协作、规范化的工作流\n\n\n\n\n\n\n\n\n\nTip实用建议\n\n\n\n对于使用 Stata MCP 进行数据处理的场景，推荐在 settings.json 中将 stata_run_selection 和 stata_run_file 加入白名单，这样 AI 调用 Stata 时不会反复询问权限。",
-    "crumbs": [
-      "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>执行权限控制</span>"
-    ]
-  },
-  {
-    "objectID": "body/05_skills.html",
-    "href": "body/05_skills.html",
-    "title": "6  技能包：发现、安装与管理",
+    "objectID": "body/05_slash_commands.html",
+    "href": "body/05_slash_commands.html",
+    "title": "6  常用斜杠命令",
     "section": "",
-    "text": "6.1 什么是 Skills\nSkills（技能）是一组打包在指定文件夹中的 prompt + 程序 + 参考文件。它们可以让 Claude Code 在特定任务中表现得更加专业和稳定。\nSkills 的核心优势：",
+    "text": "6.1 /resume：查看与恢复历史会话\nClaude Code 提供了一系列斜杠命令（Slash Commands），可以帮助你更高效地管理会话和工作流。以下是几个常用的命令。\nClaude Code 会列出你最近的对话历史，你可以选择恢复之前的某个会话，继续之前的工作。\n这在以下场景特别有用：",
     "crumbs": [
       "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>技能包：发现、安装与管理</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>常用斜杠命令</span>"
     ]
   },
   {
-    "objectID": "body/05_skills.html#什么是-skills",
-    "href": "body/05_skills.html#什么是-skills",
-    "title": "6  技能包：发现、安装与管理",
-    "section": "",
-    "text": "把标准化流程打包，可复用\nAI 只读取 SKILL.md 的元数据，判断要不要调用这个 Skill；要调用时再读取 Skill 里面的其他文件，节省 token 消耗和上下文空间",
-    "crumbs": [
-      "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>技能包：发现、安装与管理</span>"
-    ]
-  },
-  {
-    "objectID": "body/05_skills.html#skills-的目录结构",
-    "href": "body/05_skills.html#skills-的目录结构",
-    "title": "6  技能包：发现、安装与管理",
-    "section": "6.2 Skills 的目录结构",
-    "text": "6.2 Skills 的目录结构\n一个标准的 Skill 文件夹结构如下：\n.claude/\n└── skills/\n    └── skillname/\n        ├── SKILL.md        # 核心文件，必须有（含元数据和具体 prompt 描述）\n        ├── scripts/        # 可选 — 程序脚本（Python 等）\n        ├── assets/         # 可选 — 模板和资源文件\n        ├── references/     # 可选 — 参考文档（说明手册、规范文档）\n        └── agents/         # 可选 — 子代理定义\n其中 SKILL.md 是核心定义文件，包含：\n\n元数据：名称、简介、触发条件（description 字段中的关键词）\nPrompt 内容：指导 AI 如何执行这个 Skill 的详细指令",
-    "crumbs": [
-      "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>技能包：发现、安装与管理</span>"
-    ]
-  },
-  {
-    "objectID": "body/05_skills.html#发现与安装-skills",
-    "href": "body/05_skills.html#发现与安装-skills",
-    "title": "6  技能包：发现、安装与管理",
-    "section": "6.3 发现与安装 Skills",
-    "text": "6.3 发现与安装 Skills\n\n6.3.1 方法一：通过 /plugin 命令\n在 Claude Code 中使用 /plugin 命令来浏览、下载和管理官方及第三方技能包。\n\n\n6.3.2 方法二：发送 URL 给 AI\n直接用自然语言把技能包的网址发给 AI，让它下载并安装。例如：\n请帮我安装这个 Skill：https://github.com/anthropics/skills.git\n\n\n6.3.3 方法三：手动下载\n手动下载网页上的 Skill 文件，移动到系统级或项目级的 .claude/skills 文件夹：\n\n系统级：~/.claude/skills/（Windows：C:\\Users\\用户名\\.claude\\skills\\）\n项目级：项目目录/.claude/skills/",
-    "crumbs": [
-      "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>技能包：发现、安装与管理</span>"
-    ]
-  },
-  {
-    "objectID": "body/05_skills.html#示例skill-creator",
-    "href": "body/05_skills.html#示例skill-creator",
-    "title": "6  技能包：发现、安装与管理",
-    "section": "6.4 示例：skill-creator",
-    "text": "6.4 示例：skill-creator\n以 Anthropic 官方的 skill-creator 为例，其核心结构如下：\n.claude/skills/skill-creator/\n├── SKILL.md              # 核心定义文件\n├── agents/               # 评估、对比和打分的子代理\n│   ├── analyzer.md\n│   ├── comparator.md\n│   └── grader.md\n├── assets/               # 前端模板等资源\n│   ├── eval_review.html\n│   └── eval-viewer/\n├── references/           # JSON/YAML Schema 等规范文档\n│   └── schemas.md\n└── scripts/              # 自动化脚本\n    ├── run_eval.py       # 执行技能测试与评估\n    ├── generate_report.py # 生成测试报告\n    ├── improve_description.py # 优化触发描述词\n    └── ...\n\n6.4.1 skill-creator 的工作原理\n功能：这是一个”用来创建技能的技能”。它可以协助用户从零开始搭建新技能、优化已有技能的触发词描述、执行自动化基准测试（Eval），并分析性能表现。\n工作原理：\n\n识别指令，创建 Skill：通过识别用户诸如”创建新技能”的意图，触发 SKILL.md 中的系统提示词\n执行脚本，测试和改进 Skill：调用 scripts/ 中的 Python 脚本来测试 Skill，然后根据 assets/ 提供的模板呈现结果\n\n\n\n6.4.2 核心文件的作用\n\nSKILL.md：核心定义文件。包含元数据以及指导 AI 创建和优化其他技能的 Prompt 指示\nscripts/：存放核心功能的 Python 脚本\nassets/：存放辅助执行的资源文件\nreferences/：提供背景及规范知识库\nagents/：对技能进行评估、对比和打分的子代理",
-    "crumbs": [
-      "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>技能包：发现、安装与管理</span>"
-    ]
-  },
-  {
-    "objectID": "body/05_skills.html#为什么要创建数据处理-skill",
-    "href": "body/05_skills.html#为什么要创建数据处理-skill",
-    "title": "6  技能包：发现、安装与管理",
-    "section": "6.5 为什么要创建数据处理 Skill",
-    "text": "6.5 为什么要创建数据处理 Skill\n对于经常使用 Stata 进行实证研究的经管类研究者而言，创建一个专门的数据处理 Skill 可以：\n\n向 AI 说明数据处理的具体要求（例如剔除哪些样本）\n给 AI 制定工作规范（例如变量标签怎么写、最后输出什么文件）\n避免每次都重复说明”剔除 ST 股、剔除金融业、指标要缩尾”等常规操作\n\n下一章将介绍 Claude Code 的常用斜杠命令，后续章节将详细演示如何创建和使用数据处理 Skill。",
-    "crumbs": [
-      "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>技能包：发现、安装与管理</span>"
-    ]
-  },
-  {
-    "objectID": "body/06_slash_commands.html",
-    "href": "body/06_slash_commands.html",
-    "title": "7  常用斜杠命令",
-    "section": "",
-    "text": "7.1 /resume：查看与恢复历史会话\nClaude Code 提供了一系列斜杠命令（Slash Commands），可以帮助你更高效地管理会话和工作流。以下是最常用的几个命令。\nClaude Code 会列出你最近的对话历史，你可以选择恢复之前的某个会话，继续之前的工作。\n这在以下场景特别有用：",
-    "crumbs": [
-      "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
-    ]
-  },
-  {
-    "objectID": "body/06_slash_commands.html#resume查看与恢复历史会话",
-    "href": "body/06_slash_commands.html#resume查看与恢复历史会话",
-    "title": "7  常用斜杠命令",
+    "objectID": "body/05_slash_commands.html#resume查看与恢复历史会话",
+    "href": "body/05_slash_commands.html#resume查看与恢复历史会话",
+    "title": "6  常用斜杠命令",
     "section": "",
     "text": "/resume\n\n\n\n昨天进行到一半的数据处理任务，今天想继续\n之前的工作结果需要微调或扩展",
     "crumbs": [
       "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>常用斜杠命令</span>"
     ]
   },
   {
-    "objectID": "body/06_slash_commands.html#btw运行时旁注对话",
-    "href": "body/06_slash_commands.html#btw运行时旁注对话",
-    "title": "7  常用斜杠命令",
-    "section": "7.2 /btw：运行时旁注对话",
-    "text": "7.2 /btw：运行时旁注对话\n/btw 你觉得刚才生成的代码还可以怎么优化？\n/btw 允许你在 Claude Code 运行过程中插入对话，而不打断当前进程。你的问题和回答完成后会自动消失，不会污染主上下文。\n这在以下场景特别有用：\n\nAI 正在执行一个耗时较长的任务，你想顺便问它一个问题\n不确定 AI 正在做什么，想快速了解一下进度",
+    "objectID": "body/05_slash_commands.html#btw运行时旁注对话",
+    "href": "body/05_slash_commands.html#btw运行时旁注对话",
+    "title": "6  常用斜杠命令",
+    "section": "6.2 /btw：运行时旁注对话",
+    "text": "6.2 /btw：运行时旁注对话\n/btw 你觉得刚才生成的代码还可以怎么优化？\n/btw 允许你在 Claude Code 运行过程中插入对话，而不打断当前进程。你的问题和回答完成后会自动消失，不会污染主上下文。\n这在以下场景特别有用：\n\nAI 正在执行一个耗时较长的任务，你想顺便问它一个问题\n不确定 AI 正在做什么，想快速了解一下进度",
     "crumbs": [
       "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>常用斜杠命令</span>"
     ]
   },
   {
-    "objectID": "body/06_slash_commands.html#branch创建分支",
-    "href": "body/06_slash_commands.html#branch创建分支",
-    "title": "7  常用斜杠命令",
-    "section": "7.3 /branch：创建分支",
-    "text": "7.3 /branch：创建分支\n/branch\n在当前工作状态下创建一个 Git 分支。这对于在不确定方案是否可行的情况下进行实验很有用——如果方案失败，可以轻松回退。",
+    "objectID": "body/05_slash_commands.html#branch创建分支",
+    "href": "body/05_slash_commands.html#branch创建分支",
+    "title": "6  常用斜杠命令",
+    "section": "6.3 /branch：创建分支",
+    "text": "6.3 /branch：创建分支\n/branch\n在当前工作状态下创建一个 Git 分支。这对于在不确定方案是否可行的情况下进行实验很有用——如果方案失败，可以轻松回退。",
     "crumbs": [
       "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>常用斜杠命令</span>"
     ]
   },
   {
-    "objectID": "body/06_slash_commands.html#rewind回退",
-    "href": "body/06_slash_commands.html#rewind回退",
-    "title": "7  常用斜杠命令",
-    "section": "7.4 /rewind：回退",
-    "text": "7.4 /rewind：回退\n/rewind\n将对话状态回退到之前的某个节点。如果你发现 AI 走了弯路，可以用这个命令回到之前的状态重新开始。",
+    "objectID": "body/05_slash_commands.html#rewind回退",
+    "href": "body/05_slash_commands.html#rewind回退",
+    "title": "6  常用斜杠命令",
+    "section": "6.4 /rewind：回退",
+    "text": "6.4 /rewind：回退\n/rewind\n将对话状态回退到之前的某个节点。如果你发现 AI 走了弯路，可以用这个命令回到之前的状态重新开始。",
     "crumbs": [
       "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>常用斜杠命令</span>"
     ]
   },
   {
-    "objectID": "body/06_slash_commands.html#export导出会话记录",
-    "href": "body/06_slash_commands.html#export导出会话记录",
-    "title": "7  常用斜杠命令",
-    "section": "7.5 /export：导出会话记录",
-    "text": "7.5 /export：导出会话记录\n/export\n将当前会话的完整记录导出为文件。这对于以下场景很有用：\n\n保存工作日志\n与同事分享你和 AI 的交互过程\n将 AI 的输出结果归档",
+    "objectID": "body/05_slash_commands.html#export导出会话记录",
+    "href": "body/05_slash_commands.html#export导出会话记录",
+    "title": "6  常用斜杠命令",
+    "section": "6.5 /export：导出会话记录",
+    "text": "6.5 /export：导出会话记录\n/export\n将当前会话的完整记录导出为文件。这对于以下场景很有用：\n\n保存工作日志\n与同事分享你和 AI 的交互过程\n将 AI 的输出结果归档",
     "crumbs": [
       "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>常用斜杠命令</span>"
     ]
   },
   {
-    "objectID": "body/06_slash_commands.html#insights使用习惯分析",
-    "href": "body/06_slash_commands.html#insights使用习惯分析",
-    "title": "7  常用斜杠命令",
-    "section": "7.6 /insights：使用习惯分析",
-    "text": "7.6 /insights：使用习惯分析\n/insights\n生成一份 HTML 报告，分析你过去一个月使用 Claude Code 的习惯，包括：\n\n你最常用的操作类型\n哪些任务耗时最长\n工作效率的变化趋势\n改进建议\n\n这个命令可以帮助你反思和优化自己的 AI 协作方式。",
+    "objectID": "body/05_slash_commands.html#insights使用习惯分析",
+    "href": "body/05_slash_commands.html#insights使用习惯分析",
+    "title": "6  常用斜杠命令",
+    "section": "6.6 /insights：使用习惯分析",
+    "text": "6.6 /insights：使用习惯分析\n/insights\n生成一份 HTML 报告，分析你过去一个月使用 Claude Code 的习惯，包括：\n\n你最常用的操作类型\n哪些任务耗时最长\n工作效率的变化趋势\n改进建议\n\n这个命令可以帮助你反思和优化自己的 AI 协作方式。",
     "crumbs": [
       "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>常用斜杠命令</span>"
     ]
   },
   {
-    "objectID": "body/06_slash_commands.html#命令速查表",
-    "href": "body/06_slash_commands.html#命令速查表",
-    "title": "7  常用斜杠命令",
-    "section": "7.7 命令速查表",
-    "text": "7.7 命令速查表\n\n\n\n命令\n功能\n使用场景\n\n\n\n\n/resume\n恢复历史会话\n继续之前未完成的任务\n\n\n/btw\n运行时旁注对话\n不打断进程的快速提问\n\n\n/branch\n创建 Git 分支\n实验性操作前创建安全网\n\n\n/rewind\n回退对话状态\nAI 走了弯路时回退重来\n\n\n/export\n导出会话记录\n保存工作日志或分享\n\n\n/insights\n使用习惯分析\n了解和优化自己的使用方式",
+    "objectID": "body/05_slash_commands.html#发现与安装-skills",
+    "href": "body/05_slash_commands.html#发现与安装-skills",
+    "title": "6  常用斜杠命令",
+    "section": "6.7 发现与安装 Skills",
+    "text": "6.7 发现与安装 Skills\n\n6.7.1 方法一：通过 /plugin 命令\n在 Claude Code 中使用 /plugin 命令来浏览、下载和管理官方及第三方技能包。\n\n\n6.7.2 方法二：发送 URL 给 AI\n直接用自然语言把技能包的网址发给 AI，让它下载并安装。例如：\n请帮我安装这个技能包：https://github.com/anthropics/skills.git\n\n\n6.7.3 方法三：手动下载\n手动下载网页上的 Skill 文件，移动到系统级或项目级的 .claude/skills 文件夹：\n\n系统级：~/.claude/skills/（Windows：C:\\Users\\用户名\\.claude\\skills\\）\n项目级：项目目录/.claude/skills/",
     "crumbs": [
       "**Claude Code 基本交互技巧**",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>常用斜杠命令</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>常用斜杠命令</span>"
     ]
   },
   {
-    "objectID": "body/07_data_workflow.html",
-    "href": "body/07_data_workflow.html",
-    "title": "8  先计划、后执行：数据处理工作流",
+    "objectID": "body/05_slash_commands.html#常用快捷键",
+    "href": "body/05_slash_commands.html#常用快捷键",
+    "title": "6  常用斜杠命令",
+    "section": "6.8 常用快捷键",
+    "text": "6.8 常用快捷键\n\nEsc：打断当前工作\n双击 Esc：清空输入框\n\\ + 回车：换行\n?：查看快捷键",
+    "crumbs": [
+      "**Claude Code 基本交互技巧**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>常用斜杠命令</span>"
+    ]
+  },
+  {
+    "objectID": "body/06_data_workflow.html",
+    "href": "body/06_data_workflow.html",
+    "title": "7  数据处理实践",
     "section": "",
-    "text": "8.1 整体流程\n使用 Claude Code 进行数据处理时，推荐采用”先计划、后执行”的工作模式。这样可以避免 AI 在模糊指令下浪费大量时间探索数据结构，也能让你在执行前审阅和调整方案。\n数据处理的标准流程分为三个阶段：",
+    "text": "7.1 整体流程\n使用 Claude Code 进行数据处理或更复杂的任务时，推荐采用”先计划、后执行”的工作模式。这样可以避免 AI 在模糊指令下浪费大量时间探索数据结构，也能让你在执行前审阅和调整方案。\n数据处理的标准流程分为三个阶段：",
     "crumbs": [
       "**数据处理实战**",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>先计划、后执行：数据处理工作流</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>数据处理实践</span>"
     ]
   },
   {
-    "objectID": "body/07_data_workflow.html#整体流程",
-    "href": "body/07_data_workflow.html#整体流程",
-    "title": "8  先计划、后执行：数据处理工作流",
+    "objectID": "body/06_data_workflow.html#整体流程",
+    "href": "body/06_data_workflow.html#整体流程",
+    "title": "7  数据处理实践",
     "section": "",
     "text": "Step 1：在 CLAUDE.md 中明确项目约定\n    ↓\nStep 2：打开 plan mode，说明任务需求\n    ↓\nStep 3：确认计划，开始执行",
     "crumbs": [
       "**数据处理实战**",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>先计划、后执行：数据处理工作流</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>数据处理实践</span>"
     ]
   },
   {
-    "objectID": "body/07_data_workflow.html#step-1在-claude.md-中明确项目约定",
-    "href": "body/07_data_workflow.html#step-1在-claude.md-中明确项目约定",
-    "title": "8  先计划、后执行：数据处理工作流",
-    "section": "8.2 Step 1：在 CLAUDE.md 中明确项目约定",
-    "text": "8.2 Step 1：在 CLAUDE.md 中明确项目约定\n在开始数据处理之前，先在 CLAUDE.md 中写明你的工作习惯和希望 AI 工作的方式。这一步非常重要，它决定了 AI 后续所有操作的基本规范。\n以下是一个适合数据处理项目的 CLAUDE.md 示例：\n## Stata 数据处理规范\n\n- 通过 Stata-mcp 调用 Stata，不要用命令行。\n- 原始数据在 `data/raw/` 目录下，不要修改或覆盖\n- 清洗过程中以及清洗后的数据存入 `data/processed/`\n- 代码放在 `code/`\n- 说明文档放在 `file/`\n- Stata MCP 运行在 Windows 端，必须使用 Windows 路径格式（`C:/Users/...`），\n  不能用 WSL 的 `/mnt/c/...` 格式，否则报 `r(601) file not found`\n\n\n\n\n\n\nTip持续完善 CLAUDE.md\n\n\n\n可以在 AI 执行完任务后，问它刚刚有没有遇到问题。然后让它总结经验，写进 CLAUDE.md 里面。随着使用，CLAUDE.md 会不断完善，AI 的工作效率和准确度也会逐步提升。",
+    "objectID": "body/06_data_workflow.html#step-1在-claude.md-中明确项目约定",
+    "href": "body/06_data_workflow.html#step-1在-claude.md-中明确项目约定",
+    "title": "7  数据处理实践",
+    "section": "7.2 Step 1：在 CLAUDE.md 中明确项目约定",
+    "text": "7.2 Step 1：在 CLAUDE.md 中明确项目约定\n在开始数据处理之前，先在 CLAUDE.md 中写明你的工作习惯和希望 AI 工作的方式。这一步非常重要，它决定了 AI 后续所有操作的基本规范。\n以下是一个适合数据处理项目的 CLAUDE.md 示例：\n## Stata 数据处理规范\n\n- 通过 Stata-mcp 调用 Stata，不要用命令行。\n- 原始数据在 `data/raw/` 目录下，不要修改或覆盖\n- 清洗过程中以及清洗后的数据存入 `data/processed/`\n- 代码放在 `code/`\n- 说明文档放在 `file/`\n- Stata MCP 运行在 Windows 端，必须使用 Windows 路径格式（`C:/Users/...`），\n  不能用 WSL 的 `/mnt/c/...` 格式，否则报 `r(601) file not found`\n\n\n\n\n\n\nTip持续完善 CLAUDE.md\n\n\n\n可以在 AI 执行完任务后，问它刚刚有没有遇到问题或报错。然后让它总结经验，写进 CLAUDE.md 里面。随着使用，CLAUDE.md 会不断完善，AI 的工作效率和准确度也会逐步提升。",
     "crumbs": [
       "**数据处理实战**",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>先计划、后执行：数据处理工作流</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>数据处理实践</span>"
     ]
   },
   {
-    "objectID": "body/07_data_workflow.html#step-2打开-plan-mode说明任务需求",
-    "href": "body/07_data_workflow.html#step-2打开-plan-mode说明任务需求",
-    "title": "8  先计划、后执行：数据处理工作流",
-    "section": "8.3 Step 2：打开 plan mode，说明任务需求",
-    "text": "8.3 Step 2：打开 plan mode，说明任务需求\n在 Claude Code 中使用 plan mode 输入任务需求。好的 prompt 应该包含：\n\n用什么工具（Stata、Python 等）\n有哪些步骤（清洗、合并、计算等）\n最后要输出什么（.do 文件、.dta 数据、.md 文档）\n自己对需求不确定的地方也可以写明，让 AI 帮你完善\n\n\n8.3.1 示例 prompt\n【data/】里面是实证金融研究用的 A 股上市公司数据，需要清洗合并后\n计算常用控制变量（Size、Age、Lev、Growth、ROA），\n对这些指标进行描述性统计。用 stata 完成。\n\n注意事项：删除金融行业（行业代码J*）、计算出的指标要缩尾\n\n- 我不确定具体要执行哪些数据清洗操作，\n  需要你结合数据结构和数据处理的惯例判断\n\n最后输出三个文件：处理数据的.do文档；处理后数据集.dta文件；\n数据处理工作小结.md文档（包含数据处理操作和最后的描述性统计结果）\n\n\n\n\n\n\nNote关于不确定性的表达\n\n\n\n一些常规的数据处理操作（例如缩尾），即使不写，AI 有时候也会自己判断出需要执行，但结果不稳定。建议在 prompt 中尽量明确你的需求，至少列出关键注意事项。\n\n\n\n\n8.3.2 AI 的工作过程\n收到 prompt 后，AI 通常会：\n\n探索数据结构 — 读取数据的说明文件（如 CSMAR 的 .txt 文档），导入少量样本行确认\n识别关键信息 — 变量名、数据类型、频率、标识符格式等\n生成计划书 — 包含每一步的具体操作，具体到 Stata 命令级别\n\n例如，AI 可能识别出需要统一的变量名：\n\nSymbol → Stkcd（股票代码在不同数据集中的名称不同）\nEndDate → Accper（报告期的变量名不同）\n金额以字符串存储（如 \"19802000000.00\"），需要转为数值",
+    "objectID": "body/06_data_workflow.html#step-2打开-plan-mode说明任务需求",
+    "href": "body/06_data_workflow.html#step-2打开-plan-mode说明任务需求",
+    "title": "7  数据处理实践",
+    "section": "7.3 Step 2：打开 plan mode，说明任务需求",
+    "text": "7.3 Step 2：打开 plan mode，说明任务需求\n在 Claude Code 中使用 plan mode 输入任务需求。好的 prompt 应该包含：\n\n用什么工具（Stata、Python 等）\n有哪些步骤（清洗、合并、计算等）\n最后要输出什么（.do 文件、.dta 数据、.md 文档）\n自己对需求不确定的地方也可以写明，让 AI 帮你完善\n\n\n7.3.1 示例 prompt\n【data/】里面是实证金融研究用的 A 股上市公司数据，需要清洗合并后计算常用控制变量（Size、Age、Lev、Growth、ROA），对这些指标进行描述性统计。用 stata 完成。\n\n注意事项：删除金融行业（行业代码J*）、计算出的指标要缩尾\n\n- 我不确定具体要执行哪些数据清洗操作，需要你结合数据结构和数据处理的惯例判断\n\n最后输出三个文件：处理数据的.do文档；处理后数据集.dta文件；数据处理工作小结.md文档（包含数据处理操作和最后的描述性统计结果）\n\n\n\n\n\n\nNote关于不确定性的表达\n\n\n\n一些常规的数据处理操作（例如缩尾），即使不写，AI 有时候也会自己判断出需要执行，但结果不稳定。建议在 prompt 中尽量明确你的需求，至少列出关键注意事项。\n\n\n\n\n7.3.2 AI 的工作过程\n收到 prompt 后，AI 通常会：\n\n探索数据结构 — 读取数据的说明文件（如 CSMAR 的 .txt 文档），导入少量样本行确认\n识别关键信息 — 变量名、数据类型、频率、标识符格式等\n生成计划书 — 包含每一步的具体操作，具体到 Stata 命令级别\n\n例如，AI 可能识别出需要统一的变量名：\n\nSymbol → Stkcd（股票代码在不同数据集中的名称不同）\nEndDate → Accper（报告期的变量名不同）\n金额以字符串存储（如 \"19802000000.00\"），需要转为数值",
     "crumbs": [
       "**数据处理实战**",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>先计划、后执行：数据处理工作流</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>数据处理实践</span>"
     ]
   },
   {
-    "objectID": "body/07_data_workflow.html#step-3确认计划并执行",
-    "href": "body/07_data_workflow.html#step-3确认计划并执行",
-    "title": "8  先计划、后执行：数据处理工作流",
-    "section": "8.4 Step 3：确认计划并执行",
-    "text": "8.4 Step 3：确认计划并执行\nAI 生成计划书后，你有两种执行方式：\n\n8.4.1 逐步执行\n按照计划书，先生成第一部分（预处理）的 .do 文件并运行。\n适合：对计划不太确定，想逐步检查。\n\n\n8.4.2 一次执行\n按照计划书全部执行，每步运行完检查 .log 确认无错误后再继续下一步。\n适合：对计划比较有信心，想提高效率。",
+    "objectID": "body/06_data_workflow.html#step-3确认计划并执行",
+    "href": "body/06_data_workflow.html#step-3确认计划并执行",
+    "title": "7  数据处理实践",
+    "section": "7.4 Step 3：确认计划并执行",
+    "text": "7.4 Step 3：确认计划并执行\n修改计划书有两种方式： 1. 小幅修改，直接在对话的选项 “No” 后面输入要修改的的内容 2. 大幅修改，在对话的选项 “No” 后面让 AI 把计划书保存为 .md 文档，然后再修改这份文档。\n确认计划书后，可以逐步执行或一次执行：\n\n7.4.1 逐步执行\n按照计划书，先生成第一部分（预处理）的 .do 文件并运行。\n适合：对计划不太确定，想逐步检查。\n\n\n7.4.2 一次执行\n按照计划书全部执行，每步运行完检查 .log 确认无错误后再继续下一步。\n适合：对计划比较有信心，想提高效率。",
     "crumbs": [
       "**数据处理实战**",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>先计划、后执行：数据处理工作流</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>数据处理实践</span>"
     ]
   },
   {
-    "objectID": "body/07_data_workflow.html#这种方法的好处",
-    "href": "body/07_data_workflow.html#这种方法的好处",
-    "title": "8  先计划、后执行：数据处理工作流",
-    "section": "8.5 这种方法的好处",
-    "text": "8.5 这种方法的好处\n\n计划书是写出来的文档，你可以直接审阅、修改\n计划书里会包含具体的变量名、过滤条件，不会再有模糊之处\n如果哪一步你想调整，改计划书然后让 Claude Code 按改后的计划执行就行\n计划书本身也是很好的工作记录",
+    "objectID": "body/06_data_workflow.html#常见陷阱",
+    "href": "body/06_data_workflow.html#常见陷阱",
+    "title": "7  数据处理实践",
+    "section": "7.5 常见陷阱",
+    "text": "7.5 常见陷阱\n\n\n\n\n\n\nCaution避免模糊指令\n\n\n\n直接在 plan mode 输入模糊的指令（如”对数据做一些清洗”），AI 可能需要花很长时间探索数据结构。例如，一次模糊指令导致 AI 的 Explore 阶段运行了 21 分钟。而如果向 AI 说明，“不要扫描全部数据，迅速探索数据结构”，或者，“用 Stata 探索数据结构，不要用终端命令” 也能节省时间。\n\n\n下一章将通过一个完整的实战案例，演示这个工作流的具体应用。",
     "crumbs": [
       "**数据处理实战**",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>先计划、后执行：数据处理工作流</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>数据处理实践</span>"
     ]
   },
   {
-    "objectID": "body/07_data_workflow.html#常见陷阱",
-    "href": "body/07_data_workflow.html#常见陷阱",
-    "title": "8  先计划、后执行：数据处理工作流",
-    "section": "8.6 常见陷阱",
-    "text": "8.6 常见陷阱\n\n\n\n\n\n\nCaution避免模糊指令\n\n\n\n直接在 plan mode 输入模糊的指令（如”对数据做一些清洗”），AI 可能需要花很长时间探索数据结构。例如，一次模糊指令导致 AI 的 Explore 阶段运行了 21 分钟。而如果先给出具体的数据描述，同样的探索只需要几分钟。\n\n\n下一章将通过一个完整的实战案例，演示这个工作流的具体应用。",
-    "crumbs": [
-      "**数据处理实战**",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>先计划、后执行：数据处理工作流</span>"
-    ]
-  },
-  {
-    "objectID": "body/08_data_demo.html",
-    "href": "body/08_data_demo.html",
-    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
+    "objectID": "body/07_data_demo.html",
+    "href": "body/07_data_demo.html",
+    "title": "8  实战演示：清洗 CSMAR 企业财务数据",
     "section": "",
-    "text": "9.1 任务说明\n本章通过一个完整的实战案例，演示如何使用 Claude Code 清洗 CSMAR（国泰安）企业财务数据，计算常用的公司特征变量。\n目标：从企业基本信息和财务报表数据中，计算 5 个企业特征变量：\n额外要求：",
+    "text": "8.1 任务说明\n本章通过一个完整的实战案例，演示如何使用 Claude Code 清洗 CSMAR（国泰安）企业财务数据，计算常用的公司特征变量。\n目标：从企业基本信息和财务报表数据中，计算 5 个企业特征变量：\n额外要求：",
     "crumbs": [
       "**数据处理实战**",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
     ]
   },
   {
-    "objectID": "body/08_data_demo.html#任务说明",
-    "href": "body/08_data_demo.html#任务说明",
-    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
+    "objectID": "body/07_data_demo.html#任务说明",
+    "href": "body/07_data_demo.html#任务说明",
+    "title": "8  实战演示：清洗 CSMAR 企业财务数据",
     "section": "",
     "text": "变量\n含义\n计算公式\n\n\n\n\nSize\n公司规模\nln(总资产)\n\n\nAge\n公司年龄\n当年年份 - 上市年份\n\n\nLev\n资产负债率\n负债合计 / 资产总计\n\n\nGrowth\n营业收入增长率\n(本期营收 - 上期营收) / |上期营收|\n\n\nROA\n资产收益率\n净利润 / 资产总计\n\n\n\n\n\n删除金融行业（行业代码 J 开头）\n计算出的指标需进行缩尾处理\n输出：.do 文件、.dta 数据集、.md 工作小结",
     "crumbs": [
       "**数据处理实战**",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
     ]
   },
   {
-    "objectID": "body/08_data_demo.html#数据概况",
-    "href": "body/08_data_demo.html#数据概况",
-    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
-    "section": "9.2 数据概况",
-    "text": "9.2 数据概况\n本次使用的数据来自 CSMAR 数据库，包含 4 个数据集：\n\n\n\n\n\n\n\n\n数据集\n文件名\n主要内容\n\n\n\n\n资产负债表\nFS_Combas.csv\n资产、负债、所有者权益等 154 个变量\n\n\n利润表\nFS_Comins.csv\n营业收入、净利润等 80 个变量\n\n\n现金流量表（间接法）\nFS_Comscfi.csv\n经营/投资/筹资现金流等 27 个变量\n\n\n上市公司基本信息年度表\nSTK_LISTEDCOINFOANL.csv\n股票代码、行业分类、上市日期等\n\n\n\n每个数据集都附有 [DES][csv].txt 说明文件，包含完整的变量定义。",
+    "objectID": "body/07_data_demo.html#数据概况",
+    "href": "body/07_data_demo.html#数据概况",
+    "title": "8  实战演示：清洗 CSMAR 企业财务数据",
+    "section": "8.2 数据概况",
+    "text": "8.2 数据概况\n本次使用的数据来自 CSMAR 数据库，包含 4 个数据集：\n\n\n\n\n\n\n\n\n数据集\n文件名\n主要内容\n\n\n\n\n资产负债表\nFS_Combas.csv\n资产、负债、所有者权益等 154 个变量\n\n\n利润表\nFS_Comins.csv\n营业收入、净利润等 80 个变量\n\n\n现金流量表（间接法）\nFS_Comscfi.csv\n经营/投资/筹资现金流等 27 个变量\n\n\n上市公司基本信息年度表\nSTK_LISTEDCOINFOANL.csv\n股票代码、行业分类、上市日期等\n\n\n\n每个数据集都附有 [DES][csv].txt 说明文件，包含完整的变量定义。",
     "crumbs": [
       "**数据处理实战**",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
     ]
   },
   {
-    "objectID": "body/08_data_demo.html#探索阶段",
-    "href": "body/08_data_demo.html#探索阶段",
-    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
-    "section": "9.3 探索阶段",
-    "text": "9.3 探索阶段\n在 plan mode 下输入任务需求后，AI 首先会探索数据结构。\n\n9.3.1 关键发现\nAI 通过读取说明文件和导入样本行，发现了以下关键信息：\n1. 变量名不统一\n不同数据集使用不同的变量名来表示相同的概念：\n\n股票代码：基本信息表用 Symbol，其他表用 Stkcd\n报告期：现金流量表用 EndDate，其他表用 Accper\n\n2. 金额以字符串存储\nCSMAR 的 CSV 文件中，金额类字段以字符串格式存储（如 \"19802000000.00\"），Stata 导入后需要通过 destring 转为数值型。\n3. 报表类型区分\n每家公司同时有合并报表（Typrep = \"A\"）和母公司报表（Typrep = \"B\"），需要筛选保留合并报表。\n4. 报告期频率\n数据包含年度（12-31）和季度报告，实证研究通常只保留年度数据。\n\n\n9.3.2 探索用的 Stata 代码示例\n* 导入少量样本行，确认数据结构\nimport delimited \"C:/path/FS_Combas.csv\", clear rowfirst(5) ///\n    encoding(\"utf8\") bindquote(strict)\ndescribe\nlist stkcd accper typrep a001000000 in 1/3\n\n\n\n\n\n\nNote探索阶段的原则\n\n\n\n使用 rowfirst(5) 限制导入行数，避免加载整个大数据集（资产负债表可达 300+ MB）。优先读取 .txt 说明文件了解变量定义，再用 Stata 确认。",
+    "objectID": "body/07_data_demo.html#prompt",
+    "href": "body/07_data_demo.html#prompt",
+    "title": "8  实战演示：清洗 CSMAR 企业财务数据",
+    "section": "8.3 prompt",
+    "text": "8.3 prompt\n【data/】里面是实证金融研究用的 A 股上市公司数据，需要清洗合并后计算常用控制变量（Size、Age、Lev、Growth、ROA），对这些指标进行描述性统计。用 stata 完成。\n\n注意事项：删除金融行业（行业代码J*）、计算出的指标要缩尾\n\n- 我不确定具体要执行哪些数据清洗操作，需要你结合数据结构和数据处理的惯例判断\n\n最后输出三个文件：处理数据的.do文档；处理后数据集.dta文件；数据处理工作小结.md文档（包含数据处理操作和最后的描述性统计结果）\n\n8.3.1 关键发现\nAI 通过读取说明文件和导入样本行，发现了以下关键信息：\n1. 变量名不统一\n不同数据集使用不同的变量名来表示相同的概念：\n\n股票代码：基本信息表用 Symbol，其他表用 Stkcd\n报告期：现金流量表用 EndDate，其他表用 Accper\n\n2. 金额以字符串存储\nCSMAR 的 CSV 文件中，金额类字段以字符串格式存储（如 \"19802000000.00\"），Stata 导入后需要通过 destring 转为数值型。\n3. 报表类型区分\n每家公司同时有合并报表（Typrep = \"A\"）和母公司报表（Typrep = \"B\"），需要筛选保留合并报表。\n4. 报告期频率\n数据包含年度（12-31）和季度报告，实证研究通常只保留年度数据。",
     "crumbs": [
       "**数据处理实战**",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
     ]
   },
   {
-    "objectID": "body/08_data_demo.html#计划阶段",
-    "href": "body/08_data_demo.html#计划阶段",
-    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
-    "section": "9.4 计划阶段",
-    "text": "9.4 计划阶段\nAI 根据探索结果生成详细的数据处理计划书，包含以下步骤：\n\n预处理：导入 4 个数据集，保留合并报表（typrep == \"A\"）、保留年度数据（accper 以 “12” 结尾）\n变量准备：重命名统一标识符（Symbol → Stkcd，EndDate → Accper），字符串转数值（destring）\n去重：以 stkcd + year 为键去重\n合并：以 stkcd + year 为键，依次合并 4 个数据集\n样本筛选：剔除金融行业（行业代码 J 开头）、剔除 ST 股票、剔除总资产为负的异常值\n变量计算：计算 Size、Age、Lev、Growth、ROA\n缩尾：对计算的指标在 1%/99% 分位数进行缩尾\n描述性统计：输出均值、标准差、最小值、最大值等",
+    "objectID": "body/07_data_demo.html#计划阶段",
+    "href": "body/07_data_demo.html#计划阶段",
+    "title": "8  实战演示：清洗 CSMAR 企业财务数据",
+    "section": "8.4 计划阶段",
+    "text": "8.4 计划阶段\nAI 根据探索结果生成详细的数据处理计划书，包含以下步骤：\n\n预处理：导入 4 个数据集，保留合并报表（typrep == \"A\"）、保留年度数据（accper 以 “12” 结尾）\n变量准备：重命名统一标识符（Symbol → Stkcd，EndDate → Accper），字符串转数值（destring）\n去重：以 stkcd + year 为键去重\n合并：以 stkcd + year 为键，依次合并 4 个数据集\n样本筛选：剔除金融行业（行业代码 J 开头）、剔除 ST 股票、剔除总资产为负的异常值\n变量计算：计算 Size、Age、Lev、Growth、ROA\n缩尾：对计算的指标在 1%/99% 分位数进行缩尾\n描述性统计：输出均值、标准差、最小值、最大值等",
     "crumbs": [
       "**数据处理实战**",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
     ]
   },
   {
-    "objectID": "body/08_data_demo.html#执行阶段",
-    "href": "body/08_data_demo.html#执行阶段",
-    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
-    "section": "9.5 执行阶段",
-    "text": "9.5 执行阶段\n确认计划无误后，AI 开始执行。整个过程约 10 分钟。\n\n9.5.1 核心代码片段\n导入并筛选年度数据：\nimport delimited \"C:/path/FS_Combas.csv\", clear ///\n    encoding(\"utf8\") bindquote(strict)\n* 保留年度数据（12月31日）\ngen year = real(substr(accper, 1, 4))\nkeep if substr(accper, 6, 2) == \"12\"\n* 保留合并报表\nkeep if typrep == \"A\"\n变量计算：\n* 公司规模\ngen Size = ln(a001000000)\n\n* 公司年龄\ngen Age = year - real(substr(listingdate, 1, 4))\n\n* 资产负债率\ngen Lev = a002000000 / a001000000\n\n* 资产收益率\ngen ROA = b002000000 / a001000000\n\n* 营业收入增长率（需滞后一期）\nsort stkcd year\nby stkcd: gen Growth = (b001101000 - b001101000[_n-1]) ///\n    / abs(b001101000[_n-1]) if _n &gt; 1 & b001101000[_n-1] != 0\n剔除金融行业和 ST 股票：\n* 剔除金融行业（行业代码 J 开头）\ndrop if substr(industrycode, 1, 1) == \"J\"\n\n* 剔除 ST 股票\ngen is_st = (strpos(shortname, \"ST\") &gt; 0)\ndrop if is_st == 1\ndrop is_st\n缩尾处理：\nforeach var of varlist Size Lev Growth ROA {\n    _pctile `var', percentiles(1 99)\n    local p1 = r(r1)\n    local p99 = r(r2)\n    replace `var' = `p1' if `var' &lt; `p1' & !missing(`var')\n    replace `var' = `p99' if `var' &gt; `p99' & !missing(`var')\n}\n描述性统计：\ntabstat Size Age Lev Growth ROA, stat(n mean sd min p25 p50 p75 max) ///\n    col(stat) format(%9.4f)",
+    "objectID": "body/07_data_demo.html#执行阶段",
+    "href": "body/07_data_demo.html#执行阶段",
+    "title": "8  实战演示：清洗 CSMAR 企业财务数据",
+    "section": "8.5 执行阶段",
+    "text": "8.5 执行阶段\n确认计划无误后，AI 开始执行。整个过程约 10 分钟。",
     "crumbs": [
       "**数据处理实战**",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
     ]
   },
   {
-    "objectID": "body/08_data_demo.html#输出结果",
-    "href": "body/08_data_demo.html#输出结果",
-    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
-    "section": "9.6 输出结果",
-    "text": "9.6 输出结果\n执行完成后，AI 生成以下文件：\n\n\n\n\n\n\n\n\n输出文件\n位置\n说明\n\n\n\n\n数据处理代码\ncode/\n完整的、带注释的 .do 文件\n\n\n清洗后数据\ndata/processed/\n.dta 格式的清洗数据集\n\n\n工作小结\nfile/\n.md 格式的处理报告，包含每步操作和描述性统计结果",
+    "objectID": "body/07_data_demo.html#输出结果",
+    "href": "body/07_data_demo.html#输出结果",
+    "title": "8  实战演示：清洗 CSMAR 企业财务数据",
+    "section": "8.6 输出结果",
+    "text": "8.6 输出结果\n执行完成后，AI 生成以下文件：\n\n\n\n\n\n\n\n\n输出文件\n位置\n说明\n\n\n\n\n数据处理代码\ncode/\n完整的、带注释的 .do 文件\n\n\n清洗后数据\ndata/processed/\n.dta 格式的清洗数据集\n\n\n工作小结\nfile/\n.md 格式的处理报告，包含每步操作和描述性统计结果",
     "crumbs": [
       "**数据处理实战**",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
     ]
   },
   {
-    "objectID": "body/08_data_demo.html#经验总结",
-    "href": "body/08_data_demo.html#经验总结",
-    "title": "9  实战演示：清洗 CSMAR 企业财务数据",
-    "section": "9.7 经验总结",
-    "text": "9.7 经验总结\n\nCLAUDE.md 至关重要：提前写明路径规范和目录约定，可以避免大量重复沟通\nplan mode 是效率关键：先探索数据、生成计划，再执行，比直接让 AI 动手效率高得多\n表达不确定性是可以的：在 prompt 中写明”我不确定具体需要哪些操作”，AI 会根据数据结构自行判断并给出建议",
+    "objectID": "body/07_data_demo.html#经验小结",
+    "href": "body/07_data_demo.html#经验小结",
+    "title": "8  实战演示：清洗 CSMAR 企业财务数据",
+    "section": "8.7 经验小结",
+    "text": "8.7 经验小结\n\n在 CLAUDE.md 提前写明路径规范和目录约定，可以避免重复沟通或者试错\n对计划或者完整流程不确定的时候，可以用 plan mode，把确定的部分写下来，让 AI 完善",
     "crumbs": [
       "**数据处理实战**",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>实战演示：清洗 CSMAR 企业财务数据</span>"
     ]
   },
   {
-    "objectID": "body/09_skill_intro.html",
-    "href": "body/09_skill_intro.html",
-    "title": "10  为什么要创建数据处理 Skill",
+    "objectID": "body/08_skills.html",
+    "href": "body/08_skills.html",
+    "title": "9  Skills 简介",
     "section": "",
-    "text": "10.1 动机\n使用 Claude Code 进行数据处理时，你会发现很多操作是重复性的：\n将这些标准化的流程打包为一个 Skill，可以：",
+    "text": "9.1 什么是 Skills\nSkills（技能）是一组打包在指定文件夹中的 prompt + 程序 + 参考文件。它们可以让 Claude Code 在特定任务中表现得更加专业和稳定。\nSkills 的核心优势：",
     "crumbs": [
       "**Skill 创建与复用**",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>为什么要创建数据处理 Skill</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Skills 简介</span>"
     ]
   },
   {
-    "objectID": "body/09_skill_intro.html#动机",
-    "href": "body/09_skill_intro.html#动机",
-    "title": "10  为什么要创建数据处理 Skill",
+    "objectID": "body/08_skills.html#什么是-skills",
+    "href": "body/08_skills.html#什么是-skills",
+    "title": "9  Skills 简介",
     "section": "",
-    "text": "每次都要说明”剔除 ST 股、剔除金融业、指标要缩尾”\n每次都要提醒 AI 使用 Windows 路径格式\n每次都要告诉它输出 .do 文件、.dta 数据和 .md 小结\n\n\n\n避免重复说明：Skill 中已经包含了所有常规要求\n提高稳定性：Skill 定义了明确的工作流程，AI 不会遗漏步骤\n积累经验：每次使用后可以不断完善 Skill，沉淀最佳实践",
+    "text": "把标准化流程打包，可复用\nAI 只读取 SKILL.md 的元数据，判断要不要调用这个 Skill；要调用时再读取 Skill 里面的其他文件，节省 token 消耗和上下文空间",
     "crumbs": [
       "**Skill 创建与复用**",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>为什么要创建数据处理 Skill</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Skills 简介</span>"
     ]
   },
   {
-    "objectID": "body/09_skill_intro.html#数据处理-skill-应该做什么",
-    "href": "body/09_skill_intro.html#数据处理-skill-应该做什么",
-    "title": "10  为什么要创建数据处理 Skill",
-    "section": "10.2 数据处理 Skill 应该做什么",
-    "text": "10.2 数据处理 Skill 应该做什么\n一个完善的数据处理 Skill 应具备以下功能：\n\n自动探索数据结构 — 通过读取说明文件或导入少量样本，快速了解数据的变量、类型、编码方式\n全面检查数据质量问题 — 包括但不限于：保留合并报表、保留年度数据、统一变量名、字符型转数值型、剔除金融行业样本、剔除 ST 样本、剔除异常值、去重、缩尾等\n关注缺失值风险 — 合并数据集后会不会大量缺失？计算某个指标时会不会因某个变量的缺失导致大量缺失？\n主动询问用户 — 对于不确定的操作，向用户提问而不是自行决定\n灵活适配需求 — 判断是处理单个数据集还是合并多个数据集\n按需计算变量 — 根据用户需求保留和计算指定变量\n输出描述性统计 — 清洗完成后对重要变量进行描述性统计",
+    "objectID": "body/08_skills.html#skills-的目录结构",
+    "href": "body/08_skills.html#skills-的目录结构",
+    "title": "9  Skills 简介",
+    "section": "9.2 Skills 的目录结构",
+    "text": "9.2 Skills 的目录结构\n一个标准的 Skill 文件夹结构如下：\n.claude/\n└── skills/\n    └── skillname/\n        ├── SKILL.md        # 核心文件，必须有（含元数据和具体 prompt 描述）\n        ├── scripts/        # 可选 — 程序脚本（Python 等）\n        ├── assets/         # 可选 — 模板和资源文件\n        ├── references/     # 可选 — 参考文档（说明手册、规范文档）\n        └── 其他文件夹，如 agents/    # 可选 — 因 skill 需求而已\n其中 SKILL.md 是核心定义文件，包含：\n\n元数据：名称、简介、触发条件（description 字段中的关键词）\nPrompt 内容：指导 AI 如何执行这个 Skill 的详细指令",
     "crumbs": [
       "**Skill 创建与复用**",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>为什么要创建数据处理 Skill</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Skills 简介</span>"
     ]
   },
   {
-    "objectID": "body/09_skill_intro.html#设计考量单个-skill-vs-多个-skill",
-    "href": "body/09_skill_intro.html#设计考量单个-skill-vs-多个-skill",
-    "title": "10  为什么要创建数据处理 Skill",
-    "section": "10.3 设计考量：单个 Skill vs 多个 Skill",
-    "text": "10.3 设计考量：单个 Skill vs 多个 Skill\n上述功能可以放在一个综合性的 Skill 中，也可以拆分为多个专注的 Skill：\n单 Skill 方案：\n\n优点：使用简单，一个 Skill 涵盖所有功能\n缺点：SKILL.md 可能很长，消耗较多 token\n\n多 Skill 方案：\n\n优点：每个 Skill 聚焦特定任务（如”数据探索”、“数据清洗”、“变量计算”），更灵活\n缺点：需要管理多个 Skill 之间的协作\n\n\n\n\n\n\n\nNote本书的方案\n\n\n\n在接下来的演示中，我们采用单 Skill 方案——将所有功能整合到一个 stata-data-cleaner Skill 中。这是因为数据处理的各个环节（探索、清洗、合并、计算）紧密关联，拆分反而增加协调成本。Skill 内部通过 5 个阶段（Phase）来组织工作流，既保持了灵活性，又避免了过度拆分。",
+    "objectID": "body/08_skills.html#示例skill-creator",
+    "href": "body/08_skills.html#示例skill-creator",
+    "title": "9  Skills 简介",
+    "section": "9.3 示例：skill-creator",
+    "text": "9.3 示例：skill-creator\n以 Anthropic 官方的 skill-creator 为例，其核心结构如下：\n.claude/skills/skill-creator/\n├── SKILL.md              # 核心定义文件\n├── agents/               # 评估、对比和打分的子代理\n│   ├── analyzer.md\n│   ├── comparator.md\n│   └── grader.md\n├── assets/               # 前端模板等资源\n│   ├── eval_review.html\n│   └── eval-viewer/\n├── references/           # JSON/YAML Schema 等规范文档\n│   └── schemas.md\n└── scripts/              # 自动化脚本\n    ├── run_eval.py       # 执行技能测试与评估\n    ├── generate_report.py # 生成测试报告\n    ├── improve_description.py # 优化触发描述词\n    └── ...\n\n9.3.1 skill-creator 的工作原理\n功能：这是一个”用来创建技能的技能”。它可以协助用户从零开始搭建新技能、优化已有技能的触发词描述、执行自动化基准测试（Eval），并分析性能表现。\n工作原理：\n\n识别指令，创建 Skill：通过识别用户诸如”创建新技能”的意图，触发 SKILL.md 中的系统提示词\n执行脚本，测试和改进 Skill：调用 scripts/ 中的 Python 脚本来测试 Skill，然后根据 assets/ 提供的模板呈现结果\n\n\n\n9.3.2 核心文件的作用\n\nSKILL.md：核心定义文件。包含元数据以及指导 AI 创建和优化其他技能的 Prompt 指示\nscripts/：存放核心功能的 Python 脚本\nassets/：存放辅助执行的资源文件\nreferences/：提供背景及规范知识库\nagents/：对技能进行评估、对比和打分的子代理",
     "crumbs": [
       "**Skill 创建与复用**",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>为什么要创建数据处理 Skill</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Skills 简介</span>"
     ]
   },
   {
-    "objectID": "body/09_skill_intro.html#stata-data-cleaner-skill-概览",
-    "href": "body/09_skill_intro.html#stata-data-cleaner-skill-概览",
-    "title": "10  为什么要创建数据处理 Skill",
-    "section": "10.4 stata-data-cleaner Skill 概览",
-    "text": "10.4 stata-data-cleaner Skill 概览\nstata-data-cleaner 是我们创建的数据处理 Skill，其核心是一个 5 阶段工作流：\nPhase 1: Explore  → 快速了解数据结构（只读，不修改）\nPhase 2: Diagnose → 诊断数据质量问题\nPhase 3: Consult  → 向用户确认不确定的决策\nPhase 4: Execute  → 生成并执行 Stata 代码\nPhase 5: Document → 输出 .do、.dta、.md 文件\n每个阶段的输出会指导下一阶段的工作。下一章将详细介绍这个 Skill 的创建和使用过程。",
+    "objectID": "body/08_skills.html#发现与安装-skills",
+    "href": "body/08_skills.html#发现与安装-skills",
+    "title": "9  Skills 简介",
+    "section": "9.4 发现与安装 Skills",
+    "text": "9.4 发现与安装 Skills\n详见 常用斜杠命令【发现与安装 Skills】部分\n\nskill-creator 也包含在 Anthropic 官方技能包 https://github.com/anthropics/skills.git 里面",
     "crumbs": [
       "**Skill 创建与复用**",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>为什么要创建数据处理 Skill</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Skills 简介</span>"
     ]
   },
   {
-    "objectID": "body/10_skill_demo.html",
-    "href": "body/10_skill_demo.html",
-    "title": "11  创建与使用 stata-data-cleaner Skill",
+    "objectID": "body/09_skill_demo.html",
+    "href": "body/09_skill_demo.html",
+    "title": "10  创建与使用 stata-data-cleaner Skill",
     "section": "",
-    "text": "11.1 创建 Skill\n本章详细介绍 stata-data-cleaner Skill 的创建过程、工作原理和使用方法。",
+    "text": "10.1 为什么要创建数据处理 Skill\n本章详细介绍 stata-data-cleaner Skill 的创建过程、工作原理和使用方法。\n对于经常使用 Stata 进行实证研究的经管类研究者而言，创建一个专门的数据处理 Skill 可以：",
     "crumbs": [
       "**Skill 创建与复用**",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
     ]
   },
   {
-    "objectID": "body/10_skill_demo.html#创建-skill",
-    "href": "body/10_skill_demo.html#创建-skill",
-    "title": "11  创建与使用 stata-data-cleaner Skill",
+    "objectID": "body/09_skill_demo.html#为什么要创建数据处理-skill",
+    "href": "body/09_skill_demo.html#为什么要创建数据处理-skill",
+    "title": "10  创建与使用 stata-data-cleaner Skill",
+    "section": "10.2 创建 Skill",
+    "text": "向 AI 说明数据处理的具体要求（例如剔除哪些样本）\n给 AI 制定工作规范（例如变量标签怎么写、最后输出什么文件）\n避免每次都重复说明”剔除 ST 股、剔除金融业、指标要缩尾”等常规操作\n10.2 创建 Skill\n\n\n10.2.1 prompt\n在 plan mode 下输入以下 prompt，让 AI 根据已有的数据处理经验创建 Skill：\n现在 data/raw/ 里面的数据清洗完了。请你把清洗数据的流程打包成一个\nskill，放在当前项目文件夹。参考之前的清洗流程和清洗代码，让 skill\n实现以下功能：\n\n1. 自己探索数据结构（尽可能快速，不要扫描整个大型数据集）\n2. 全面检查数据预处理操作（保留合并报表、保留年度数据、统一变量名、\n   字符型转数值型、剔除金融行业、剔除 ST 样本、剔除异常值、去重、\n   缩尾等）是否需要进行\n3. 尤其关注缺失值的情况\n4. 如果不确定某个操作是否需要进行，要向我提问\n5. 根据需求判断是处理单个数据集还是合并多个数据集\n6. 根据需求保留和计算需要的变量\n7. 清洗完成后进行描述性统计\n\n最终输出：.do 文档、.dta 文件、数据处理工作小结 .md 文档\n\n用 stata mcp 调用 stata，不要用命令行调用。\n因为每次处理的数据结构可能不一样，考虑到的情况要尽可能全面。\n\n\n10.2.2 创建过程\nAI 会分析之前的清洗代码和工作小结，提炼出通用的数据处理流程，然后生成：\n\nSKILL.md：核心定义文件，包含元数据和 5 阶段工作流\nreferences/operations-guide.md：详细操作参考手册\n\n创建过程约 7 分钟。",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/09_skill_demo.html#生成的-skill-结构",
+    "href": "body/09_skill_demo.html#生成的-skill-结构",
+    "title": "10  创建与使用 stata-data-cleaner Skill",
+    "section": "10.3 生成的 Skill 结构",
+    "text": "10.3 生成的 Skill 结构\n.claude/skills/stata-data-cleaner/\n├── SKILL.md                    # 核心文件\n└── references/\n    └── operations-guide.md     # 操作参考手册",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/09_skill_demo.html#阶段工作流内容",
+    "href": "body/09_skill_demo.html#阶段工作流内容",
+    "title": "10  创建与使用 stata-data-cleaner Skill",
+    "section": "10.4 5 阶段工作流内容",
+    "text": "10.4 5 阶段工作流内容\n\n这部分是 AI 生成的总结。关于 skill 规定的 5 阶段工作流具体内容，可查看.claude\\skills\\stata-data-cleaner\n\n\n10.4.1 Phase 1：Explore — 探索数据结构\n目标：快速了解数据，不导入整个大数据集（有些文件超过 300 MB）。\n步骤：\n\n扫描数据目录 — 列出所有文件和子目录，识别文件格式和目录结构\n读取说明文件（最快途径） — CSMAR 数据有 [DES][csv].txt 文件，包含完整的变量定义\n用 Stata 确认 — 导入少量样本行确认文档描述\n\nimport delimited \"C:/path/file.csv\", clear rowfirst(2) ///\n    encoding(\"utf8\") bindquote(strict)\ndescribe\nlist in 1/3\n关键确认事项：\n\n变量名在 Stata 中会被 import delimited 全部小写化\n金额是否以字符串存储\n日期格式和标识符格式\n\n\n\n10.4.2 Phase 2：Diagnose — 诊断数据质量问题\n对每个数据集进行针对性检查：\n\n\n\n检查项\n方法\n关注点\n\n\n\n\n重复记录\nduplicates report\n是否有多种报表类型或重述报告\n\n\n缺失值\nmisstable summarize\n缺失率 &gt;10% 的变量需报告给用户\n\n\n类型问题\ndescribe\n数值是否被存储为字符串\n\n\n报表类型分布\ntab typrep\n合并 vs 母公司报表比例\n\n\n行业分布\ntab substr(industrycode,1,1)\n金融业占比\n\n\n特殊情况\ncount if strpos(shortname,\"ST\")\nST 股、负资产、极端值\n\n\n\n缺失值的关键分析：\n\n合并风险：数据集 A 的变量 X 有 5% 缺失，数据集 B 的变量 Y 有 8% 缺失，合并后至少有一个缺失的比例可能达到 13%\n计算风险：ROA = 净利润 / 总资产，如果净利润有高缺失率，计算出的 ROA 缺失率会更高\n\n\n\n10.4.3 Phase 3：Consult — 向用户确认\n只询问真正不确定的事情。如果数据中没有 ST 股票，就不需要问是否要剔除。\n必问项：\n\n需要计算哪些变量？—— 用户的研究问题决定一切\n需要合并哪些数据集？—— 确认合并键\n\n条件性询问（仅当数据中存在该问题时才问）：\n\n是否剔除金融行业？（默认：是）\n是否剔除 ST 股票？（默认：是）\n缩尾比例？（默认：1%/99%）\n时间范围？\n年度还是季度？\n\n\n\n\n\n\n\nTip合并前必须告知\n\n\n\n在执行合并前，Skill 会向用户报告每个数据集的观测数和预计匹配率，以及可能丢失的观测数量。例如：“资产负债表有 43,292 条年报，利润表有 43,292 条。合并后预计匹配约 43,000 条。”\n\n\n\n\n10.4.4 Phase 4：Execute — 生成并执行代码\nSkill 会生成一个结构化的 .do 文件：\n* ============================================================\n* [描述处理目的]\n* ============================================================\nclear all\nset more off\n\n* --- 1. 导入数据 ---\n* --- 2. 变量准备 ---     (rename, destring, 日期提取)\n* --- 3. 筛选 ---         (报表类型、时间范围、行业)\n* --- 4. 去重 ---\n* --- 5. 合并 ---         (含 _merge 诊断)\n* --- 6. 样本筛选 ---     (金融、ST、负资产等)\n* --- 7. 变量计算 ---\n* --- 8. 缺失值处理 ---\n* --- 9. 缩尾 ---\n* --- 10. 变量标签 ---\n* --- 11. 描述性统计 ---\n* --- 12. 保存 ---\n如果执行出错，Skill 会读取错误信息、修复代码并重新执行，不会盲目重试。\n\n\n10.4.5 Phase 5：Document — 输出与文档\n\n\n\n输出\n位置\n说明\n\n\n\n\n.do 文件\ncode/\n完整的、带注释的 Stata 代码\n\n\n.dta 文件\ndata/processed/\n清洗后的数据集\n\n\n.md 文件\nfile/\n处理报告（操作记录 + 描述性统计）",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/09_skill_demo.html#关键-stata-代码模式",
+    "href": "body/09_skill_demo.html#关键-stata-代码模式",
+    "title": "10  创建与使用 stata-data-cleaner Skill",
+    "section": "10.5 关键 Stata 代码模式",
+    "text": "10.5 关键 Stata 代码模式\nSkill 中内置了以下常用模式：\n导入 CSV（处理 CSMAR 编码和引号）：\nimport delimited \"C:/path/file.csv\", clear encoding(\"utf8\") bindquote(strict)\n从日期字符串提取年份：\ngen year = real(substr(datevar, 1, 4))\n筛选年度 + 合并报表（CSMAR 惯例）：\nkeep if substr(accper, 6, 2) == \"12\" & typrep == \"A\"\n不依赖外部包的缩尾：\nforeach var of varlist var1 var2 var3 {\n    _pctile `var', percentiles(1 99)\n    local p1 = r(r1)\n    local p99 = r(r2)\n    replace `var' = `p1' if `var' &lt; `p1' & !missing(`var')\n    replace `var' = `p99' if `var' &gt; `p99' & !missing(`var')\n}\n计算增长率（安全版本）：\nsort stkcd year\nby stkcd: gen growth = (revenue - revenue[_n-1]) ///\n    / abs(revenue[_n-1]) if _n &gt; 1 & revenue[_n-1] != 0\n注意使用 abs() 和 != 0 检查来处理基期为负值或零的情况。\n带诊断的合并：\nmerge 1:1 stkcd year using `other'\ntab _merge\ndrop if _merge != 3\ndrop _merge",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/09_skill_demo.html#常见陷阱与排错",
+    "href": "body/09_skill_demo.html#常见陷阱与排错",
+    "title": "10  创建与使用 stata-data-cleaner Skill",
+    "section": "10.6 常见陷阱与排错",
+    "text": "10.6 常见陷阱与排错\n\n\n\n\n\n\n\n\n陷阱\n原因\n解决方法\n\n\n\n\n变量名找不到\nimport delimited 会将所有变量名小写化\n代码中统一使用小写变量名\n\n\nCSV 导入引号错误\nCSMAR 的值被双引号包裹\n使用 bindquote(strict)\n\n\n空字符串 ≠ 缺失值\nCSMAR 用空 \"\" 表示缺失，导入后是空字符串不是 Stata 缺失值\n对数值列执行 destring, replace force\n\n\n路径错误\nStata MCP 运行在 Windows 端\n始终使用 C:/Users/...，不用 /mnt/c/...\n\n\n内存不足\n资产负债表可达 300+ MB\n先筛选（保留年度+合并报表）再处理\n\n\n增长率分母为零\n上期营收为零或负值\n使用 abs() 并添加 != 0 检查\n\n\n合并键类型不匹配\n一边是字符串，一边是数值\n合并前确保两边类型一致",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/09_skill_demo.html#使用-skill-清洗数据",
+    "href": "body/09_skill_demo.html#使用-skill-清洗数据",
+    "title": "10  创建与使用 stata-data-cleaner Skill",
+    "section": "10.7 使用 Skill 清洗数据",
+    "text": "10.7 使用 Skill 清洗数据\n创建完成后，使用这个 Skill 清洗数据的流程非常简单：\n\n将原始数据放入 data/raw/\n在 Claude Code 中描述你的需求（例如”清洗这些数据并计算 Size、ROA”）\nSkill 自动触发，执行 5 阶段工作流\n在 Phase 3 确认 Skill 提出的问题\n等待执行完成，查看输出文件",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/10_references.html",
+    "href": "body/10_references.html",
+    "title": "11  相关链接",
     "section": "",
-    "text": "11.1.1 创建 prompt\n在 plan mode 下输入以下 prompt，让 AI 根据已有的数据处理经验创建 Skill：\n现在 data/raw/ 里面的数据清洗完了。请你把清洗数据的流程打包成一个\nskill，放在当前项目文件夹。参考之前的清洗流程和清洗代码，让 skill\n实现以下功能：\n\n1. 自己探索数据结构（尽可能快速，不要扫描整个大型数据集）\n2. 全面检查数据预处理操作（保留合并报表、保留年度数据、统一变量名、\n   字符型转数值型、剔除金融行业、剔除 ST 样本、剔除异常值、去重、\n   缩尾等）是否需要进行\n3. 尤其关注缺失值的情况\n4. 如果不确定某个操作是否需要进行，要向我提问\n5. 根据需求判断是处理单个数据集还是合并多个数据集\n6. 根据需求保留和计算需要的变量\n7. 清洗完成后进行描述性统计\n\n最终输出：.do 文档、.dta 文件、数据处理工作小结 .md 文档\n\n用 stata mcp 调用 stata，不要用命令行调用。\n因为每次处理的数据结构可能不一样，考虑到的情况要尽可能全面。\n\n\n11.1.2 创建过程\nAI 会分析之前的清洗代码和工作小结，提炼出通用的数据处理流程，然后生成：\n\nSKILL.md：核心定义文件，包含元数据和 5 阶段工作流\nreferences/operations-guide.md：详细操作参考手册\n\n创建过程约 7 分钟。",
-    "crumbs": [
-      "**Skill 创建与复用**",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
-    ]
-  },
-  {
-    "objectID": "body/10_skill_demo.html#生成的-skill-结构",
-    "href": "body/10_skill_demo.html#生成的-skill-结构",
-    "title": "11  创建与使用 stata-data-cleaner Skill",
-    "section": "11.2 生成的 Skill 结构",
-    "text": "11.2 生成的 Skill 结构\n.claude/skills/stata-data-cleaner/\n├── SKILL.md                    # 核心文件\n└── references/\n    └── operations-guide.md     # 操作参考手册",
-    "crumbs": [
-      "**Skill 创建与复用**",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
-    ]
-  },
-  {
-    "objectID": "body/10_skill_demo.html#阶段工作流详解",
-    "href": "body/10_skill_demo.html#阶段工作流详解",
-    "title": "11  创建与使用 stata-data-cleaner Skill",
-    "section": "11.3 5 阶段工作流详解",
-    "text": "11.3 5 阶段工作流详解\n\n11.3.1 Phase 1：Explore — 探索数据结构\n目标：快速了解数据，不导入整个大数据集（有些文件超过 300 MB）。\n步骤：\n\n扫描数据目录 — 列出所有文件和子目录，识别文件格式和目录结构\n读取说明文件（最快途径） — CSMAR 数据有 [DES][csv].txt 文件，包含完整的变量定义\n用 Stata 确认 — 导入少量样本行确认文档描述\n\nimport delimited \"C:/path/file.csv\", clear rowfirst(2) ///\n    encoding(\"utf8\") bindquote(strict)\ndescribe\nlist in 1/3\n关键确认事项：\n\n变量名在 Stata 中会被 import delimited 全部小写化\n金额是否以字符串存储\n日期格式和标识符格式\n\n\n\n11.3.2 Phase 2：Diagnose — 诊断数据质量问题\n对每个数据集进行针对性检查：\n\n\n\n检查项\n方法\n关注点\n\n\n\n\n重复记录\nduplicates report\n是否有多种报表类型或重述报告\n\n\n缺失值\nmisstable summarize\n缺失率 &gt;10% 的变量需报告给用户\n\n\n类型问题\ndescribe\n数值是否被存储为字符串\n\n\n报表类型分布\ntab typrep\n合并 vs 母公司报表比例\n\n\n行业分布\ntab substr(industrycode,1,1)\n金融业占比\n\n\n特殊情况\ncount if strpos(shortname,\"ST\")\nST 股、负资产、极端值\n\n\n\n缺失值的关键分析：\n\n合并风险：数据集 A 的变量 X 有 5% 缺失，数据集 B 的变量 Y 有 8% 缺失，合并后至少有一个缺失的比例可能达到 13%\n计算风险：ROA = 净利润 / 总资产，如果净利润有高缺失率，计算出的 ROA 缺失率会更高\n\n\n\n11.3.3 Phase 3：Consult — 向用户确认\n只询问真正不确定的事情。如果数据中没有 ST 股票，就不需要问是否要剔除。\n必问项：\n\n需要计算哪些变量？—— 用户的研究问题决定一切\n需要合并哪些数据集？—— 确认合并键\n\n条件性询问（仅当数据中存在该问题时才问）：\n\n是否剔除金融行业？（默认：是）\n是否剔除 ST 股票？（默认：是）\n缩尾比例？（默认：1%/99%）\n时间范围？\n年度还是季度？\n\n\n\n\n\n\n\nTip合并前必须告知\n\n\n\n在执行合并前，Skill 会向用户报告每个数据集的观测数和预计匹配率，以及可能丢失的观测数量。例如：“资产负债表有 43,292 条年报，利润表有 43,292 条。合并后预计匹配约 43,000 条。”\n\n\n\n\n11.3.4 Phase 4：Execute — 生成并执行代码\nSkill 会生成一个结构化的 .do 文件：\n* ============================================================\n* [描述处理目的]\n* ============================================================\nclear all\nset more off\n\n* --- 1. 导入数据 ---\n* --- 2. 变量准备 ---     (rename, destring, 日期提取)\n* --- 3. 筛选 ---         (报表类型、时间范围、行业)\n* --- 4. 去重 ---\n* --- 5. 合并 ---         (含 _merge 诊断)\n* --- 6. 样本筛选 ---     (金融、ST、负资产等)\n* --- 7. 变量计算 ---\n* --- 8. 缺失值处理 ---\n* --- 9. 缩尾 ---\n* --- 10. 变量标签 ---\n* --- 11. 描述性统计 ---\n* --- 12. 保存 ---\n如果执行出错，Skill 会读取错误信息、修复代码并重新执行，不会盲目重试。\n\n\n11.3.5 Phase 5：Document — 输出与文档\n\n\n\n输出\n位置\n说明\n\n\n\n\n.do 文件\ncode/\n完整的、带注释的 Stata 代码\n\n\n.dta 文件\ndata/processed/\n清洗后的数据集\n\n\n.md 文件\nfile/\n处理报告（操作记录 + 描述性统计）",
-    "crumbs": [
-      "**Skill 创建与复用**",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
-    ]
-  },
-  {
-    "objectID": "body/10_skill_demo.html#关键-stata-代码模式",
-    "href": "body/10_skill_demo.html#关键-stata-代码模式",
-    "title": "11  创建与使用 stata-data-cleaner Skill",
-    "section": "11.4 关键 Stata 代码模式",
-    "text": "11.4 关键 Stata 代码模式\nSkill 中内置了以下常用模式：\n导入 CSV（处理 CSMAR 编码和引号）：\nimport delimited \"C:/path/file.csv\", clear encoding(\"utf8\") bindquote(strict)\n从日期字符串提取年份：\ngen year = real(substr(datevar, 1, 4))\n筛选年度 + 合并报表（CSMAR 惯例）：\nkeep if substr(accper, 6, 2) == \"12\" & typrep == \"A\"\n不依赖外部包的缩尾：\nforeach var of varlist var1 var2 var3 {\n    _pctile `var', percentiles(1 99)\n    local p1 = r(r1)\n    local p99 = r(r2)\n    replace `var' = `p1' if `var' &lt; `p1' & !missing(`var')\n    replace `var' = `p99' if `var' &gt; `p99' & !missing(`var')\n}\n计算增长率（安全版本）：\nsort stkcd year\nby stkcd: gen growth = (revenue - revenue[_n-1]) ///\n    / abs(revenue[_n-1]) if _n &gt; 1 & revenue[_n-1] != 0\n注意使用 abs() 和 != 0 检查来处理基期为负值或零的情况。\n带诊断的合并：\nmerge 1:1 stkcd year using `other'\ntab _merge\ndrop if _merge != 3\ndrop _merge",
-    "crumbs": [
-      "**Skill 创建与复用**",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
-    ]
-  },
-  {
-    "objectID": "body/10_skill_demo.html#常见陷阱与排错",
-    "href": "body/10_skill_demo.html#常见陷阱与排错",
-    "title": "11  创建与使用 stata-data-cleaner Skill",
-    "section": "11.5 常见陷阱与排错",
-    "text": "11.5 常见陷阱与排错\n\n\n\n\n\n\n\n\n陷阱\n原因\n解决方法\n\n\n\n\n变量名找不到\nimport delimited 会将所有变量名小写化\n代码中统一使用小写变量名\n\n\nCSV 导入引号错误\nCSMAR 的值被双引号包裹\n使用 bindquote(strict)\n\n\n空字符串 ≠ 缺失值\nCSMAR 用空 \"\" 表示缺失，导入后是空字符串不是 Stata 缺失值\n对数值列执行 destring, replace force\n\n\n路径错误\nStata MCP 运行在 Windows 端\n始终使用 C:/Users/...，不用 /mnt/c/...\n\n\n内存不足\n资产负债表可达 300+ MB\n先筛选（保留年度+合并报表）再处理\n\n\n增长率分母为零\n上期营收为零或负值\n使用 abs() 并添加 != 0 检查\n\n\n合并键类型不匹配\n一边是字符串，一边是数值\n合并前确保两边类型一致",
-    "crumbs": [
-      "**Skill 创建与复用**",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
-    ]
-  },
-  {
-    "objectID": "body/10_skill_demo.html#使用-skill-清洗数据",
-    "href": "body/10_skill_demo.html#使用-skill-清洗数据",
-    "title": "11  创建与使用 stata-data-cleaner Skill",
-    "section": "11.6 使用 Skill 清洗数据",
-    "text": "11.6 使用 Skill 清洗数据\n创建完成后，使用这个 Skill 清洗数据的流程非常简单：\n\n将原始数据放入 data/raw/\n在 Claude Code 中描述你的需求（例如”清洗这些数据并计算 Size、ROA”）\nSkill 自动触发，执行 5 阶段工作流\n在 Phase 3 确认 Skill 提出的问题\n等待执行完成，查看输出文件\n\n使用 Skill 清洗同样的 CSMAR 数据，全程约 7 分钟，比从零开始快得多。",
-    "crumbs": [
-      "**Skill 创建与复用**",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
-    ]
-  },
-  {
-    "objectID": "body/11_references.html",
-    "href": "body/11_references.html",
-    "title": "12  参考资料",
-    "section": "",
-    "text": "12.1 Claude Code 相关",
+    "text": "11.0.1 官方网站\n\nClaude Code 快速入门\nStata MCP 插件 Github 主页\nAnthropic Skills 仓库\n\n\n\n\n11.0.2 安装指南\n\n无编程基础也能装！Claude Code 安装配置保姆级教程\n从Opencode到VS Code到Skills：一次配齐整套AI生产力工具\nGLM 官方指引文档：在 Claude Code 中使用 GLM Coding Plan 的方法\nGLM 套餐购买\n\n\n\n\n11.0.3 安装记录\n\nWSL_claudecode_GLM安装记录\nWindows_claudecode_GLM安装记录\nclaude code官方脚本安装与npm安装及卸载\n\n\n\n\n11.0.4 Quarto Book 使用教程\n\nQuarto+Vscode：生成在线电子书",
     "crumbs": [
       "**参考资料**",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>参考资料</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>相关链接</span>"
     ]
   },
   {
-    "objectID": "body/11_references.html#claude-code-相关",
-    "href": "body/11_references.html#claude-code-相关",
-    "title": "12  参考资料",
+    "objectID": "body/A01_stata_mcp_guide.html",
+    "href": "body/A01_stata_mcp_guide.html",
+    "title": "12  附录 A：Stata MCP 安装与配置指南",
     "section": "",
-    "text": "Claude Code 官方文档\nClaude Code GitHub 仓库 — Anthropic 官方技能包仓库\nClaude Code 快速入门",
-    "crumbs": [
-      "**参考资料**",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>参考资料</span>"
-    ]
-  },
-  {
-    "objectID": "body/11_references.html#stata-mcp-相关",
-    "href": "body/11_references.html#stata-mcp-相关",
-    "title": "12  参考资料",
-    "section": "12.2 Stata MCP 相关",
-    "text": "12.2 Stata MCP 相关\n\nStata MCP 插件 — VS Code 扩展商店\nMCP 协议介绍 — Model Context Protocol 官方文档",
-    "crumbs": [
-      "**参考资料**",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>参考资料</span>"
-    ]
-  },
-  {
-    "objectID": "body/11_references.html#skills-相关",
-    "href": "body/11_references.html#skills-相关",
-    "title": "12  参考资料",
-    "section": "12.3 Skills 相关",
-    "text": "12.3 Skills 相关\n\nAnthropic Skills 仓库 — 官方技能包集合\nClaude Code Skills 文档 — Skills 的创建和使用指南",
-    "crumbs": [
-      "**参考资料**",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>参考资料</span>"
-    ]
-  },
-  {
-    "objectID": "body/11_references.html#stata-与实证研究",
-    "href": "body/11_references.html#stata-与实证研究",
-    "title": "12  参考资料",
-    "section": "12.4 Stata 与实证研究",
-    "text": "12.4 Stata 与实证研究\n\n连享会 — Stata 经管实证研究社区\n连享会寒假班 — 系统的 Stata 实证课程\n连享会视频 — 在线视频教程",
-    "crumbs": [
-      "**参考资料**",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>参考资料</span>"
-    ]
-  },
-  {
-    "objectID": "body/11_references.html#数据来源",
-    "href": "body/11_references.html#数据来源",
-    "title": "12  参考资料",
-    "section": "12.5 数据来源",
-    "text": "12.5 数据来源\n\nCSMAR 数据库 — 国泰安金融数据库\nWind 金融终端 — 万得金融数据",
-    "crumbs": [
-      "**参考资料**",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>参考资料</span>"
-    ]
-  },
-  {
-    "objectID": "body/11_references.html#工具下载",
-    "href": "body/11_references.html#工具下载",
-    "title": "12  参考资料",
-    "section": "12.6 工具下载",
-    "text": "12.6 工具下载\n\nQuarto — 技术文档和书籍出版工具\nVS Code — 推荐的代码编辑器\nGit — 版本控制工具",
-    "crumbs": [
-      "**参考资料**",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>参考资料</span>"
-    ]
-  },
-  {
-    "objectID": "body/A01_claude_md_template.html",
-    "href": "body/A01_claude_md_template.html",
-    "title": "13  附录 A：CLAUDE.md 模板",
-    "section": "",
-    "text": "13.1 模板一：命令行模式\n本附录提供两个 CLAUDE.md 模板，分别适用于命令行模式和 Stata MCP 模式。你可以根据自己的使用方式选择对应的模板，复制到项目根目录并根据实际情况修改。\n适用于没有 Stata MCP 或不想安装 MCP 的用户。",
+    "text": "12.1 前提条件\n本附录提供 Stata MCP 的详细安装步骤和常见问题解决方法。",
     "crumbs": [
       "**附录**",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>附录 A：CLAUDE.md 模板</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>附录 A：Stata MCP 安装与配置指南</span>"
     ]
   },
   {
-    "objectID": "body/A01_claude_md_template.html#模板一命令行模式",
-    "href": "body/A01_claude_md_template.html#模板一命令行模式",
-    "title": "13  附录 A：CLAUDE.md 模板",
-    "section": "",
-    "text": "## Stata 数据处理规范\n\n### Stata 配置\n- Stata 安装路径：D:/stata18/StataMP-64.exe\n  （请替换为你的实际安装路径）\n- 运行 dofile 命令格式：\n  \"D:/stata18/StataMP-64.exe\" /e do \"script.do\"\n- 运行前需先 cd 到项目目录，否则日志会写到默认路径\n\n### 路径规范\n- 必须使用 Windows 路径格式（D:/...）\n- 不能使用 WSL 的 /mnt/d/... 格式\n- Stata 无法识别 WSL 路径，会报 r(601) file not found\n\n### 目录约定\n- 原始数据放在 data/raw/，不要修改或覆盖\n- 清洗后的数据放在 data/processed/\n- 代码放在 code/\n- 说明文档放在 file/\n\n### 工作流程\n- 每次执行 Stata 分三步：Write(.do) → Bash(execute) → Read(.log)\n- 运行完成后检查 .log 文件中是否有 r( 开头的错误代码\n- 如果有错误，分析原因后修改 .do 文件重新运行",
-    "crumbs": [
-      "**附录**",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>附录 A：CLAUDE.md 模板</span>"
-    ]
-  },
-  {
-    "objectID": "body/A01_claude_md_template.html#模板二stata-mcp-模式",
-    "href": "body/A01_claude_md_template.html#模板二stata-mcp-模式",
-    "title": "13  附录 A：CLAUDE.md 模板",
-    "section": "13.2 模板二：Stata MCP 模式",
-    "text": "13.2 模板二：Stata MCP 模式\n适用于已安装 Stata MCP 的用户（推荐）。\n## Stata 数据处理规范\n\n### 调用方式\n- 通过 Stata MCP 调用 Stata，不要用命令行\n- 使用 stata_run_selection 运行代码片段\n- 使用 stata_run_file 运行 .do 文件\n\n### 路径规范\n- Stata MCP 运行在 Windows 端，必须使用 Windows 路径格式\n  （C:/Users/...），不能用 WSL 的 /mnt/c/... 格式\n- 否则会报 r(601) file not found\n\n### 目录约定\n- 原始数据放在 data/raw/，不要修改或覆盖\n- 清洗过程中以及清洗后的数据存入 data/processed/\n- 代码放在 code/\n- 说明文档放在 file/\n\n### 输出要求\n- 数据处理的代码保存为 .do 文件\n- 处理后的数据保存为 .dta 文件\n- 数据处理工作小结保存为 .md 文档\n  （包含进行了哪些操作，以及最后的描述性统计）",
-    "crumbs": [
-      "**附录**",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>附录 A：CLAUDE.md 模板</span>"
-    ]
-  },
-  {
-    "objectID": "body/A01_claude_md_template.html#使用建议",
-    "href": "body/A01_claude_md_template.html#使用建议",
-    "title": "13  附录 A：CLAUDE.md 模板",
-    "section": "13.3 使用建议",
-    "text": "13.3 使用建议\n\n选择适合你的模板，复制到项目根目录，文件名为 CLAUDE.md\n修改路径信息：将示例路径替换为你本地的实际路径\n补充项目特定需求：比如数据来源说明、特殊变量定义等\n持续完善：在 AI 执行任务后，问它是否遇到了问题，让它总结经验更新 CLAUDE.md",
-    "crumbs": [
-      "**附录**",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>附录 A：CLAUDE.md 模板</span>"
-    ]
-  },
-  {
-    "objectID": "body/A02_stata_mcp_guide.html",
-    "href": "body/A02_stata_mcp_guide.html",
-    "title": "14  附录 B：Stata MCP 安装与配置指南",
-    "section": "",
-    "text": "14.1 前提条件\n本附录提供 Stata MCP 的详细安装步骤和常见问题解决方法。",
-    "crumbs": [
-      "**附录**",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>附录 B：Stata MCP 安装与配置指南</span>"
-    ]
-  },
-  {
-    "objectID": "body/A02_stata_mcp_guide.html#前提条件",
-    "href": "body/A02_stata_mcp_guide.html#前提条件",
-    "title": "14  附录 B：Stata MCP 安装与配置指南",
+    "objectID": "body/A01_stata_mcp_guide.html#前提条件",
+    "href": "body/A01_stata_mcp_guide.html#前提条件",
+    "title": "12  附录 A：Stata MCP 安装与配置指南",
     "section": "",
     "text": "有效的 Stata 授权文件（stata.lic）\nVS Code 编辑器\nClaude Code CLI",
     "crumbs": [
       "**附录**",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>附录 B：Stata MCP 安装与配置指南</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>附录 A：Stata MCP 安装与配置指南</span>"
     ]
   },
   {
-    "objectID": "body/A02_stata_mcp_guide.html#安装步骤",
-    "href": "body/A02_stata_mcp_guide.html#安装步骤",
-    "title": "14  附录 B：Stata MCP 安装与配置指南",
-    "section": "14.2 安装步骤",
-    "text": "14.2 安装步骤\n\n14.2.1 第一步：安装 VS Code 扩展\n\n打开 VS Code\n进入扩展商店（Ctrl+Shift+X）\n搜索 “Stata MCP”\n点击安装\n\n\n\n14.2.2 第二步：配置 Stata 路径\n\n打开 VS Code 设置（Ctrl+,）\n搜索 “Stata MCP”\n在 Stata 安装路径设置中填入你的 Stata 可执行文件路径\n\nWindows 示例：D:/stata18/StataMP-64.exe\n\n保存设置后，检查 VS Code 右下角状态栏\n如果显示 “Stata: Connected”，说明连接成功\n\n\n\n14.2.3 第三步：在 Claude Code 中注册 MCP 服务器\n在终端中运行以下命令：\nclaude mcp add --transport sse stata-mcp http://localhost:4000/mcp --scope user\n\n--scope user 表示全局注册，所有项目都可以使用\n如果只想在当前项目中使用，改用 --scope project\n\n\n\n14.2.4 第四步：验证\n启动 Claude Code，尝试运行一段简单的 Stata 代码：\ndisplay \"Hello from Stata MCP!\"\n如果结果正常返回到对话中，说明配置成功。",
+    "objectID": "body/A01_stata_mcp_guide.html#安装步骤",
+    "href": "body/A01_stata_mcp_guide.html#安装步骤",
+    "title": "12  附录 A：Stata MCP 安装与配置指南",
+    "section": "12.2 安装步骤",
+    "text": "12.2 安装步骤\n\n12.2.1 第一步：安装 VS Code 扩展\n\n打开 VS Code\n进入扩展商店（Ctrl+Shift+X）\n搜索 “Stata MCP”\n点击安装\n\n\n\n12.2.2 第二步：配置 Stata 路径\n\n打开 VS Code 设置（Ctrl+,）\n搜索 “Stata MCP”\n在 Stata 安装路径设置中填入你的 Stata 可执行文件所在文件夹（而不是可执行文件本身的路径）\n\nWindows 示例：D:/stata18\n错误示例：D:/stata18/StataMP-64.exe\n\n保存设置后，检查 VS Code 右下角状态栏\n如果显示 “Stata: Connected”，说明连接成功\n\n\n\n12.2.3 第三步：在 Claude Code 中注册 MCP 服务器\n在终端中运行以下命令：\nclaude mcp add --transport sse stata-mcp http://localhost:4000/mcp --scope user\n\n此命令以及 Stata MCP 服务器在其他代码编辑器（如 Cursor）的配置方式可在 Stata MCP 的 Github 主页 的 “Detailed Configurations” 处找到\n\n\n--scope user 表示全局注册，所有项目都可以使用\n如果只想在当前项目中使用，改用 --scope project\n\n\n\n12.2.4 第四步：验证\n重启 VS Code 及终端，对 Claude Code 说：“测试一下能否运行 Stata MCP”。\n或者尝试手动运行一段简单的 Stata 代码：\ndisplay \"Hello from Stata MCP!\"\n如果结果正常返回到对话中，说明配置成功。",
     "crumbs": [
       "**附录**",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>附录 B：Stata MCP 安装与配置指南</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>附录 A：Stata MCP 安装与配置指南</span>"
     ]
   },
   {
-    "objectID": "body/A02_stata_mcp_guide.html#常见问题",
-    "href": "body/A02_stata_mcp_guide.html#常见问题",
-    "title": "14  附录 B：Stata MCP 安装与配置指南",
-    "section": "14.3 常见问题",
-    "text": "14.3 常见问题\n\n14.3.1 问题一：“Stata: Connected” 不显示\n可能原因：\n\nStata 路径配置错误\nStata 授权文件缺失或过期\nVS Code 扩展未正确加载\n\n解决方法：\n\n确认 Stata 路径正确（在文件管理器中验证路径是否存在）\n检查 stata.lic 文件是否在 Stata 安装目录下\n重启 VS Code\n\n\n\n14.3.2 问题二：Claude Code 提示找不到 stata-mcp\n可能原因：\n\nMCP 服务器未注册\nStata MCP 服务未启动\n\n解决方法：\n\n重新运行注册命令\n确认 VS Code 中 Stata MCP 扩展已启用\n运行 claude mcp list 查看已注册的 MCP 服务器\n\n\n\n14.3.3 问题三：路径错误 r(601)\n可能原因：\n\nClaude Code 使用了 WSL 路径格式（/mnt/c/...）\n\n解决方法：\n在项目 CLAUDE.md 中明确写明：\nStata MCP 运行在 Windows 端，必须使用 Windows 路径格式\n（C:/Users/...），不能用 WSL 的 /mnt/c/... 格式\n\n\n14.3.4 问题四：大型数据集运行缓慢\n解决方法：\n\n先用 rowfirst(5) 导入少量样本行进行探索\n确认变量和筛选条件后再导入完整数据\n优先筛选（保留年度+合并报表）以减少数据量",
+    "objectID": "body/A01_stata_mcp_guide.html#常见问题",
+    "href": "body/A01_stata_mcp_guide.html#常见问题",
+    "title": "12  附录 A：Stata MCP 安装与配置指南",
+    "section": "12.3 常见问题",
+    "text": "12.3 常见问题\n\n12.3.1 问题一：“Stata: Connected” 不显示\n可能原因：\n\nStata 路径配置错误\nStata 授权文件缺失或过期\nVS Code 扩展未正确加载\n\n解决方法：\n\n确认 Stata 路径正确（在文件管理器中验证路径是否存在）\n检查 stata.lic 文件是否在 Stata 安装目录下\n重启 VS Code\n\n\n\n12.3.2 问题二：Claude Code 提示找不到 stata-mcp\n可能原因：\n\nMCP 服务器未注册\nStata MCP 服务未启动\n\n解决方法：\n\n没有重启 VS Code 或终端\n重新运行注册命令\n确认 VS Code 中 Stata MCP 扩展已启用\n运行 claude mcp list 查看已注册的 MCP 服务器\n\n\n\n12.3.3 问题三：路径错误 r(601)\n可能原因：\n\nClaude Code 使用了 WSL 路径格式（/mnt/c/...）\n\n解决方法：\n在项目 CLAUDE.md 中明确写明：\nStata MCP 运行在 Windows 端，必须使用 Windows 路径格式\n（C:/Users/...），不能用 WSL 的 /mnt/c/... 格式",
     "crumbs": [
       "**附录**",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>附录 B：Stata MCP 安装与配置指南</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>附录 A：Stata MCP 安装与配置指南</span>"
     ]
   },
   {
-    "objectID": "body/A02_stata_mcp_guide.html#mcp-管理命令",
-    "href": "body/A02_stata_mcp_guide.html#mcp-管理命令",
-    "title": "14  附录 B：Stata MCP 安装与配置指南",
-    "section": "14.4 MCP 管理命令",
-    "text": "14.4 MCP 管理命令\n# 查看已注册的 MCP 服务器\nclaude mcp list\n\n# 移除 MCP 服务器\nclaude mcp remove stata-mcp\n\n# 查看 MCP 服务器详情\nclaude mcp get stata-mcp",
+    "objectID": "body/A01_stata_mcp_guide.html#mcp-管理命令",
+    "href": "body/A01_stata_mcp_guide.html#mcp-管理命令",
+    "title": "12  附录 A：Stata MCP 安装与配置指南",
+    "section": "12.4 MCP 管理命令",
+    "text": "12.4 MCP 管理命令\n# 查看已注册的 MCP 服务器\nclaude mcp list\n\n# 移除 MCP 服务器\nclaude mcp remove stata-mcp\n\n# 查看 MCP 服务器详情\nclaude mcp get stata-mcp\n或在 claude code 用斜杠命令：/mcp",
     "crumbs": [
       "**附录**",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>附录 B：Stata MCP 安装与配置指南</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>附录 A：Stata MCP 安装与配置指南</span>"
     ]
   }
 ]
