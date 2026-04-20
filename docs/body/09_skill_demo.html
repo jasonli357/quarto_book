@@ -307,7 +307,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#为什么要创建数据处理-skill" id="toc-为什么要创建数据处理-skill" class="nav-link active" data-scroll-target="#为什么要创建数据处理-skill"><span class="header-section-number">10.1</span> 为什么要创建数据处理 Skill</a>
+  <li><a href="#为什么要创建数据处理-skill" id="toc-为什么要创建数据处理-skill" class="nav-link active" data-scroll-target="#为什么要创建数据处理-skill"><span class="header-section-number">10.1</span> 为什么要创建数据处理 Skill</a></li>
+  <li><a href="#创建-skill" id="toc-创建-skill" class="nav-link" data-scroll-target="#创建-skill"><span class="header-section-number">10.2</span> 创建 Skill</a>
   <ul class="collapse">
   <li><a href="#prompt" id="toc-prompt" class="nav-link" data-scroll-target="#prompt"><span class="header-section-number">10.2.1</span> prompt</a></li>
   <li><a href="#创建过程" id="toc-创建过程" class="nav-link" data-scroll-target="#创建过程"><span class="header-section-number">10.2.2</span> 创建过程</a></li>
@@ -357,29 +358,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>向 AI 说明数据处理的具体要求（例如剔除哪些样本）</li>
 <li>给 AI 制定工作规范（例如变量标签怎么写、最后输出什么文件）</li>
 <li>避免每次都重复说明”剔除 ST 股、剔除金融业、指标要缩尾”等常规操作</li>
-<li><h2 id="创建-skill" data-number="10.2" class="anchored"><span class="header-section-number">10.2</span> 创建 Skill</h2></li>
 </ul>
+</section>
+<section id="创建-skill" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="创建-skill"><span class="header-section-number">10.2</span> 创建 Skill</h2>
 <section id="prompt" class="level3" data-number="10.2.1">
 <h3 data-number="10.2.1" class="anchored" data-anchor-id="prompt"><span class="header-section-number">10.2.1</span> prompt</h3>
 <p>在 plan mode 下输入以下 prompt，让 AI 根据已有的数据处理经验创建 Skill：</p>
-<pre><code>现在 data/raw/ 里面的数据清洗完了。请你把清洗数据的流程打包成一个
-skill，放在当前项目文件夹。参考之前的清洗流程和清洗代码，让 skill
-实现以下功能：
+<pre><code>现在 @data/raw/ 里面的数据清洗完了。请你把清洗数据的流程打包成一个skill，放在当前项目文件夹。
+参考 @file/plan.md, @file/data_processing_summary.md 的清洗流程和 @code/data_cleaning.do 的清洗代码，让skill实现以下功能：
 
-1. 自己探索数据结构（尽可能快速，不要扫描整个大型数据集）
-2. 全面检查数据预处理操作（保留合并报表、保留年度数据、统一变量名、
-   字符型转数值型、剔除金融行业、剔除 ST 样本、剔除异常值、去重、
-   缩尾等）是否需要进行
-3. 尤其关注缺失值的情况
-4. 如果不确定某个操作是否需要进行，要向我提问
-5. 根据需求判断是处理单个数据集还是合并多个数据集
-6. 根据需求保留和计算需要的变量
-7. 清洗完成后进行描述性统计
+1. 这个 skill 要自己探索数据结构（尽可能快速，不要扫描整个大型数据集，可以通过stata代码或者阅读数据里面的.txt说明文件来探索）     
+2. 然后要全面检查各种具体的数据预处理操作（包括但不限于：保留合并报表、保留年度数据、统一变量名、字符型转为数值型变量、剔除金融行业样本、剔除 ST 样本、剔除总资产为负等异常值、剔除上市不到一年样本、去重、缩尾等等）是否需要进行；
+3. 尤其关注缺失值的情况。例如：合并数据集后，会不会某一个数据大量缺失导致合并数据集大量缺失；计算某个指标时，会不会某个变量存在大量缺失值，导致这个指标存在大量缺失；
+4. 如果不确定某个操作是否需要进行、怎么进行，要向我提问。
+5. 根据我的需求，判断是只要处理单个数据集，还是要合并多个数据集
+6. 根据我的需求，保留和计算我需要的变量
+7. 清洗完成后，对重要的变量进行描述性统计
 
-最终输出：.do 文档、.dta 文件、数据处理工作小结 .md 文档
+最终输出包括：数据处理的 .do 文档；处理后的 .dta 文件；数据处理工作小结 .md 文档（包含进行了哪些操作，以及最后的描述性统计）
 
-用 stata mcp 调用 stata，不要用命令行调用。
-因为每次处理的数据结构可能不一样，考虑到的情况要尽可能全面。</code></pre>
+用 stata 完成上述任务。用 stata mcp 调用 stata，不要用命令行调用。
+
+因为每次用这个skill处理的数据结构可能不一样，这个skill考虑到的情况要尽可能全面，确保泛用性。
+
+如果有什么我没提到但在其他数据清洗任务中常见的操作，请你补充。
+
+另外，不知道上述功能全部放进一个skill比较好，还是分别放进几个不同的skill比较好。请你给出建议。</code></pre>
 </section>
 <section id="创建过程" class="level3" data-number="10.2.2">
 <h3 data-number="10.2.2" class="anchored" data-anchor-id="创建过程"><span class="header-section-number">10.2.2</span> 创建过程</h3>

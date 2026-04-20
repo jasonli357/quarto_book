@@ -529,8 +529,19 @@
     "objectID": "body/09_skill_demo.html#为什么要创建数据处理-skill",
     "href": "body/09_skill_demo.html#为什么要创建数据处理-skill",
     "title": "10  创建与使用 stata-data-cleaner Skill",
+    "section": "",
+    "text": "向 AI 说明数据处理的具体要求（例如剔除哪些样本）\n给 AI 制定工作规范（例如变量标签怎么写、最后输出什么文件）\n避免每次都重复说明”剔除 ST 股、剔除金融业、指标要缩尾”等常规操作",
+    "crumbs": [
+      "**Skill 创建与复用**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
+    ]
+  },
+  {
+    "objectID": "body/09_skill_demo.html#创建-skill",
+    "href": "body/09_skill_demo.html#创建-skill",
+    "title": "10  创建与使用 stata-data-cleaner Skill",
     "section": "10.2 创建 Skill",
-    "text": "向 AI 说明数据处理的具体要求（例如剔除哪些样本）\n给 AI 制定工作规范（例如变量标签怎么写、最后输出什么文件）\n避免每次都重复说明”剔除 ST 股、剔除金融业、指标要缩尾”等常规操作\n10.2 创建 Skill\n\n\n10.2.1 prompt\n在 plan mode 下输入以下 prompt，让 AI 根据已有的数据处理经验创建 Skill：\n现在 data/raw/ 里面的数据清洗完了。请你把清洗数据的流程打包成一个\nskill，放在当前项目文件夹。参考之前的清洗流程和清洗代码，让 skill\n实现以下功能：\n\n1. 自己探索数据结构（尽可能快速，不要扫描整个大型数据集）\n2. 全面检查数据预处理操作（保留合并报表、保留年度数据、统一变量名、\n   字符型转数值型、剔除金融行业、剔除 ST 样本、剔除异常值、去重、\n   缩尾等）是否需要进行\n3. 尤其关注缺失值的情况\n4. 如果不确定某个操作是否需要进行，要向我提问\n5. 根据需求判断是处理单个数据集还是合并多个数据集\n6. 根据需求保留和计算需要的变量\n7. 清洗完成后进行描述性统计\n\n最终输出：.do 文档、.dta 文件、数据处理工作小结 .md 文档\n\n用 stata mcp 调用 stata，不要用命令行调用。\n因为每次处理的数据结构可能不一样，考虑到的情况要尽可能全面。\n\n\n10.2.2 创建过程\nAI 会分析之前的清洗代码和工作小结，提炼出通用的数据处理流程，然后生成：\n\nSKILL.md：核心定义文件，包含元数据和 5 阶段工作流\nreferences/operations-guide.md：详细操作参考手册\n\n创建过程约 7 分钟。",
+    "text": "10.2 创建 Skill\n\n10.2.1 prompt\n在 plan mode 下输入以下 prompt，让 AI 根据已有的数据处理经验创建 Skill：\n现在 @data/raw/ 里面的数据清洗完了。请你把清洗数据的流程打包成一个skill，放在当前项目文件夹。\n参考 @file/plan.md, @file/data_processing_summary.md 的清洗流程和 @code/data_cleaning.do 的清洗代码，让skill实现以下功能：\n\n1. 这个 skill 要自己探索数据结构（尽可能快速，不要扫描整个大型数据集，可以通过stata代码或者阅读数据里面的.txt说明文件来探索）     \n2. 然后要全面检查各种具体的数据预处理操作（包括但不限于：保留合并报表、保留年度数据、统一变量名、字符型转为数值型变量、剔除金融行业样本、剔除 ST 样本、剔除总资产为负等异常值、剔除上市不到一年样本、去重、缩尾等等）是否需要进行；\n3. 尤其关注缺失值的情况。例如：合并数据集后，会不会某一个数据大量缺失导致合并数据集大量缺失；计算某个指标时，会不会某个变量存在大量缺失值，导致这个指标存在大量缺失；\n4. 如果不确定某个操作是否需要进行、怎么进行，要向我提问。\n5. 根据我的需求，判断是只要处理单个数据集，还是要合并多个数据集\n6. 根据我的需求，保留和计算我需要的变量\n7. 清洗完成后，对重要的变量进行描述性统计\n\n最终输出包括：数据处理的 .do 文档；处理后的 .dta 文件；数据处理工作小结 .md 文档（包含进行了哪些操作，以及最后的描述性统计）\n\n用 stata 完成上述任务。用 stata mcp 调用 stata，不要用命令行调用。\n\n因为每次用这个skill处理的数据结构可能不一样，这个skill考虑到的情况要尽可能全面，确保泛用性。\n\n如果有什么我没提到但在其他数据清洗任务中常见的操作，请你补充。\n\n另外，不知道上述功能全部放进一个skill比较好，还是分别放进几个不同的skill比较好。请你给出建议。\n\n\n10.2.2 创建过程\nAI 会分析之前的清洗代码和工作小结，提炼出通用的数据处理流程，然后生成：\n\nSKILL.md：核心定义文件，包含元数据和 5 阶段工作流\nreferences/operations-guide.md：详细操作参考手册\n\n创建过程约 7 分钟。",
     "crumbs": [
       "**Skill 创建与复用**",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>创建与使用 stata-data-cleaner Skill</span>"
