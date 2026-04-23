@@ -39,3 +39,4 @@
 ### prompt 3（用新生成的 skill 清洗数据）
 
 【data/】里面是实证金融研究用的 A 股上市公司数据，需要清洗合并后计算常用控制变量（Size、Age、Lev、Growth、ROA），对这些指标进行描述性统计。用 stata 完成。
+
