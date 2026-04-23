@@ -607,7 +607,7 @@
     "href": "body/10_references.html",
     "title": "11  相关链接",
     "section": "",
-    "text": "11.0.1 官方网站\n\nClaude Code 快速入门\nStata MCP 插件 Github 主页\nAnthropic Skills 仓库\n\n\n\n\n11.0.2 安装指南\n\n无编程基础也能装！Claude Code 安装配置保姆级教程\n从Opencode到VS Code到Skills：一次配齐整套AI生产力工具\nGLM 官方指引文档：在 Claude Code 中使用 GLM Coding Plan 的方法\nGLM 套餐购买\n\n\n\n\n11.0.3 安装记录\n\nWSL_claudecode_GLM安装记录\nWindows_claudecode_GLM安装记录\nclaude code官方脚本安装与npm安装及卸载\n\n\n\n\n11.0.4 Quarto Book 使用教程\n\nQuarto+Vscode：生成在线电子书",
+    "text": "11.0.1 官方网站\n\nClaude Code 快速入门\nStata MCP 插件 Github 主页\nAnthropic Skills 仓库\n\n\n\n\n11.0.2 安装指南\n\n无编程基础也能装！Claude Code 安装配置保姆级教程\n从Opencode到VS Code到Skills：一次配齐整套AI生产力工具\nGLM 官方指引文档：在 Claude Code 中使用 GLM Coding Plan 的方法\nGLM 套餐购买\n\n\n\n\n11.0.3 安装记录\n\nWSL_claudecode_GLM安装记录\nWindows_claudecode_GLM安装记录\nclaude code官方脚本安装与npm安装及卸载\n\n\n\n\n11.0.4 Quarto Book 使用教程\n\nQuarto+Vscode：生成在线电子书\n\n\n\n\n11.0.5 Claude + Stata 进阶使用指南\n\n经济学家如何把Claude Code接入Stata? 这份保姆级指南让你的实证研究效率翻倍\nDylan Moore维护的stata-skill项目",
     "crumbs": [
       "**参考资料**",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>相关链接</span>"

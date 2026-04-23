@@ -28,3 +28,10 @@
 ### Quarto Book 使用教程
 
 - [Quarto+Vscode：生成在线电子书](https://github.com/lianxhcn/quarto_book)
+
+--- -- -
+
+### Claude + Stata 进阶使用指南
+
+- [经济学家如何把Claude Code接入Stata? 这份保姆级指南让你的实证研究效率翻倍](https://zhuanlan.zhihu.com/p/2015598606959255653)
+- [Dylan Moore维护的stata-skill项目](https://github.com/dylantmoore/stata-skill)
